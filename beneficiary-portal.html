@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة المستفيدين | منصة مشروعي</title>
+  <meta name="description" content="بوابة تسجيل المستفيدين من المنح والمشاريع في اليمن — منصة مشروعي"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="stylesheet" href="css/fonts.css?v=4.2"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css?v=4.2"/>
+  <link rel="stylesheet" href="css/variables.css?v=4.2"/>
+  <link rel="stylesheet" href="css/portals.css?v=4.2"/>
+  <style>
+    .tab-panel { display:none; } .tab-panel.active { display:block; }
+    .benef-type-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.7rem;
+    }
+    .benef-type-card {
+      border:1.5px solid var(--gray-200); border-radius:1rem; padding:.85rem .7rem;
+      text-align:center; cursor:pointer; transition:var(--portal-transition); background:#fff;
+    }
+    .benef-type-card:hover  { border-color:#059669; }
+    .benef-type-card.selected { border-color:#059669; background:rgba(5,150,105,.07); }
+    .benef-type-card i { font-size:1.5rem; margin-bottom:.35rem; display:block; }
+    .benef-type-card span { font-size:.8rem; font-weight:700; color:var(--gray-700); }
+    .benef-type-card input { display:none; }
+    /* grants loading */
+    .grants-loading {
+      text-align:center; padding:3rem; color:var(--gray-400);
+    }
+    .grants-loading i { font-size:2rem; animation:spin 1s linear infinite; display:block; margin-bottom:.75rem; }
+    /* selected grant banner */
+    .selected-grant-banner {
+      background:linear-gradient(135deg,rgba(5,150,105,.1),rgba(245,158,11,.1));
+      border:2px solid #059669;
+      border-radius:1rem;
+      padding:1rem 1.2rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      flex-wrap:wrap;
+      margin-bottom:1.5rem;
+    }
+    .selected-grant-banner .sgb-title { font-size:.95rem; font-weight:700; color:#064e3b; }
+    .selected-grant-banner .sgb-sub   { font-size:.8rem; color:var(--gray-500); }
+    .selected-grant-banner button {
+      background:none; border:none; color:#dc2626; cursor:pointer; font-size:.82rem;
+      font-family:var(--font-primary); font-weight:600; padding:0;
+    }
+  </style>
+</head>
+<body class="portal-wrapper portal-beneficiary">
+
+<!-- ========================= TOP NAV ========================= -->
+<nav class="portal-topbar">
+  <a href="index.html" class="portal-topbar-logo">
+    <div class="logo-mark">م</div>
+    <div>
+      <span class="logo-name">مشروعي</span>
+      <span class="logo-tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="portal-topbar-actions">
+    <a href="donor-portal.html" class="btn-back">
+      <i class="fas fa-handshake"></i> بوابة المانحين
+    </a>
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> الرئيسية
+    </a>
+  </div>
+</nav>
+
+<!-- ========================= HERO ========================= -->
+<section class="portal-hero">
+  <div class="portal-hero-content">
+    <div class="portal-icon-badge"><i class="fas fa-hands-helping"></i></div>
+    <h1>بوابة المستفيدين</h1>
+    <p>
+      سجّل بياناتك، اختر المنحة أو المشروع المناسب لك<br/>
+      وتتبّع حالة طلبك خطوةً بخطوة
+    </p>
+    <div class="portal-hero-btns">
+      <button onclick="bSwitchTab('b-register')" style="background:#fff;color:#064e3b;padding:.65rem 1.5rem;border-radius:99px;font-family:var(--font-primary);font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:.3s;">
+        <i class="fas fa-user-plus"></i> تسجيل جديد
+      </button>
+      <button onclick="bSwitchTab('b-login')" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:.65rem 1.5rem;border-radius:99px;font-family:var(--font-primary);font-size:.95rem;font-weight:700;cursor:pointer;transition:.3s;">
+        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= STATS ========================= -->
+<div class="portal-stats-bar">
+  <div class="portal-stats-inner">
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="bStatGrants">--</div>
+      <div class="portal-stat-label">منحة ومشروع متاح</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="bStatBenef">--</div>
+      <div class="portal-stat-label">مستفيد مسجّل</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value">21</div>
+      <div class="portal-stat-label">محافظة مُغطّاة</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="bStatDonors">--</div>
+      <div class="portal-stat-label">منظمة مانحة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= MAIN ========================= -->
+<main class="portal-container">
+  <div style="max-width:900px;margin:0 auto;">
+
+    <!-- Tabs -->
+    <div class="portal-tabs">
+      <button class="portal-tab-btn active" id="btab-b-register" onclick="bSwitchTab('b-register')">
+        <i class="fas fa-user-plus"></i> تسجيل جديد
+      </button>
+      <button class="portal-tab-btn" id="btab-b-login" onclick="bSwitchTab('b-login')">
+        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+      </button>
+    </div>
+
+    <!-- ============ REGISTER TAB ============ -->
+    <div class="tab-panel active" id="bpanel-b-register">
+
+      <div class="portal-info-panel">
+        <h3><i class="fas fa-info-circle"></i> كيف تستفيد من المنح والمشاريع؟</h3>
+        <ul class="info-list">
+          <li><i class="fas fa-search"></i> تصفّح المنح والمشاريع المتاحة واختر ما يناسبك</li>
+          <li><i class="fas fa-user-edit"></i> أكمل بيانات التسجيل بدقة لضمان قبول طلبك</li>
+          <li><i class="fas fa-clock"></i> ستُراجَع بياناتك خلال 5-7 أيام عمل من قِبَل المنظمة المانحة</li>
+          <li><i class="fas fa-bell"></i> ستُبلَّغ بنتيجة الطلب عبر رقم هاتفك أو بريدك الإلكتروني</li>
+        </ul>
+      </div>
+
+      <div class="portal-form-card" id="benefRegisterCard">
+        <h2>تسجيل مستفيد جديد</h2>
+        <p class="form-subtitle">تأكد من اختيار المنحة أو المشروع المناسب قبل إكمال البيانات.</p>
+        <div id="benefFormAlert" class="form-alert"></div>
+
+        <!-- ===== STEP 1: اختيار المنحة/المشروع ===== -->
+        <div class="form-step-header">
+          <div class="step-number">١</div>
+          <div><h3>اختر المنحة أو المشروع</h3></div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="grants-filter-bar">
+          <input type="text" class="grants-search" id="grantSearch" placeholder="🔍 ابحث عن منحة أو مشروع..." oninput="filterGrants()"/>
+          <button class="filter-chip active" data-filter="all" onclick="setGrantFilter(this,'all')">الكل</button>
+          <button class="filter-chip" data-filter="grant" onclick="setGrantFilter(this,'grant')"><i class="fas fa-gift"></i> منح</button>
+          <button class="filter-chip" data-filter="project" onclick="setGrantFilter(this,'project')"><i class="fas fa-project-diagram"></i> مشاريع</button>
+          <button class="filter-chip" data-filter="مفتوح" onclick="setGrantFilter(this,'مفتوح')"><i class="fas fa-door-open"></i> مفتوح</button>
+        </div>
+
+        <!-- Selected grant banner -->
+        <div class="selected-grant-banner" id="selectedGrantBanner" style="display:none;">
+          <div>
+            <div class="sgb-title" id="sgbTitle">—</div>
+            <div class="sgb-sub" id="sgbSub">—</div>
+          </div>
+          <button onclick="clearSelectedGrant()"><i class="fas fa-times-circle"></i> إلغاء الاختيار</button>
+        </div>
+
+        <!-- Grants grid -->
+        <div id="grantsGrid" class="grants-grid" style="margin-bottom:1.5rem;">
+          <div class="grants-loading"><i class="fas fa-spinner"></i> جاري تحميل المنح والمشاريع...</div>
+        </div>
+        <div class="field-error" id="err-grant_id" style="margin-bottom:1rem;"><i class="fas fa-exclamation-circle"></i> يُرجى اختيار منحة أو مشروع</div>
+
+        <hr class="form-divider"/>
+
+        <!-- ===== STEP 2: البيانات الشخصية ===== -->
+        <div class="form-step-header">
+          <div class="step-number">٢</div>
+          <div><h3>البيانات الشخصية</h3></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">الاسم الكامل <span class="required-star">*</span></label>
+            <input type="text" class="form-input" id="b_full_name" placeholder="الاسم الرباعي"/>
+            <div class="field-error" id="err-b_full_name"><i class="fas fa-exclamation-circle"></i> الاسم مطلوب</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">رقم الهوية الوطنية <span class="required-star">*</span></label>
+            <input type="text" class="form-input" id="b_national_id" placeholder="رقم البطاقة الشخصية"/>
+            <div class="field-error" id="err-b_national_id"><i class="fas fa-exclamation-circle"></i> رقم الهوية مطلوب</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">الجنس <span class="required-star">*</span></label>
+            <select class="form-select" id="b_gender">
+              <option value="">— اختر —</option>
+              <option value="ذكر">ذكر</option>
+              <option value="أنثى">أنثى</option>
+            </select>
+            <div class="field-error" id="err-b_gender"><i class="fas fa-exclamation-circle"></i> يُرجى تحديد الجنس</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">تاريخ الميلاد <span class="required-star">*</span></label>
+            <input type="date" class="form-input" id="b_birth_date"/>
+            <div class="field-error" id="err-b_birth_date"><i class="fas fa-exclamation-circle"></i> يُرجى إدخال تاريخ الميلاد</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">المحافظة <span class="required-star">*</span></label>
+            <select class="form-select" id="b_governorate">
+              <option value="">— اختر المحافظة —</option>
+              <option>صنعاء</option><option>عدن</option><option>تعز</option>
+              <option>الحديدة</option><option>إب</option><option>مأرب</option>
+              <option>حضرموت</option><option>ذمار</option><option>المهرة</option>
+              <option>البيضاء</option><option>أبين</option><option>شبوة</option>
+              <option>حجة</option><option>عمران</option><option>صعدة</option>
+              <option>المحويت</option><option>الجوف</option><option>لحج</option>
+              <option>الضالع</option><option>ريمة</option><option>سقطرى</option>
+            </select>
+            <div class="field-error" id="err-b_governorate"><i class="fas fa-exclamation-circle"></i> يُرجى اختيار المحافظة</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">المديرية / الحي</label>
+            <input type="text" class="form-input" id="b_district" placeholder="مثال: مديرية المعلا"/>
+          </div>
+          <div class="form-group full-width">
+            <label class="form-label">العنوان التفصيلي</label>
+            <input type="text" class="form-input" id="b_address" placeholder="الحي، الشارع، علامة مميزة..."/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">رقم الهاتف <span class="required-star">*</span></label>
+            <div class="input-with-prefix">
+              <span class="input-prefix">+967</span>
+              <input type="tel" id="b_phone" placeholder="7XXXXXXXX" maxlength="9"/>
+            </div>
+            <div class="field-error" id="err-b_phone"><i class="fas fa-exclamation-circle"></i> أدخل 9 أرقام يمنية صحيحة</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">البريد الإلكتروني (اختياري)</label>
+            <input type="email" class="form-input" id="b_email" placeholder="example@mail.com" dir="ltr"/>
+          </div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- ===== STEP 3: معلومات الحالة ===== -->
+        <div class="form-step-header">
+          <div class="step-number">٣</div>
+          <div><h3>الوضع الاجتماعي والاقتصادي</h3></div>
+        </div>
+
+        <!-- نوع المستفيد -->
+        <div class="form-group full-width" style="margin-bottom:1.2rem;">
+          <label class="form-label">نوع المستفيد <span class="required-star">*</span></label>
+          <div class="benef-type-grid" id="benefTypeGrid">
+            <div class="benef-type-card" onclick="selectBenefType(this,'فرد')">
+              <i class="fas fa-user" style="color:#059669;"></i>
+              <span>فرد</span>
+              <input type="radio" name="benef_type" value="فرد"/>
+            </div>
+            <div class="benef-type-card" onclick="selectBenefType(this,'أسرة')">
+              <i class="fas fa-home" style="color:#3b82f6;"></i>
+              <span>أسرة</span>
+              <input type="radio" name="benef_type" value="أسرة"/>
+            </div>
+            <div class="benef-type-card" onclick="selectBenefType(this,'منظمة مجتمعية')">
+              <i class="fas fa-users" style="color:#6c47d0;"></i>
+              <span>منظمة مجتمعية</span>
+              <input type="radio" name="benef_type" value="منظمة مجتمعية"/>
+            </div>
+            <div class="benef-type-card" onclick="selectBenefType(this,'شركة صغيرة')">
+              <i class="fas fa-store" style="color:#f59e0b;"></i>
+              <span>شركة صغيرة</span>
+              <input type="radio" name="benef_type" value="شركة صغيرة"/>
+            </div>
+          </div>
+          <div class="field-error" id="err-benef_type"><i class="fas fa-exclamation-circle"></i> يُرجى تحديد نوع المستفيد</div>
+        </div>
+
+        <div class="form-grid cols-3">
+          <div class="form-group">
+            <label class="form-label">عدد أفراد الأسرة</label>
+            <input type="number" class="form-input" id="b_family_count" min="1" max="30" placeholder="عدد الأفراد"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">حالة النزوح <span class="required-star">*</span></label>
+            <select class="form-select" id="b_displacement">
+              <option value="">— اختر —</option>
+              <option>مقيم في مكانه الأصلي</option>
+              <option>نازح داخلي</option>
+              <option>لاجئ عائد</option>
+              <option>مهجّر</option>
+            </select>
+            <div class="field-error" id="err-b_displacement"><i class="fas fa-exclamation-circle"></i> يُرجى تحديد حالة النزوح</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">المستوى التعليمي</label>
+            <select class="form-select" id="b_education">
+              <option value="">— اختر —</option>
+              <option>أمي</option><option>ابتدائي</option><option>إعدادي</option>
+              <option>ثانوي</option><option>دبلوم</option><option>جامعي</option>
+              <option>دراسات عليا</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">الحالة الوظيفية</label>
+            <select class="form-select" id="b_employment">
+              <option value="">— اختر —</option>
+              <option>عاطل عن العمل</option><option>يعمل بجزء</option>
+              <option>يعمل بشكل كامل</option><option>صاحب عمل حر</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">الدخل الشهري (ريال)</label>
+            <input type="number" class="form-input" id="b_income" min="0" placeholder="مثال: 50000"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ذوو الاحتياجات الخاصة؟</label>
+            <select class="form-select" id="b_special_needs">
+              <option value="false">لا</option>
+              <option value="true">نعم</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- ===== STEP 4: فكرة المشروع / الاحتياج ===== -->
+        <div class="form-step-header">
+          <div class="step-number">٤</div>
+          <div><h3>فكرة المشروع أو الاحتياج</h3></div>
+        </div>
+
+        <div class="form-group full-width" style="margin-bottom:1.5rem;">
+          <label class="form-label">اشرح مشروعك أو احتياجك <span class="required-star">*</span></label>
+          <textarea class="form-textarea" id="b_project_idea" rows="5" placeholder="اكتب وصفاً واضحاً لفكرة مشروعك أو احتياجك من المنحة، ما الذي ستستخدم فيه المنحة؟ وما الأثر المتوقع؟"></textarea>
+          <div class="field-error" id="err-b_project_idea"><i class="fas fa-exclamation-circle"></i> يُرجى شرح فكرة المشروع أو الاحتياج</div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- ===== STEP 5: كلمة المرور ===== -->
+        <div class="form-step-header">
+          <div class="step-number">٥</div>
+          <div><h3>كلمة مرور الحساب</h3></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">كلمة المرور <span class="required-star">*</span></label>
+            <input type="password" class="form-input" id="b_password" autocomplete="new-password" placeholder="أدخل كلمة مرور" oninput="checkPasswordStrength(this,'b_str')"/>
+            <div class="password-strength">
+              <div class="strength-bar"><div class="strength-fill" id="b_str_fill"></div></div>
+              <span class="strength-text" id="b_str_text"></span>
+            </div>
+            <div class="field-error" id="err-b_password"><i class="fas fa-exclamation-circle"></i> كلمة المرور قصيرة جداً</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">تأكيد كلمة المرور <span class="required-star">*</span></label>
+            <input type="password" class="form-input" id="b_password2" autocomplete="new-password" placeholder="أعد إدخال كلمة المرور"/>
+            <div class="field-error" id="err-b_password2"><i class="fas fa-exclamation-circle"></i> كلمتا المرور غير متطابقتين</div>
+          </div>
+        </div>
+
+        <div class="form-group full-width" style="margin-top:.5rem;">
+          <div class="checkbox-group">
+            <input type="checkbox" id="b_agree"/>
+            <label for="b_agree">أقرّ بأن المعلومات المُدخَلة صحيحة وأوافق على <a href="#" style="color:#059669;font-weight:700;">شروط الاستخدام</a> الخاصة بمنصة مشروعي</label>
+          </div>
+          <div class="field-error" id="err-b_agree"><i class="fas fa-exclamation-circle"></i> يُرجى الموافقة</div>
+        </div>
+
+        <button class="portal-submit-btn" onclick="submitBeneficiary()">
+          <div class="btn-spinner"></div>
+          <span class="btn-text"><i class="fas fa-paper-plane"></i> إرسال طلب التسجيل</span>
+        </button>
+
+        <p class="login-alt-bar">لديك حساب سابق؟ <a onclick="bSwitchTab('b-login')">سجّل الدخول</a></p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="portal-form-card portal-success" id="benefSuccess">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h2>تم تسجيل طلبك بنجاح! 🎉</h2>
+        <p>شكراً لتسجيلك في منصة مشروعي. سيتواصل معك فريق المنظمة المانحة خلال <strong>5-7 أيام عمل</strong> للتحقق من بياناتك.</p>
+        <div class="ref-number" id="benefRefNum">رقم الطلب: ---</div>
+        <p style="font-size:.85rem;color:var(--gray-500);margin-bottom:1.5rem;">احتفظ بهذا الرقم للمتابعة</p>
+        <a href="index.html" style="display:inline-block;padding:.75rem 2rem;background:linear-gradient(135deg,#064e3b,#059669);color:#fff;border-radius:99px;font-weight:700;font-size:.95rem;text-decoration:none;margin-left:.75rem;">
+          العودة للرئيسية
+        </a>
+        <button onclick="bSwitchTab('b-register');resetBenefForm();" style="display:inline-block;padding:.75rem 2rem;background:transparent;color:#059669;border:2px solid #059669;border-radius:99px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:var(--font-primary);">
+          تسجيل مستفيد آخر
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ LOGIN TAB ============ -->
+    <div class="tab-panel" id="bpanel-b-login">
+      <div class="portal-form-card">
+        <h2>تسجيل الدخول — بوابة المستفيدين</h2>
+        <p class="form-subtitle">أدخل رقم هاتفك وكلمة المرور لمتابعة حالة طلبك.</p>
+        <div id="bLoginAlert" class="form-alert"></div>
+
+        <div class="form-group" style="margin-bottom:1.2rem;">
+          <label class="form-label">رقم الهاتف <span class="required-star">*</span></label>
+          <div class="input-with-prefix">
+            <span class="input-prefix">+967</span>
+            <input type="tel" id="blogin_phone" placeholder="7XXXXXXXX" maxlength="9"/>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label class="form-label">كلمة المرور <span class="required-star">*</span></label>
+          <input type="password" class="form-input" id="blogin_pass" autocomplete="current-password" placeholder="كلمة المرور"/>
+        </div>
+
+        <button class="portal-submit-btn" onclick="beneficiaryLogin()">
+          <div class="btn-spinner"></div>
+          <span class="btn-text"><i class="fas fa-sign-in-alt"></i> دخول</span>
+        </button>
+
+        <p class="login-alt-bar" style="margin-top:1rem;">مستفيد جديد؟ <a onclick="bSwitchTab('b-register')">سجّل هنا</a></p>
+      </div>
+
+      <!-- quick status lookup -->
+      <div class="portal-form-card" style="margin-top:1.5rem;">
+        <h2 style="font-size:1.1rem;"><i class="fas fa-search" style="color:#059669;"></i> متابعة حالة الطلب</h2>
+        <p class="form-subtitle">أدخل رقم الطلب لمتابعة حالته بدون تسجيل دخول.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <input type="text" class="form-input" id="trackRef" placeholder="رقم الطلب — مثال: BNF-2026-XXXX" style="flex:1;min-width:200px;" dir="ltr"/>
+          <button onclick="trackApplication()" style="padding:.7rem 1.5rem;background:linear-gradient(135deg,#064e3b,#059669);color:#fff;border:none;border-radius:.75rem;font-family:var(--font-primary);font-size:.9rem;font-weight:700;cursor:pointer;white-space:nowrap;">
+            <i class="fas fa-search"></i> تتبّع
+          </button>
+        </div>
+        <div id="trackResult" style="margin-top:1rem;display:none;"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer style="background:var(--gray-800);color:var(--gray-400);text-align:center;padding:1.5rem;font-size:.85rem;margin-top:2rem;">
+  <p>© 2025 مشروعي — Tamza Holding | <a href="index.html" style="color:#059669;">العودة للموقع الرئيسي</a></p>
+</footer>
+
+<script src="js/portals.js?v=4.2"></script>
+</body>
+</html>

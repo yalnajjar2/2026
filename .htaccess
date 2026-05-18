@@ -1,0 +1,120 @@
+# ============================================================
+#  مشروعي — Mashrooi Platform
+#  ملف إعدادات Apache لاستضافة GoDaddy (cPanel / Linux)
+#  نسخة: v4.2 | 2026-04-30
+# ============================================================
+
+# ---- التشفير الافتراضي ----
+AddDefaultCharset UTF-8
+
+# ---- تفعيل mod_rewrite ----
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+
+# ---- إعادة التوجيه HTTPS ----
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- إزالة www (canonical) ----
+# احذف أو اقلب الشرط إذا أردت إبقاء www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# ---- السماح بالوصول المباشر للملفات الموجودة ----
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ---- توجيه كل المسارات غير الموجودة إلى index.html (SPA) ----
+RewriteRule ^ /index.html [L]
+
+# ============================================================
+#  MIME Types
+# ============================================================
+AddType text/html .html .htm
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType font/woff2 .woff2
+AddType font/woff .woff
+
+# ============================================================
+#  ضغط GZIP — لتسريع التحميل
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ============================================================
+#  Cache-Control — تخزين مؤقت ذكي
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — لا تخزين (يتغير دائماً)
+  ExpiresByType text/html                 "access plus 0 seconds"
+
+  # CSS & JavaScript — 1 أسبوع
+  ExpiresByType text/css                  "access plus 1 week"
+  ExpiresByType application/javascript    "access plus 1 week"
+
+  # الصور — 1 شهر
+  ExpiresByType image/jpeg                "access plus 1 month"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType image/gif                 "access plus 1 month"
+  ExpiresByType image/webp                "access plus 1 month"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+  ExpiresByType image/x-icon              "access plus 1 year"
+
+  # الخطوط — 1 سنة
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType font/woff                 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # منع التخزين المؤقت للـ HTML
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # تخزين آمن للأصول الثابتة
+  <FilesMatch "\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ico)$">
+    Header set Cache-Control "public, max-age=604800, immutable"
+  </FilesMatch>
+
+  # رؤوس أمان
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ============================================================
+#  صفحة الخطأ 404 المخصصة
+# ============================================================
+ErrorDocument 404 /404.html
+
+# ============================================================
+#  منع الوصول لملفات حساسة
+# ============================================================
+<FilesMatch "(\.htaccess|\.htpasswd|\.git|\.env|README\.md|CHANGELOG\.md)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# ============================================================
+#  تحسين الأداء — KeepAlive
+# ============================================================
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+</IfModule>

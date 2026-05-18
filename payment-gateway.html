@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة الدفع | منصة مشروعي</title>
+  <meta name="description" content="بوابة الدفع الآمنة — منصة مشروعي مع شبكة WeNet للمدفوعات في اليمن"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="stylesheet" href="css/fonts.css?v=4.3"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css?v=4.3"/>
+  <link rel="stylesheet" href="css/variables.css?v=4.3"/>
+  <link rel="stylesheet" href="css/payment.css?v=4.3"/>
+</head>
+<body class="pay-wrapper">
+
+<!-- ========================= TOP NAV ========================= -->
+<nav class="pay-topbar">
+  <a href="index.html" class="pay-topbar-logo">
+    <div class="logo-mark">م</div>
+    <div>
+      <span class="logo-name">مشروعي</span>
+      <span class="logo-tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="pay-topbar-secure">
+    <i class="fas fa-lock"></i>
+    <span>اتصال مشفّر SSL | بوابة دفع آمنة</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/PCI_DSS_Logo.svg/120px-PCI_DSS_Logo.svg.png" alt="PCI DSS" style="height:22px;opacity:.6;" onerror="this.style.display='none'"/>
+  </div>
+</nav>
+
+<!-- ========================= HERO ========================= -->
+<section class="pay-hero">
+  <div class="pay-hero-content">
+    <div class="wenet-badge" style="margin-bottom:1rem;font-size:.9rem;padding:.4rem 1.1rem;">
+      <i class="fas fa-network-wired"></i> مدعوم بشبكة WeNet للمدفوعات
+    </div>
+    <h1>بوابة الدفع الآمنة</h1>
+    <p>ادفع بثقة عبر البنوك اليمنية، المحافظ الإلكترونية، وشبكات الصرافة في صنعاء</p>
+  </div>
+</section>
+
+<!-- ========================= MAIN ========================= -->
+<div class="pay-container">
+
+  <!-- ======= LEFT: Payment Form ======= -->
+  <div>
+
+    <!-- Order Info -->
+    <div class="pay-card" id="orderInfoCard">
+      <div class="pay-card-header">
+        <div class="header-icon" style="background:rgba(15,45,94,.1);color:var(--primary)"><i class="fas fa-file-invoice"></i></div>
+        <div>
+          <h2>تفاصيل الطلب</h2>
+          <p id="orderRef">رقم الطلب: <strong>#ORD-0092</strong></p>
+        </div>
+      </div>
+      <div class="pay-card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--gray-100);">
+          <span style="font-size:.875rem;color:var(--gray-600);">ماكينة تعبئة أوتوماتيكية</span>
+          <span style="font-weight:700;">$3,500</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--gray-100);">
+          <span style="font-size:.875rem;color:var(--gray-600);">رسوم الشحن والتركيب</span>
+          <span style="font-weight:700;">$250</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;">
+          <span style="font-size:.875rem;color:var(--gray-600);">رسوم بوابة الدفع (1.5%)</span>
+          <span style="font-weight:700;color:var(--pay-warn);">$56.25</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- المبلغ -->
+    <div class="pay-card">
+      <div class="pay-card-header">
+        <div class="header-icon" style="background:rgba(14,165,160,.1);color:var(--secondary)"><i class="fas fa-dollar-sign"></i></div>
+        <div><h2>المبلغ المطلوب</h2></div>
+      </div>
+      <div class="pay-card-body">
+        <div class="amount-input-wrap">
+          <span class="currency-label">YER</span>
+          <input type="number" class="amount-input" id="payAmount" value="2052000" oninput="updateSummary()"/>
+        </div>
+        <div style="text-align:center;margin-top:.5rem;font-size:.82rem;color:var(--gray-500);">يعادل تقريباً: <strong id="usdEquiv">$3,800</strong> بسعر صرف 540 ر.ي/$</div>
+        <div class="quick-amounts">
+          <button class="quick-amt-btn" onclick="setAmount(540000)">540,000 ر.ي</button>
+          <button class="quick-amt-btn" onclick="setAmount(1080000)">1,080,000 ر.ي</button>
+          <button class="quick-amt-btn" onclick="setAmount(2700000)">2,700,000 ر.ي</button>
+          <button class="quick-amt-btn" onclick="setAmount(5400000)">5,400,000 ر.ي</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- طريقة الدفع -->
+    <div class="pay-card">
+      <div class="pay-card-header">
+        <div class="header-icon" style="background:rgba(27,58,107,.1);color:var(--pay-wenet)"><i class="fas fa-credit-card"></i></div>
+        <div><h2>اختر طريقة الدفع</h2></div>
+      </div>
+      <div class="pay-card-body">
+
+        <!-- Method Tabs -->
+        <div class="pay-method-tabs">
+          <div class="pay-method-tab active" onclick="switchPayMethod('bank',this)">
+            <span class="tab-icon">🏦</span>
+            <span class="tab-label">تحويل بنكي</span>
+          </div>
+          <div class="pay-method-tab" onclick="switchPayMethod('wallet',this)">
+            <span class="tab-icon">📱</span>
+            <span class="tab-label">محفظة إلكترونية</span>
+          </div>
+          <div class="pay-method-tab" onclick="switchPayMethod('exchange',this)">
+            <span class="tab-icon">🏪</span>
+            <span class="tab-label">شبكات صرافة</span>
+          </div>
+        </div>
+
+        <!-- === BANK TRANSFER === -->
+        <div class="pay-method-panel active" id="panel-bank">
+          <p style="font-size:.82rem;color:var(--gray-500);margin-bottom:1rem;"><i class="fas fa-info-circle"></i> اختر البنك المناسب للتحويل المباشر عبر WeNet</p>
+          <div class="partner-grid" id="bankGrid">
+            <!-- Rendered by JS -->
+          </div>
+          <div id="bankDetails" style="display:none;margin-top:1.2rem;"></div>
+        </div>
+
+        <!-- === WALLET === -->
+        <div class="pay-method-panel" id="panel-wallet">
+          <p style="font-size:.82rem;color:var(--gray-500);margin-bottom:1rem;"><i class="fas fa-info-circle"></i> ادفع مباشرة من محفظتك الإلكترونية</p>
+          <div class="partner-grid" id="walletGrid">
+            <!-- Rendered by JS -->
+          </div>
+          <div id="walletDetails" style="display:none;margin-top:1.2rem;"></div>
+        </div>
+
+        <!-- === EXCHANGE === -->
+        <div class="pay-method-panel" id="panel-exchange">
+          <p style="font-size:.82rem;color:var(--gray-500);margin-bottom:1rem;"><i class="fas fa-map-marker-alt"></i> شبكات الصرافة المعتمدة في صنعاء</p>
+          <div class="partner-grid" id="exchangeGrid">
+            <!-- Rendered by JS -->
+          </div>
+          <div id="exchangeDetails" style="display:none;margin-top:1.2rem;"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- بيانات الدافع -->
+    <div class="pay-card" id="payerInfoCard">
+      <div class="pay-card-header">
+        <div class="header-icon" style="background:rgba(16,185,129,.1);color:var(--success)"><i class="fas fa-user-check"></i></div>
+        <div><h2>بيانات الدافع</h2></div>
+      </div>
+      <div class="pay-card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:var(--gray-700);margin-bottom:.4rem;">الاسم الكامل <span style="color:red">*</span></label>
+            <input type="text" id="payerName" class="form-inp" placeholder="اسم الدافع" style="width:100%;padding:.7rem 1rem;border:1.5px solid var(--gray-200);border-radius:.65rem;font-family:var(--font-primary);font-size:.875rem;outline:none;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:var(--gray-700);margin-bottom:.4rem;">رقم الهاتف <span style="color:red">*</span></label>
+            <div style="display:flex;border:1.5px solid var(--gray-200);border-radius:.65rem;overflow:hidden;">
+              <span style="padding:.7rem .75rem;background:var(--gray-100);font-size:.8rem;font-weight:700;color:var(--gray-600);border-left:1.5px solid var(--gray-200);">+967</span>
+              <input type="tel" id="payerPhone" placeholder="7XXXXXXXX" maxlength="9" style="flex:1;padding:.7rem .75rem;border:none;font-family:var(--font-primary);font-size:.875rem;outline:none;direction:ltr;text-align:right;"/>
+            </div>
+          </div>
+          <div style="grid-column:1/-1;">
+            <label style="display:block;font-size:.82rem;font-weight:700;color:var(--gray-700);margin-bottom:.4rem;">رقم مرجع التحويل / إيصال الدفع</label>
+            <input type="text" id="payerRef" placeholder="أدخل رقم الإيصال أو مرجع التحويل" style="width:100%;padding:.7rem 1rem;border:1.5px solid var(--gray-200);border-radius:.65rem;font-family:var(--font-primary);font-size:.875rem;outline:none;direction:ltr;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert -->
+    <div id="payAlert" style="display:none;margin-bottom:1rem;"></div>
+
+    <!-- Receipt (hidden) -->
+    <div class="pay-receipt" id="payReceipt">
+      <div class="receipt-icon"><i class="fas fa-check"></i></div>
+      <h2 style="font-size:1.4rem;font-weight:800;color:var(--gray-800);margin-bottom:.5rem;">تم استلام طلب الدفع!</h2>
+      <p style="color:var(--gray-500);margin-bottom:1rem;">سيتم التحقق من التحويل وتأكيد الطلب خلال <strong>1-3 ساعات</strong> بحد أقصى.</p>
+      <div class="receipt-ref" id="receiptRef">رقم المعاملة: —</div>
+      <a href="index.html" style="display:inline-block;padding:.75rem 2rem;background:var(--pay-wenet-g);color:#fff;border-radius:99px;font-weight:700;font-size:.9rem;text-decoration:none;">العودة للرئيسية</a>
+    </div>
+
+  </div>
+
+  <!-- ======= RIGHT: Summary ======= -->
+  <div>
+    <div class="pay-summary-card">
+      <div class="pay-summary-header">
+        <h3><i class="fas fa-receipt"></i> ملخص الدفع</h3>
+      </div>
+      <div class="pay-summary-body">
+        <div class="summary-row">
+          <span class="s-label">الطريقة</span>
+          <span class="s-val" id="sumMethod">تحويل بنكي</span>
+        </div>
+        <div class="summary-row">
+          <span class="s-label">المزوّد</span>
+          <span class="s-val" id="sumProvider">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="s-label">رسوم المعالجة</span>
+          <span class="s-val" id="sumFee" style="color:var(--pay-warn);">0 ر.ي</span>
+        </div>
+        <div class="summary-row">
+          <span class="s-label">وقت التأكيد</span>
+          <span class="s-val" id="sumTime">1-3 ساعات</span>
+        </div>
+        <div class="summary-total">
+          <span class="t-label">الإجمالي</span>
+          <span class="t-val" id="sumTotal">2,052,000 ر.ي</span>
+        </div>
+
+        <button class="pay-now-btn" id="payNowBtn" onclick="submitPayment()">
+          <div class="btn-spinner"></div>
+          <span class="btn-lbl"><i class="fas fa-lock"></i> تأكيد الدفع الآن</span>
+        </button>
+        <div class="pay-secure-note">
+          <i class="fas fa-shield-alt"></i> محمي بتشفير 256-bit SSL
+        </div>
+        <div class="pay-secure-note" style="margin-top:.3rem;">
+          <i class="fas fa-network-wired"></i>
+          <span style="color:var(--pay-wenet);font-weight:700;">مدعوم بـ WeNet Payment Network</span>
+        </div>
+
+        <!-- WeNet logo area -->
+        <div style="margin-top:1.2rem;padding:1rem;background:rgba(27,58,107,.05);border-radius:.75rem;border:1px solid rgba(27,58,107,.1);text-align:center;">
+          <div style="font-size:.75rem;color:var(--gray-500);margin-bottom:.4rem;">شبكة المدفوعات</div>
+          <div style="font-size:1.2rem;font-weight:900;color:var(--pay-wenet);letter-spacing:2px;">WeNet</div>
+          <div style="font-size:.7rem;color:var(--gray-400);margin-top:.2rem;">Yemen Payment Network</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div style="background:rgba(245,158,11,.07);border:1.5px solid rgba(245,158,11,.25);border-radius:.9rem;padding:1.2rem;margin-top:1rem;">
+      <h4 style="font-size:.88rem;font-weight:700;color:#92400e;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;"><i class="fas fa-lightbulb"></i> تعليمات الدفع</h4>
+      <ul style="list-style:none;margin:0;padding:0;">
+        <li style="font-size:.8rem;color:var(--gray-700);padding:.3rem 0;display:flex;gap:.4rem;align-items:flex-start;"><i class="fas fa-check" style="color:#d97706;margin-top:3px;flex-shrink:0;"></i>أرسل المبلغ لحساب المنصة المحدد</li>
+        <li style="font-size:.8rem;color:var(--gray-700);padding:.3rem 0;display:flex;gap:.4rem;align-items:flex-start;"><i class="fas fa-check" style="color:#d97706;margin-top:3px;flex-shrink:0;"></i>احفظ إيصال التحويل</li>
+        <li style="font-size:.8rem;color:var(--gray-700);padding:.3rem 0;display:flex;gap:.4rem;align-items:flex-start;"><i class="fas fa-check" style="color:#d97706;margin-top:3px;flex-shrink:0;"></i>أدخل رقم المرجع في خانة الإيصال</li>
+        <li style="font-size:.8rem;color:var(--gray-700);padding:.3rem 0;display:flex;gap:.4rem;align-items:flex-start;"><i class="fas fa-check" style="color:#d97706;margin-top:3px;flex-shrink:0;"></i>سيتم تأكيد الطلب خلال 1-3 ساعات</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /pay-container -->
+
+<!-- ========================= WeNet Section ========================= -->
+<section style="max-width:1200px;margin:0 auto 4rem;padding:0 1.5rem;">
+  <div class="wenet-integration-card">
+    <div class="wenet-integration-header">
+      <div>
+        <h3><i class="fas fa-network-wired"></i> شبكة WeNet — شركاء المدفوعات في اليمن</h3>
+        <p style="color:rgba(255,255,255,.8);font-size:.82rem;margin-top:.3rem;">البنوك والمحافظ الإلكترونية وشبكات الصرافة المعتمدة في صنعاء</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <button onclick="openAddPartnerPanel('gateway')" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);border-radius:.6rem;color:#fff;padding:.45rem 1rem;font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;">
+          <i class="fas fa-plus"></i> إضافة شريك
+        </button>
+        <div class="wenet-logo-text">WeNet</div>
+      </div>
+    </div>
+    <div class="wenet-integration-body">
+
+      <!-- Stats -->
+      <div class="wenet-stats">
+        <div class="wenet-stat"><div class="w-val">12</div><div class="w-lbl">بنك شريك</div></div>
+        <div class="wenet-stat"><div class="w-val">8</div><div class="w-lbl">محفظة إلكترونية</div></div>
+        <div class="wenet-stat"><div class="w-val">35+</div><div class="w-lbl">نقطة صرافة</div></div>
+        <div class="wenet-stat"><div class="w-val">99.7%</div><div class="w-lbl">نسبة الاستيعاب</div></div>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="partner-cat-tabs">
+        <button class="pcat-tab active" onclick="filterPartners('all',this)"><i class="fas fa-th"></i> الكل</button>
+        <button class="pcat-tab" onclick="filterPartners('bank',this)"><i class="fas fa-university"></i> البنوك</button>
+        <button class="pcat-tab" onclick="filterPartners('wallet',this)"><i class="fas fa-mobile-alt"></i> المحافظ</button>
+        <button class="pcat-tab" onclick="filterPartners('exchange',this)"><i class="fas fa-store"></i> الصرافة</button>
+      </div>
+
+      <!-- Partners Table -->
+      <div style="overflow-x:auto;">
+        <table class="wenet-table" id="wenetTable">
+          <thead>
+            <tr>
+              <th>الجهة</th>
+              <th>النوع</th>
+              <th>الحد الأدنى</th>
+              <th>الحد الأقصى</th>
+              <th>رسوم التحويل</th>
+              <th>وقت المعالجة</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="wenetTableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- نموذج إضافة شريك جديد في صفحة البوابة -->
+  <div id="gateway-add-partner-wrapper" style="margin-top:1.5rem;"></div>
+
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer style="background:var(--gray-800);color:var(--gray-400);text-align:center;padding:1.5rem;font-size:.82rem;">
+  <p>© 2025 مشروعي — Tamza Holding | بوابة الدفع مدعومة بشبكة WeNet اليمنية | <a href="index.html" style="color:var(--secondary);">العودة للموقع</a></p>
+</footer>
+
+<script src="js/payment.js?v=4.4"></script>
+<script>
+// تهيئة نموذج إضافة الشريك في صفحة البوابة
+document.addEventListener('DOMContentLoaded', function() {
+  const wrapper = document.getElementById('gateway-add-partner-wrapper');
+  if (wrapper && typeof getAddPartnerFormHTML === 'function') {
+    wrapper.innerHTML = getAddPartnerFormHTML('gateway');
+  }
+  // تحديث إحصائيات الجدول بعد تحميل الشركاء المخصصين
+  const allP = typeof getAllPartners === 'function' ? getAllPartners() : window.paymentGateway?.getAllPartners?.();
+  if (allP) {
+    const total = allP.banks.length + allP.wallets.length + allP.exchanges.length;
+    const bankStat = document.querySelector('.wenet-stat:nth-child(1) .w-val');
+    const walletStat = document.querySelector('.wenet-stat:nth-child(2) .w-val');
+    const exchStat = document.querySelector('.wenet-stat:nth-child(3) .w-val');
+    if (bankStat)   bankStat.textContent   = allP.banks.length;
+    if (walletStat) walletStat.textContent = allP.wallets.length;
+    if (exchStat)   exchStat.textContent   = allP.exchanges.length + '+';
+  }
+});
+</script>
+</body>
+</html>

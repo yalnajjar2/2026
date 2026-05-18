@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mashroie — Donor & Development Partner Profile 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════════════════
+   MASHROIE — DONOR PROFILE | PREMIUM VISUAL DESIGN
+   Two-language: English primary, Arabic secondary
+   Color palette: Deep Navy · Emerald Green · Gold · White
+══════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:       #0A0F1E;
+  --navy:      #0D1B2E;
+  --navy2:     #162840;
+  --navy3:     #1E3A56;
+  --emerald:   #1B7A4A;
+  --em2:       #22A86A;
+  --em3:       #2DD882;
+  --gold:      #C8922A;
+  --gold2:     #E8B84B;
+  --gold3:     #FBE9B7;
+  --white:     #FFFFFF;
+  --off:       #F5F7FA;
+  --slate:     #E4EAF2;
+  --muted:     #7A8CA0;
+  --body-txt:  #2C3E50;
+  --red:       #B83232;
+}
+html{background:#B8C4D0}
+body{
+  font-family:'Inter',sans-serif;
+  background:#B8C4D0;
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+  color:var(--body-txt);
+}
+
+/* ── TOOLBAR ── */
+#bar{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:var(--ink);
+  padding:0 32px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 30px rgba(0,0,0,.6);
+}
+.bar-logo{display:flex;align-items:center;gap:10px}
+.bar-logo img{height:32px;width:32px;object-fit:contain;border-radius:6px}
+.bar-logo span{color:#fff;font-weight:700;font-size:.9rem;letter-spacing:.02em}
+.bar-logo small{display:block;color:rgba(255,255,255,.4);font-size:.65rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.bar-center{color:rgba(255,255,255,.35);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.bar-actions{display:flex;gap:10px;align-items:center}
+.btn-pdf{
+  background:linear-gradient(135deg,var(--emerald),var(--em2));
+  color:#fff;border:none;border-radius:8px;
+  padding:9px 22px;font-size:.82rem;font-weight:700;
+  cursor:pointer;font-family:'Inter',sans-serif;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 4px 16px rgba(27,122,74,.4);
+  transition:.2s;letter-spacing:.02em;
+}
+.btn-pdf:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(27,122,74,.5)}
+.btn-pdf svg{width:16px;height:16px}
+
+/* ── PAGE STACK ── */
+.pages{padding:64px 20px 48px;max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+
+/* ── A4 PAGE BASE ── */
+.pg{
+  width:100%;background:#fff;
+  box-shadow:0 12px 60px rgba(0,0,0,.22),0 2px 8px rgba(0,0,0,.1);
+  margin-bottom:24px;
+  position:relative;overflow:hidden;
+  page-break-after:always;
+}
+
+/* ══ PAGE 1 — COVER ══ */
+.p1{
+  min-height:300mm;
+  background:var(--navy);
+  display:flex;flex-direction:column;
+}
+
+/* Animated mesh background */
+.p1-mesh{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 0% 0%, rgba(27,122,74,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(200,146,42,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(30,58,86,.5) 0%, transparent 70%);
+}
+/* Grid lines overlay */
+.p1-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+/* Big decorative circle */
+.p1-circle{
+  position:absolute;
+  top:-120px;right:-120px;
+  width:480px;height:480px;
+  border-radius:50%;
+  border:1px solid rgba(27,122,74,.15);
+  pointer-events:none;
+}
+.p1-circle2{
+  position:absolute;
+  top:-60px;right:-60px;
+  width:360px;height:360px;
+  border-radius:50%;
+  border:1px solid rgba(200,146,42,.1);
+  pointer-events:none;
+}
+/* Bottom accent bar */
+.p1-accent-bar{
+  position:absolute;bottom:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--emerald),var(--em2),var(--gold),var(--gold2));
+}
+
+/* Cover header */
+.cov-head{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:38px 52px 0;
+}
+.cov-brand{display:flex;align-items:center;gap:16px}
+.cov-logo{
+  width:64px;height:64px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+.cov-logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+.cov-brand-text{}
+.cov-brand-en{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:.02em;line-height:1}
+.cov-brand-ar{font-family:'Cairo',sans-serif;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.5);margin-top:3px}
+.cov-label{
+  text-align:right;
+}
+.cov-label-tag{
+  background:rgba(200,146,42,.12);
+  border:1px solid rgba(200,146,42,.3);
+  border-radius:24px;padding:7px 20px;
+  color:var(--gold2);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  display:inline-block;margin-bottom:6px;
+}
+.cov-label-sub{color:rgba(255,255,255,.3);font-size:.68rem;letter-spacing:.08em}
+
+/* Cover hero section */
+.cov-hero{
+  position:relative;z-index:2;
+  flex:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:52px 52px 36px;
+}
+.cov-eyebrow{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.cov-dot{width:8px;height:8px;border-radius:50%;background:var(--em3)}
+.cov-eye-text{
+  font-size:.75rem;color:var(--em2);font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+}
+.cov-h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.8rem;font-weight:900;
+  color:#fff;line-height:1.1;
+  margin-bottom:16px;
+  letter-spacing:-.02em;
+}
+.cov-h1 .gr{
+  background:linear-gradient(135deg,var(--em3) 0%,var(--gold2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cov-h2-ar{
+  font-family:'Cairo',sans-serif;
+  font-size:1.6rem;font-weight:800;
+  color:rgba(255,255,255,.65);
+  margin-bottom:28px;
+  line-height:1.4;
+  direction:rtl;
+}
+.cov-divider{
+  width:60px;height:4px;
+  background:linear-gradient(90deg,var(--em2),var(--gold2));
+  border-radius:2px;margin-bottom:28px;
+}
+.cov-desc{
+  font-size:1rem;color:rgba(255,255,255,.6);
+  line-height:1.8;max-width:580px;margin-bottom:12px;
+  font-weight:300;
+}
+.cov-desc-ar{
+  font-family:'Cairo',sans-serif;
+  font-size:.88rem;color:rgba(255,255,255,.4);
+  line-height:1.8;max-width:560px;
+  direction:rtl;
+}
+
+/* Cover KPI strip */
+.cov-kpis{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.07);
+  margin:0 52px;
+}
+.kpi{
+  padding:26px 16px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.07);
+  position:relative;
+}
+.kpi:last-child{border-right:none}
+.kpi-n{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;font-weight:900;
+  line-height:1;
+  background:linear-gradient(135deg,var(--em3),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.kpi-en{font-size:.68rem;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-top:5px}
+.kpi-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* Cover footer */
+.cov-foot{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 52px 20px;
+  border-top:1px solid rgba(255,255,255,.06);
+  background:rgba(0,0,0,.2);
+}
+.cf-links{display:flex;gap:24px}
+.cf-link{
+  display:flex;align-items:center;gap:7px;
+  color:rgba(255,255,255,.45);font-size:.74rem;
+}
+.cf-link span{color:rgba(255,255,255,.25);font-size:.6rem;margin:0 2px}
+.cf-year{color:rgba(255,255,255,.2);font-size:.68rem;letter-spacing:.05em}
+
+/* Pager */
+.pager{
+  position:absolute;
+  font-size:.65rem;font-family:'Inter',sans-serif;
+  font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:4px;
+}
+.pager.dark{color:rgba(255,255,255,.25);background:rgba(255,255,255,.04);bottom:22px;right:36px}
+.pager.light{color:var(--muted);background:rgba(0,0,0,.04);bottom:22px;right:36px}
+
+/* ══ INNER PAGE COMMON ══ */
+.inner{padding:52px 52px 46px;min-height:240mm}
+
+/* Section header */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;padding-bottom:18px;border-bottom:2px solid var(--slate)}
+.sh-left{}
+.sh-num{
+  font-family:'Playfair Display',serif;
+  font-size:5rem;font-weight:900;
+  color:var(--slate);line-height:.9;
+  margin-bottom:-8px;
+  letter-spacing:-.04em;
+}
+.sh-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.65rem;font-weight:800;
+  color:var(--navy);line-height:1.2;
+}
+.sh-sub{
+  font-family:'Cairo',sans-serif;
+  font-size:1rem;font-weight:700;
+  color:var(--emerald);margin-top:3px;
+}
+.sh-pill{
+  border-radius:6px;padding:5px 14px;
+  font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  align-self:flex-start;margin-top:4px;
+}
+.pill-em{background:var(--emerald);color:#fff}
+.pill-gold{background:var(--gold);color:#fff}
+.pill-navy{background:var(--navy);color:#fff}
+.pill-slate{background:var(--slate);color:var(--navy)}
+
+/* ══ PAGE 2 — EXECUTIVE SUMMARY ══ */
+.exec-lead{
+  background:var(--navy);
+  border-radius:16px;padding:32px 36px;
+  margin-bottom:26px;position:relative;overflow:hidden;
+}
+.exec-lead::before{
+  content:'';position:absolute;top:-60px;left:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,122,74,.2),transparent 70%);
+}
+.exec-lead::after{
+  content:'';position:absolute;bottom:-40px;right:-40px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,146,42,.12),transparent 70%);
+}
+.exec-lead p.en{
+  font-size:.95rem;line-height:1.85;
+  color:rgba(255,255,255,.82);
+  position:relative;z-index:1;margin-bottom:14px;
+}
+.exec-lead p.ar{
+  font-family:'Cairo',sans-serif;font-size:.88rem;line-height:1.9;
+  color:rgba(255,255,255,.55);
+  position:relative;z-index:1;
+  direction:rtl;text-align:right;
+}
+
+/* Two col */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:22px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+
+/* Info card */
+.icard{background:var(--off);border:1px solid var(--slate);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+.icard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.icard.em::before{background:linear-gradient(90deg,var(--emerald),var(--em2))}
+.icard.go::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.icard.nv::before{background:linear-gradient(90deg,var(--navy),var(--navy3))}
+.icard.rd::before{background:linear-gradient(90deg,#8B5CF6,#A78BFA)}
+.icon-wrap{
+  width:44px;height:44px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;font-size:1.1rem;
+}
+.iw-em{background:rgba(27,122,74,.1);color:var(--emerald)}
+.iw-go{background:rgba(200,146,42,.1);color:var(--gold)}
+.iw-nv{background:rgba(13,27,46,.08);color:var(--navy)}
+.iw-pu{background:rgba(139,92,246,.1);color:#8B5CF6}
+.iw-rd{background:rgba(184,50,50,.1);color:var(--red)}
+.card-h4{font-size:.78rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.card-h4-ar{font-family:'Cairo',sans-serif;font-size:.84rem;font-weight:700;color:var(--emerald);margin-bottom:9px;display:block}
+.card-p{font-size:.8rem;line-height:1.7;color:var(--body-txt)}
+.card-p-ar{font-family:'Cairo',sans-serif;font-size:.78rem;line-height:1.7;color:#5a6a7a;margin-top:6px;direction:rtl;text-align:right;display:block}
+
+/* KPI big block */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.kpi-block{
+  background:var(--navy);border-radius:12px;
+  padding:22px 14px;text-align:center;
+}
+.kbi-n{
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;
+  background:linear-gradient(135deg,var(--em3),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;margin-bottom:6px;
+}
+.kbi-en{font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em}
+.kbi-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.65);margin-top:2px}
+
+/* ══ PAGE 3 — PLATFORM ECOSYSTEM ══ */
+.eco-card{
+  border-radius:14px;padding:22px;
+  border:1px solid var(--slate);background:var(--off);
+}
+.eco-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin-bottom:14px;
+}
+.eco-h-en{font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.eco-h-ar{font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;color:var(--emerald);margin-bottom:10px;display:block}
+.eco-p-en{font-size:.77rem;line-height:1.65;color:var(--body-txt);margin-bottom:6px}
+.eco-p-ar{font-family:'Cairo',sans-serif;font-size:.75rem;line-height:1.65;color:#6b7a8d;direction:rtl;text-align:right;display:block}
+
+/* Journey bar */
+.journey{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:16px;padding:28px 28px;margin-bottom:0;
+}
+.j-title{font-size:.72rem;font-weight:700;color:var(--em2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.j-title-ar{font-family:'Cairo',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:20px;display:block}
+.j-steps{display:flex;align-items:center;gap:0}
+.j-step{
+  flex:1;text-align:center;padding:0 8px;position:relative;
+}
+.j-step:not(:last-child)::after{
+  content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+  color:rgba(255,255,255,.2);font-size:.85rem;
+}
+.j-num{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--emerald),var(--em2));
+  color:#fff;font-weight:800;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 10px;box-shadow:0 4px 12px rgba(27,122,74,.4);
+}
+.j-en{font-size:.68rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.04em}
+.j-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:rgba(255,255,255,.75);margin-top:3px;display:block}
+
+/* ══ PAGE 4 — FINANCING & IMPACT ══ */
+.fin-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px}
+.fin-step-card{
+  border-radius:12px;padding:20px 14px;text-align:center;
+  border:1px solid var(--slate);background:var(--off);
+}
+.fsn{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--emerald),var(--em2));
+  color:#fff;font-weight:800;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 12px;
+}
+.fs-en{font-size:.75rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.fs-ar{font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;color:var(--emerald);margin-bottom:7px;display:block}
+.fs-desc{font-size:.7rem;color:var(--muted);line-height:1.5;font-family:'Cairo',sans-serif}
+
+/* Banks */
+.bank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.bank-card{
+  background:var(--off);border:1px solid var(--slate);
+  border-radius:10px;padding:14px 12px;
+  display:flex;align-items:center;gap:11px;
+}
+.b-ico{
+  width:38px;height:38px;border-radius:9px;
+  background:linear-gradient(135deg,var(--navy),var(--navy3));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold2);font-size:.82rem;flex-shrink:0;
+}
+.b-name{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);line-height:1.35}
+.b-name-en{font-size:.65rem;color:var(--muted);font-family:'Inter',sans-serif;margin-top:1px}
+
+/* Impact mega */
+.impact-mega{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:16px;padding:28px 28px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+}
+.im-item{
+  text-align:center;padding:0 10px;
+  border-right:1px solid rgba(255,255,255,.07);
+}
+.im-item:last-child{border-right:none}
+.im-n{
+  font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;
+  background:linear-gradient(135deg,var(--em3),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;margin-bottom:7px;
+}
+.im-en{font-size:.65rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em}
+.im-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:rgba(255,255,255,.65);margin-top:2px;display:block}
+
+/* ══ PAGE 5 — SUCCESS STORIES ══ */
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.s-card{border-radius:14px;overflow:hidden;border:1px solid var(--slate)}
+.s-img{
+  height:90px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--navy),var(--navy3));
+}
+.s-img img{width:100%;height:100%;object-fit:cover;display:block}
+.s-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,27,46,.75),transparent)}
+.s-badge{
+  position:absolute;bottom:8px;left:10px;
+  background:rgba(27,122,74,.9);color:#fff;
+  border-radius:4px;padding:2px 8px;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+}
+.s-body{padding:14px}
+.s-name{font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:800;color:var(--navy);margin-bottom:2px}
+.s-loc{font-size:.7rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.s-stats{display:flex;justify-content:space-between;align-items:flex-end}
+.ss-item{text-align:center}
+.ss-n{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:800;color:var(--emerald)}
+.ss-l{font-size:.6rem;color:var(--muted);font-family:'Cairo',sans-serif;line-height:1.3;margin-top:1px}
+
+/* Summary bar */
+.sum-bar{
+  background:linear-gradient(135deg,var(--emerald),#0f5c35);
+  border-radius:14px;padding:24px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:20px;
+}
+.sb-stat{text-align:center}
+.sb-n{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#fff;line-height:1}
+.sb-en{font-size:.65rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.07em;margin-top:4px}
+.sb-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.7);margin-top:2px;display:block}
+.sb-divider{width:1px;height:50px;background:rgba(255,255,255,.2)}
+
+/* ══ PAGE 6 — PACKAGES & SERVICES ══ */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.svc{
+  background:var(--off);border:1px solid var(--slate);
+  border-radius:10px;padding:15px;text-align:center;
+}
+.svc-ic{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;margin:0 auto 9px;
+}
+.svc-en{font-size:.7rem;font-weight:600;color:var(--navy);margin-bottom:2px}
+.svc-ar{font-family:'Cairo',sans-serif;font-size:.75rem;font-weight:700;color:var(--emerald)}
+
+.pkg-row{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:14px;margin-bottom:20px}
+.p-card{border-radius:14px;padding:24px;border:1px solid var(--slate);position:relative;overflow:hidden}
+.p-card.feat{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+  border-color:rgba(27,122,74,.4);
+}
+.p-card.std{background:var(--off)}
+.p-popular{
+  position:absolute;top:0;left:0;right:0;
+  background:linear-gradient(90deg,var(--emerald),var(--em2));
+  text-align:center;padding:5px;
+  font-size:.65rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;
+}
+.p-name-en{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:2px;margin-top:0}
+.p-card.feat .p-name-en{color:#fff;margin-top:16px}
+.p-name-ar{font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:700;color:var(--emerald);margin-bottom:14px}
+.p-card.feat .p-name-ar{color:var(--em2)}
+.p-price{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--navy);line-height:1}
+.p-card.feat .p-price{color:var(--gold2)}
+.p-per{font-size:.7rem;color:var(--muted);margin-bottom:12px}
+.p-card.feat .p-per{color:rgba(255,255,255,.4)}
+.p-list{list-style:none}
+.p-list li{
+  font-size:.73rem;font-family:'Cairo',sans-serif;color:var(--body-txt);
+  padding:4px 0;border-bottom:1px solid var(--slate);
+  display:flex;align-items:center;gap:6px;
+}
+.p-card.feat .p-list li{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.08)}
+.p-list li::before{content:'✓';color:var(--emerald);font-weight:700;font-size:.7rem;flex-shrink:0}
+.p-card.feat .p-list li::before{color:var(--em2)}
+
+/* ══ PAGE 7 — CONTACT ══ */
+.contact-pg{
+  min-height:250mm;
+  background:var(--navy);
+  padding:52px;
+  position:relative;overflow:hidden;
+}
+.contact-pg::before{
+  content:'';position:absolute;
+  top:-150px;right:-150px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,122,74,.14),transparent 65%);
+}
+.contact-pg::after{
+  content:'';position:absolute;
+  bottom:-100px;left:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,146,42,.08),transparent 65%);
+}
+.contact-pg .sh-num{color:rgba(255,255,255,.06)}
+.contact-pg .sh-title{color:#fff}
+.contact-pg .sh-sub{color:var(--em2)}
+.contact-pg .sh{border-color:rgba(255,255,255,.08)}
+
+.ctc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;z-index:1;margin-bottom:28px}
+.ctc-group-label{
+  font-size:.66rem;color:rgba(255,255,255,.3);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:12px;
+}
+.ctc-items{display:flex;flex-direction:column;gap:10px}
+.ctc-item{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:15px;
+  display:flex;align-items:flex-start;gap:13px;
+}
+.ctc-ico{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;flex-shrink:0;
+}
+.ci-em{background:linear-gradient(135deg,var(--emerald),var(--em2));color:#fff}
+.ci-go{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}
+.ctc-txt strong{display:block;font-size:.82rem;color:rgba(255,255,255,.9);font-weight:600;margin-bottom:2px}
+.ctc-txt span{font-size:.75rem;color:rgba(255,255,255,.45);font-family:'Cairo',sans-serif;display:block}
+.ctc-txt em{font-style:normal;font-size:.68rem;color:rgba(255,255,255,.25);display:block;margin-top:1px}
+
+/* CTA invite block */
+.invite-block{
+  position:relative;z-index:1;
+  border:1px solid rgba(27,122,74,.3);
+  border-radius:16px;padding:28px;
+  background:rgba(27,122,74,.06);
+  text-align:center;margin-bottom:26px;
+}
+.inv-title-en{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:6px;
+}
+.inv-title-ar{
+  font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;
+  color:var(--em2);margin-bottom:18px;
+}
+.inv-desc{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.75;max-width:520px;margin:0 auto 8px;font-family:'Inter',sans-serif}
+.inv-desc-ar{font-family:'Cairo',sans-serif;font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.75;max-width:500px;margin:0 auto 20px;direction:rtl}
+.inv-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+.inv-b{
+  border-radius:22px;padding:6px 16px;font-size:.73rem;font-family:'Cairo',sans-serif;font-weight:600;
+}
+.inv-b.em{background:rgba(27,122,74,.15);border:1px solid rgba(45,216,130,.25);color:var(--em3)}
+.inv-b.go{background:rgba(200,146,42,.12);border:1px solid rgba(232,184,75,.25);color:var(--gold2)}
+
+/* doc footer */
+.d-foot{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,.07);
+  padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.df-brand{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.df-tagline{font-size:.7rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;margin-top:2px}
+.df-conf{
+  background:rgba(200,146,42,.1);border:1px solid rgba(200,146,42,.2);
+  border-radius:7px;padding:7px 18px;text-align:center;
+}
+.df-conf-en{font-size:.65rem;color:var(--gold2);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.df-conf-ar{font-family:'Cairo',sans-serif;font-size:.7rem;color:rgba(200,146,42,.6);margin-top:2px;display:block}
+.df-copy{color:rgba(255,255,255,.2);font-size:.67rem;font-family:'Inter',sans-serif;text-align:right}
+
+/* ══ PRINT ══ */
+@media print{
+  #bar{display:none!important}
+  html,body{background:#fff!important}
+  .pages{padding:0;max-width:none}
+  .pg{box-shadow:none;margin-bottom:0;page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div id="bar">
+  <div class="bar-logo">
+    <img src="images/mashroie-logo.png" alt="Mashroie"/>
+    <div>
+      <span>Mashroie Platform</span>
+      <small>منصة مشروعي · Donor & Development Profile</small>
+    </div>
+  </div>
+  <div class="bar-center">Profile A — Donors & Development Organizations</div>
+  <div class="bar-actions">
+    <button class="btn-pdf" onclick="window.print()">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Export as PDF
+    </button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- ═══════ PAGE 1 — COVER ═══════ -->
+<div class="pg p1">
+  <div class="p1-mesh"></div>
+  <div class="p1-grid"></div>
+  <div class="p1-circle"></div>
+  <div class="p1-circle2"></div>
+  <div class="p1-accent-bar"></div>
+
+  <div class="cov-head">
+    <div class="cov-brand">
+      <div class="cov-logo">
+        <img src="images/mashroie-logo.png" alt="Mashroie Logo"/>
+      </div>
+      <div class="cov-brand-text">
+        <div class="cov-brand-en">MASHROIE</div>
+        <div class="cov-brand-ar">منصة مشروعي — Invest &amp; Grow</div>
+      </div>
+    </div>
+    <div class="cov-label">
+      <div class="cov-label-tag">Donor &amp; Development Profile</div>
+      <div class="cov-label-sub">CONFIDENTIAL — 2025 EDITION</div>
+    </div>
+  </div>
+
+  <div class="cov-hero">
+    <div class="cov-eyebrow">
+      <div class="cov-dot"></div>
+      <div class="cov-eye-text">Yemen's SME Empowerment Platform</div>
+    </div>
+    <div class="cov-h1">
+      Rebuilding Yemen<br/>
+      One <span class="gr">Entrepreneur</span><br/>
+      at a Time
+    </div>
+    <div class="cov-h2-ar">إعادة بناء اليمن — مشروع تلو الآخر</div>
+    <div class="cov-divider"></div>
+    <p class="cov-desc">
+      Mashroie is Yemen's first integrated digital platform connecting small and medium enterprises with industrial equipment, financial institutions, professional services, and institutional partners — driving sustainable economic recovery.
+    </p>
+    <p class="cov-desc-ar">
+      مشروعي هي أول منصة رقمية متكاملة في اليمن تربط المشاريع الصغيرة والمتوسطة بالمعدات الصناعية والمؤسسات التمويلية والخدمات المهنية والشركاء المؤسسيين.
+    </p>
+  </div>
+
+  <div class="cov-kpis">
+    <div class="kpi">
+      <div class="kpi-n">18</div>
+      <div class="kpi-en">Platform Sections</div>
+      <div class="kpi-ar">قسماً في المنصة</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">8</div>
+      <div class="kpi-en">Banking Partners</div>
+      <div class="kpi-ar">شريك مصرفي يمني</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">200+</div>
+      <div class="kpi-en">Service Providers</div>
+      <div class="kpi-ar">مزود خدمة معتمد</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">$120K+</div>
+      <div class="kpi-en">Financing Facilitated</div>
+      <div class="kpi-ar">تمويل ميسّر</div>
+    </div>
+  </div>
+
+  <div class="cov-foot">
+    <div class="cf-links">
+      <div class="cf-link">📞 800 800 800</div>
+      <div class="cf-link">💬 +967 773 880 066</div>
+      <div class="cf-link">✉ info@mshroue.com</div>
+      <div class="cf-link">📍 صنعاء، اليمن</div>
+    </div>
+    <div class="cf-year">© 2025 Mashroie Platform · Tamza Holding Group</div>
+  </div>
+
+  <div class="pager dark">01 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 2 — EXECUTIVE SUMMARY ═══════ -->
+<div class="pg inner">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">01</div>
+      <div class="sh-title">Executive Summary &amp; Background</div>
+      <div class="sh-sub">الملخص التنفيذي والخلفية المؤسسية</div>
+    </div>
+    <div class="sh-pill pill-em">Overview / نظرة عامة</div>
+  </div>
+
+  <div class="exec-lead">
+    <p class="en">
+      <strong>Mashroie</strong> — meaning "My Project" in Arabic — is a comprehensive B2B2C digital marketplace developed by <strong>Tamza Holding Group</strong>, Yemen's diversified investment conglomerate. The platform addresses a critical market gap: Yemeni entrepreneurs lack access to quality industrial equipment, formal financing, and professional business support in a single, trusted digital environment. Mashroie bridges these gaps at scale, offering verified equipment catalogs, structured financing pathways through 8 Yemeni banks, and over 200 professional service providers across 12 categories.
+    </p>
+    <p class="ar">
+      <strong>مشروعي</strong> منصة B2B2C رقمية شاملة طوّرتها <strong>مجموعة تمزا القابضة</strong>. تعالج المنصة فجوة سوقية حيوية: افتقار رواد الأعمال اليمنيين لمعدات صناعية موثوقة وتمويل رسمي وخدمات أعمال مهنية في بيئة رقمية موثوقة واحدة. تجسر مشروعي هذه الفجوات عبر كتالوجات معدات موثقة ومسارات تمويلية منظمة عبر 8 بنوك يمنية وأكثر من 200 مزود خدمة.
+    </p>
+  </div>
+
+  <div class="two">
+    <div class="icard em">
+      <div class="icon-wrap iw-em">🎯</div>
+      <div class="card-h4">Mission Statement</div>
+      <span class="card-h4-ar">الرسالة</span>
+      <p class="card-p">To empower Yemeni entrepreneurs at every stage — from ideation to market launch — through technology, financing, and expert guidance.</p>
+      <span class="card-p-ar">تمكين رواد الأعمال اليمنيين في كل مرحلة — من الفكرة إلى السوق — عبر التكنولوجيا والتمويل والإرشاد المتخصص.</span>
+    </div>
+    <div class="icard go">
+      <div class="icon-wrap iw-go">🔭</div>
+      <div class="card-h4">Vision 2030</div>
+      <span class="card-h4-ar">الرؤية</span>
+      <p class="card-p">To become the leading Arab platform for SME support — creating a resilient, diversified Yemeni economy with thriving local industries.</p>
+      <span class="card-p-ar">أن نكون المنصة العربية الرائدة لدعم المشاريع الصغيرة، وبناء اقتصاد يمني متين ومتنوع بصناعات محلية مزدهرة.</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-block">
+      <div class="kbi-n">83+</div>
+      <div class="kbi-en">Jobs Created</div>
+      <div class="kbi-ar">وظيفة تم توفيرها</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kbi-n">6</div>
+      <div class="kbi-en">Governorates</div>
+      <div class="kbi-ar">محافظات مشمولة</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kbi-n">12</div>
+      <div class="kbi-en">Service Sectors</div>
+      <div class="kbi-ar">قطاع خدمي</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kbi-n">4</div>
+      <div class="kbi-en">Dashboard Types</div>
+      <div class="kbi-ar">نوع لوحة تحكم</div>
+    </div>
+  </div>
+
+  <div class="icard nv" style="border-top:none">
+    <div style="display:flex;align-items:flex-start;gap:18px">
+      <div style="min-width:54px;height:54px;border-radius:13px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;font-family:'Cairo',sans-serif;font-weight:900">ت</div>
+      <div>
+        <div class="card-h4">Tamza Holding Group — Institutional Backbone</div>
+        <span class="card-h4-ar">مجموعة تمزا القابضة — الداعم المؤسسي</span>
+        <p class="card-p">A reputable Yemeni investment group with diversified operations providing institutional credibility, resources, and strategic oversight for Mashroie. Headquartered at Tamza Holding Building, Hadda District, Sana'a, Republic of Yemen.</p>
+        <span class="card-p-ar">مجموعة استثمارية يمنية مرموقة ذات عمليات متنوعة توفر المصداقية المؤسسية والموارد والإشراف الاستراتيجي لمنصة مشروعي. المقر: الجمهورية اليمنية، صنعاء — حدة — عمارة تمزا القابضة.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pager light">02 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 3 — PLATFORM ECOSYSTEM ═══════ -->
+<div class="pg inner">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">02</div>
+      <div class="sh-title">Platform Architecture &amp; Ecosystem</div>
+      <div class="sh-sub">بنية المنصة ومنظومتها</div>
+    </div>
+    <div class="sh-pill pill-navy">Technology / التقنية</div>
+  </div>
+
+  <div class="three" style="margin-bottom:18px">
+    <div class="eco-card em">
+      <div class="eco-icon iw-em">🏭</div>
+      <div class="eco-h-en">Equipment Marketplace</div>
+      <span class="eco-h-ar">سوق المعدات الصناعية</span>
+      <p class="eco-p-en">Verified industrial machinery catalog with full technical specs, CE/ISO certifications, country of origin, financing eligibility, and direct supplier links.</p>
+      <span class="eco-p-ar">كتالوج آلات صناعية موثق مع مواصفات تقنية كاملة وشهادات دولية وأهلية تمويل وروابط مباشرة للموردين.</span>
+    </div>
+    <div class="eco-card go">
+      <div class="eco-icon iw-go">💰</div>
+      <div class="eco-h-en">Financing Gateway</div>
+      <span class="eco-h-ar">بوابة التمويل</span>
+      <p class="eco-p-en">4-step structured financing pathway connecting SMEs to 8 Yemeni banks and microfinance institutions with integrated installment calculator in USD &amp; YER.</p>
+      <span class="eco-p-ar">مسار تمويلي منظم من 4 خطوات يربط بـ8 بنوك يمنية ومؤسسات التمويل الأصغر مع آلة حاسبة بالدولار والريال.</span>
+    </div>
+    <div class="eco-card nv">
+      <div class="eco-icon iw-nv">🎓</div>
+      <div class="eco-h-en">Professional Services</div>
+      <span class="eco-h-ar">الخدمات المهنية</span>
+      <p class="eco-p-en">200+ certified providers across legal, accounting, marketing, logistics, IT, training, quality testing, and licensing — all vetted and KYC-verified.</p>
+      <span class="eco-p-ar">أكثر من 200 مزود معتمد في القانون والمحاسبة والتسويق واللوجستيات والتقنية والتدريب — جميعهم موثقون.</span>
+    </div>
+  </div>
+
+  <div class="three" style="margin-bottom:22px">
+    <div class="eco-card" style="border-top:3px solid #8B5CF6">
+      <div class="eco-icon iw-pu">🔐</div>
+      <div class="eco-h-en">KYC &amp; Compliance</div>
+      <span class="eco-h-ar">التحقق والامتثال</span>
+      <p class="eco-p-en">Multi-tier identity verification with document upload, OTP, and user-type specific requirements ensuring full regulatory compliance.</p>
+      <span class="eco-p-ar">تحقق متعدد الطبقات بمتطلبات مخصصة لكل نوع مستخدم لضمان الامتثال التنظيمي الكامل.</span>
+    </div>
+    <div class="eco-card" style="border-top:3px solid var(--red)">
+      <div class="eco-icon iw-rd">📦</div>
+      <div class="eco-h-en">Raw Materials Network</div>
+      <span class="eco-h-ar">شبكة المواد الخام</span>
+      <p class="eco-p-en">Full supply chain transparency — each product lists operational raw materials, quantities, and sourcing notes for buyers and international suppliers.</p>
+      <span class="eco-p-ar">شفافية كاملة لسلسلة التوريد — كل منتج يوضح المواد الخام والكميات وملاحظات التوريد للمشترين والموردين الدوليين.</span>
+    </div>
+    <div class="eco-card em">
+      <div class="eco-icon iw-em">🏪</div>
+      <div class="eco-h-en">SME Showcase</div>
+      <span class="eco-h-ar">واجهة المشاريع</span>
+      <p class="eco-p-en">Spotlighting real Yemeni businesses with funding metrics, job creation data, and growth stories across 6 governorates for visibility and inspiration.</p>
+      <span class="eco-p-ar">تسليط الضوء على مشاريع يمنية حقيقية مع بيانات التمويل وخلق الوظائف عبر 6 محافظات.</span>
+    </div>
+  </div>
+
+  <div class="journey">
+    <div class="j-title">End-to-End Entrepreneur Journey</div>
+    <span class="j-title-ar">رحلة رائد الأعمال الكاملة من البداية إلى النجاح</span>
+    <div class="j-steps">
+      <div class="j-step">
+        <div class="j-num">1</div>
+        <div class="j-en">Register</div>
+        <span class="j-ar">التسجيل</span>
+      </div>
+      <div class="j-step">
+        <div class="j-num">2</div>
+        <div class="j-en">KYC Verify</div>
+        <span class="j-ar">التحقق</span>
+      </div>
+      <div class="j-step">
+        <div class="j-num">3</div>
+        <div class="j-en">Browse Catalog</div>
+        <span class="j-ar">تصفح الكتالوج</span>
+      </div>
+      <div class="j-step">
+        <div class="j-num">4</div>
+        <div class="j-en">Apply Financing</div>
+        <span class="j-ar">طلب التمويل</span>
+      </div>
+      <div class="j-step">
+        <div class="j-num">5</div>
+        <div class="j-en">Launch &amp; Scale</div>
+        <span class="j-ar">الإطلاق والنمو</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pager light">03 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 4 — FINANCING & BANKING PARTNERS ═══════ -->
+<div class="pg inner">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">03</div>
+      <div class="sh-title">Financing Framework &amp; Banking Partners</div>
+      <div class="sh-sub">آلية التمويل والشركاء المصرفيون</div>
+    </div>
+    <div class="sh-pill pill-gold">Finance / التمويل</div>
+  </div>
+
+  <div class="fin-row">
+    <div class="fin-step-card">
+      <div class="fsn">1</div>
+      <div class="fs-en">Needs Assessment</div>
+      <span class="fs-ar">تحديد الاحتياج</span>
+      <div class="fs-desc">رائد الأعمال يحدد المعدة أو الخدمة المطلوبة عبر المنصة</div>
+    </div>
+    <div class="fin-step-card">
+      <div class="fsn">2</div>
+      <div class="fs-en">File Preparation</div>
+      <span class="fs-ar">إعداد الملف</span>
+      <div class="fs-desc">المنصة تساعد في جمع وتنظيم الوثائق المطلوبة للتمويل</div>
+    </div>
+    <div class="fin-step-card">
+      <div class="fsn">3</div>
+      <div class="fs-en">Bank Matching</div>
+      <span class="fs-ar">الربط بالمصرف</span>
+      <div class="fs-desc">توصيل الملف لأنسب مؤسسة تمويلية بناءً على احتياج المشروع</div>
+    </div>
+    <div class="fin-step-card">
+      <div class="fsn">4</div>
+      <div class="fs-en">Post-Disbursement</div>
+      <span class="fs-ar">متابعة ما بعد الصرف</span>
+      <div class="fs-desc">متابعة مستمرة بعد الصرف لضمان نجاح المشروع</div>
+    </div>
+  </div>
+
+  <div style="font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">
+    <span style="font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--emerald);text-transform:none;letter-spacing:0;margin-left:8px">الشركاء المصرفيون ومؤسسات التمويل الأصغر —</span>
+    Banking &amp; Microfinance Partners
+  </div>
+
+  <div class="bank-grid">
+    <div class="bank-card">
+      <div class="b-ico">🏦</div>
+      <div>
+        <div class="b-name">بنك التضامن الإسلامي</div>
+        <div class="b-name-en">Islamic Solidarity Bank</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🏦</div>
+      <div>
+        <div class="b-name">بنك سبأ الإسلامي</div>
+        <div class="b-name-en">Saba Islamic Bank</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🏦</div>
+      <div>
+        <div class="b-name">البنك الأهلي اليمني</div>
+        <div class="b-name-en">National Bank of Yemen</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🏦</div>
+      <div>
+        <div class="b-name">البنك اليمني للإنشاء والتعمير</div>
+        <div class="b-name-en">Yemen Bank for Reconstruction</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🏦</div>
+      <div>
+        <div class="b-name">بنك الائتمان اليمني</div>
+        <div class="b-name-en">Yemen Credit Bank</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🌱</div>
+      <div>
+        <div class="b-name">صندوق تنمية المنشآت الصغيرة</div>
+        <div class="b-name-en">SME Development Fund</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🌱</div>
+      <div>
+        <div class="b-name">برنامج الأمم المتحدة الإنمائي — التمويل الأصغر</div>
+        <div class="b-name-en">UNDP Microfinance Program</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🌱</div>
+      <div>
+        <div class="b-name">مؤسسات التمويل الأصغر اليمنية</div>
+        <div class="b-name-en">Yemen Microfinance Institutions</div>
+      </div>
+    </div>
+    <div class="bank-card">
+      <div class="b-ico">🌱</div>
+      <div>
+        <div class="b-name">شبكة التمويل الأصغر العربية</div>
+        <div class="b-name-en">Arab Microfinance Network</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="impact-mega">
+    <div class="im-item">
+      <div class="im-n">$120K+</div>
+      <div class="im-en">Total Financing</div>
+      <span class="im-ar">إجمالي التمويل المُيسَّر</span>
+    </div>
+    <div class="im-item">
+      <div class="im-n">83+</div>
+      <div class="im-en">Jobs Created</div>
+      <span class="im-ar">فرصة عمل</span>
+    </div>
+    <div class="im-item">
+      <div class="im-n">6</div>
+      <div class="im-en">Governorates</div>
+      <span class="im-ar">محافظات يمنية</span>
+    </div>
+    <div class="im-item">
+      <div class="im-n">540</div>
+      <div class="im-en">YER per USD</div>
+      <span class="im-ar">سعر الصرف المعتمد</span>
+    </div>
+  </div>
+
+  <div class="pager light">04 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 5 — SUCCESS STORIES ═══════ -->
+<div class="pg inner">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">04</div>
+      <div class="sh-title">SME Success Stories — Proven Impact</div>
+      <div class="sh-sub">قصص نجاح المشاريع — أثر حقيقي موثق</div>
+    </div>
+    <div class="sh-pill pill-em">Impact / الأثر</div>
+  </div>
+
+  <div class="sum-bar">
+    <div class="sb-stat">
+      <div class="sb-n">$120K+</div>
+      <div class="sb-en">Total Financing Facilitated</div>
+      <span class="sb-ar">إجمالي التمويل الميسّر</span>
+    </div>
+    <div class="sb-divider"></div>
+    <div class="sb-stat">
+      <div class="sb-n">83+</div>
+      <div class="sb-en">Permanent Jobs Created</div>
+      <span class="sb-ar">وظيفة دائمة تم توفيرها</span>
+    </div>
+    <div class="sb-divider"></div>
+    <div class="sb-stat">
+      <div class="sb-n">6</div>
+      <div class="sb-en">Yemeni Governorates</div>
+      <span class="sb-ar">محافظات يمنية مستفيدة</span>
+    </div>
+    <div class="sb-divider"></div>
+    <div class="sb-stat">
+      <div class="sb-n">6</div>
+      <div class="sb-en">Active SME Showcases</div>
+      <span class="sb-ar">مشروع نجاح موثق</span>
+    </div>
+  </div>
+
+  <div class="story-grid">
+    <div class="s-card">
+      <div class="s-img">
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784589?w=400&q=75" alt="Yemen Honey"/>
+        <div class="s-overlay"></div>
+        <div class="s-badge">Food Mfg</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">مصنع العسل اليمني الأصيل</div>
+        <div class="s-loc">📍 حضرموت · Hadramout</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$15K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">12</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2018</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="s-card">
+      <div class="s-img">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=75" alt="Bakery"/>
+        <div class="s-overlay"></div>
+        <div class="s-badge">Bakery</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">مخبز البركة الحديث</div>
+        <div class="s-loc">📍 صنعاء · Sana'a</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$12K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">8</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2020</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="s-card">
+      <div class="s-img">
+        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=75" alt="Juice Factory"/>
+        <div class="s-overlay"></div>
+        <div class="s-badge">Beverages</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">مصنع العصائر الطبيعية</div>
+        <div class="s-loc">📍 تعز · Taiz</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$25K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">15</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2019</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="s-card">
+      <div class="s-img">
+        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=75" alt="Carpentry"/>
+        <div class="s-overlay"></div>
+        <div class="s-badge">Furniture</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">ورشة النجارة الفنية</div>
+        <div class="s-loc">📍 عدن · Aden</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$18K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">10</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2017</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="s-card">
+      <div class="s-img" style="background:linear-gradient(135deg,#1a1a3e,#2d1b5e)">
+        <div class="s-overlay"></div>
+        <div class="s-badge">Textile</div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem">👗</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">مصنع الألبسة التقليدية</div>
+        <div class="s-loc">📍 إب · Ibb</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$20K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">20</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2016</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="s-card">
+      <div class="s-img" style="background:linear-gradient(135deg,#0a3030,#0d5a55)">
+        <div class="s-overlay"></div>
+        <div class="s-badge">Packaging</div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem">📦</div>
+      </div>
+      <div class="s-body">
+        <div class="s-name">مختبر التعبئة والتغليف</div>
+        <div class="s-loc">📍 الحديدة · Hodeidah</div>
+        <div class="s-stats">
+          <div class="ss-item"><div class="ss-n">$30K</div><div class="ss-l">تمويل محقق<br/>Financing</div></div>
+          <div class="ss-item"><div class="ss-n">18</div><div class="ss-l">وظيفة<br/>Jobs</div></div>
+          <div class="ss-item"><div class="ss-n">2021</div><div class="ss-l">تأسست<br/>Est.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pager light">05 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 6 — SERVICES & PACKAGES ═══════ -->
+<div class="pg inner">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">05</div>
+      <div class="sh-title">Services Ecosystem &amp; Packages</div>
+      <div class="sh-sub">منظومة الخدمات وباقات الاشتراك</div>
+    </div>
+    <div class="sh-pill pill-slate">Services / الخدمات</div>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc"><div class="svc-ic iw-em">⚖️</div><div class="svc-en">Legal Services</div><div class="svc-ar">الخدمات القانونية</div></div>
+    <div class="svc"><div class="svc-ic iw-go">🧮</div><div class="svc-en">Accounting</div><div class="svc-ar">المحاسبة والمالية</div></div>
+    <div class="svc"><div class="svc-ic iw-em">📣</div><div class="svc-en">Marketing</div><div class="svc-ar">التسويق الرقمي</div></div>
+    <div class="svc"><div class="svc-ic iw-nv">🚛</div><div class="svc-en">Logistics</div><div class="svc-ar">الخدمات اللوجستية</div></div>
+    <div class="svc"><div class="svc-ic iw-em">💻</div><div class="svc-en">IT Solutions</div><div class="svc-ar">حلول التقنية</div></div>
+    <div class="svc"><div class="svc-ic iw-go">👔</div><div class="svc-en">Consultancy</div><div class="svc-ar">الاستشارات الإدارية</div></div>
+    <div class="svc"><div class="svc-ic iw-nv">🎓</div><div class="svc-en">Training</div><div class="svc-ar">التدريب والتأهيل</div></div>
+    <div class="svc"><div class="svc-ic iw-pu">🔬</div><div class="svc-en">Quality Testing</div><div class="svc-ar">الجودة والمعايرة</div></div>
+    <div class="svc"><div class="svc-ic iw-em">🔧</div><div class="svc-en">Maintenance</div><div class="svc-ar">الصيانة والدعم</div></div>
+    <div class="svc"><div class="svc-ic iw-go">📋</div><div class="svc-en">Licensing</div><div class="svc-ar">التراخيص</div></div>
+    <div class="svc"><div class="svc-ic iw-nv">📊</div><div class="svc-en">Market Research</div><div class="svc-ar">دراسات السوق</div></div>
+    <div class="svc"><div class="svc-ic iw-rd">🛡️</div><div class="svc-en">Insurance</div><div class="svc-ar">التأمين والضمانات</div></div>
+  </div>
+
+  <div style="font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">
+    <span style="font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--emerald);text-transform:none;letter-spacing:0;margin-left:8px">باقات الاشتراك —</span>
+    Subscription Plans
+  </div>
+  <div class="pkg-row">
+    <div class="p-card std">
+      <div class="p-name-en">Starter</div>
+      <div class="p-name-ar">الباقة الأساسية</div>
+      <div class="p-price">Free</div>
+      <div class="p-per">مجاني — Get Started Today</div>
+      <ul class="p-list">
+        <li>تصفح كتالوج المعدات الكامل</li>
+        <li>1 طلب تمويل شهرياً</li>
+        <li>الوصول للخدمات الأساسية</li>
+        <li>Basic supplier contacts</li>
+      </ul>
+    </div>
+    <div class="p-card feat">
+      <div class="p-popular">Most Popular — الأكثر شيوعاً</div>
+      <div class="p-name-en" style="margin-top:16px">Professional</div>
+      <div class="p-name-ar">الباقة المهنية</div>
+      <div class="p-price">$49</div>
+      <div class="p-per">/month · شهرياً</div>
+      <ul class="p-list">
+        <li>كتالوج كامل + مواد خام</li>
+        <li>طلبات تمويل غير محدودة</li>
+        <li>معالجة KYC ذات أولوية</li>
+        <li>مدير حساب مخصص</li>
+        <li>تقارير تحليلية دورية</li>
+      </ul>
+    </div>
+    <div class="p-card std">
+      <div class="p-name-en">Enterprise</div>
+      <div class="p-name-ar">باقة المؤسسات</div>
+      <div class="p-price">Custom</div>
+      <div class="p-per">مخصص — Contact for pricing</div>
+      <ul class="p-list">
+        <li>White-label solutions</li>
+        <li>تكامل API كامل</li>
+        <li>بنية تحتية مخصصة</li>
+        <li>حلول للجهات المانحة</li>
+        <li>SLA &amp; dedicated support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pager light">06 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 7 — CONTACT & INVITATION ═══════ -->
+<div class="pg contact-pg">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-num">06</div>
+      <div class="sh-title">Contact &amp; Partnership Invitation</div>
+      <div class="sh-sub">التواصل ودعوة الشراكة الاستراتيجية</div>
+    </div>
+    <div class="sh-pill pill-gold">Connect / تواصل</div>
+  </div>
+
+  <div class="ctc-grid">
+    <div>
+      <div class="ctc-group-label">Direct Contact — التواصل المباشر</div>
+      <div class="ctc-items">
+        <div class="ctc-item">
+          <div class="ctc-ico ci-em">📞</div>
+          <div class="ctc-txt">
+            <strong>800 800 800</strong>
+            <span>خط مجاني — Free Consultation Hotline</span>
+            <em>Sun–Thu · 8:00 AM – 5:00 PM</em>
+          </div>
+        </div>
+        <div class="ctc-item">
+          <div class="ctc-ico ci-em">💬</div>
+          <div class="ctc-txt">
+            <strong>+967 773 880 066</strong>
+            <span>WhatsApp — Available 24/7</span>
+            <em>wa.me/967773880066</em>
+          </div>
+        </div>
+        <div class="ctc-item">
+          <div class="ctc-ico ci-go">✉</div>
+          <div class="ctc-txt">
+            <strong>info@mshroue.com</strong>
+            <span>Mashroie Platform — منصة مشروعي</span>
+          </div>
+        </div>
+        <div class="ctc-item">
+          <div class="ctc-ico ci-go">✉</div>
+          <div class="ctc-txt">
+            <strong>info@tmza.com</strong>
+            <span>Tamza Holding Group — مجموعة تمزا القابضة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ctc-group-label">Address &amp; Location — العنوان والموقع</div>
+      <div class="ctc-items">
+        <div class="ctc-item">
+          <div class="ctc-ico ci-go">📍</div>
+          <div class="ctc-txt">
+            <strong>Republic of Yemen — الجمهورية اليمنية</strong>
+            <span>صنعاء — حدة — عمارة تمزا القابضة</span>
+            <em>Sana'a · Hadda District · Tamza Holding Building</em>
+          </div>
+        </div>
+        <div class="ctc-item">
+          <div class="ctc-ico ci-em">🌐</div>
+          <div class="ctc-txt">
+            <strong>Digital Presence — 24/7</strong>
+            <span>Platform available around the clock</span>
+            <em>Serving Yemen &amp; the MENA Region</em>
+          </div>
+        </div>
+        <div class="ctc-item">
+          <div class="ctc-ico ci-em">✅</div>
+          <div class="ctc-txt">
+            <strong>Registered &amp; Verified Entity</strong>
+            <span>مؤسسة مسجلة ومعتمدة — Backed by Tamza Holding</span>
+            <em>Yemen's trusted investment group since establishment</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="invite-block">
+    <div class="inv-title-en">Join Yemen's Economic Recovery Mission</div>
+    <div class="inv-title-ar">انضموا إلى مهمة التعافي الاقتصادي في اليمن</div>
+    <p class="inv-desc">Mashroie welcomes international donors, development organizations, UN agencies, and bilateral partners to collaborate on scaling SME support across Yemen's governorates.</p>
+    <p class="inv-desc-ar">ترحب مشروعي بالجهات المانحة الدولية ومنظمات التنمية ووكالات الأمم المتحدة والشركاء الثنائيين للتعاون في توسيع دعم المشاريع عبر محافظات اليمن.</p>
+    <div class="inv-badges">
+      <span class="inv-b em">🌍 Development Organizations</span>
+      <span class="inv-b go">💰 Bilateral Donors</span>
+      <span class="inv-b em">🏛 UN Agencies</span>
+      <span class="inv-b go">📊 Impact Investors</span>
+      <span class="inv-b em">🤝 NGO Partners</span>
+      <span class="inv-b go">🏦 Development Banks</span>
+    </div>
+  </div>
+
+  <div class="d-foot">
+    <div>
+      <div class="df-brand">MASHROIE — مشروعي</div>
+      <div class="df-tagline">Invest &amp; Grow · Yemen's SME Empowerment Platform · Powered by Tamza Holding Group</div>
+    </div>
+    <div class="df-conf">
+      <div class="df-conf-en">Confidential Document</div>
+      <span class="df-conf-ar">وثيقة سرية — جهات مانحة</span>
+    </div>
+    <div class="df-copy">
+      info@mshroue.com · info@tmza.com<br/>
+      © 2025 Mashroie Platform · All Rights Reserved
+    </div>
+  </div>
+
+  <div class="pager dark">07 / 07</div>
+</div>
+
+</div><!-- /pages -->
+
+<script>
+document.addEventListener('keydown', e => {
+  if((e.ctrlKey||e.metaKey) && (e.key==='p'||e.key==='s')) {
+    e.preventDefault(); window.print();
+  }
+});
+</script>
+</body>
+</html>

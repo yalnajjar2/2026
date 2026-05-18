@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة المانحين | منصة مشروعي</title>
+  <meta name="description" content="بوابة المانحين والمنظمات الداعمة للمشاريع الصغيرة والمتوسطة في اليمن — منصة مشروعي"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="css/portal-auth.css?v=5.0"/>
+</head>
+
+<body class="portal-page portal-donor">
+
+<!-- ══════════════════ TOP NAV ══════════════════ -->
+<nav class="pauth-topbar">
+  <a href="index.html" class="pauth-topbar-logo">
+    <div class="pauth-logo-mark">م</div>
+    <div class="pauth-logo-text">
+      <span class="name">مشروعي</span>
+      <span class="tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="pauth-topbar-nav">
+    <div class="pauth-portal-badge">
+      <i class="fas fa-hand-holding-heart"></i> بوابة المانحين
+    </div>
+    <a href="portal-customer.html"  class="pauth-topbar-link"><i class="fas fa-user-circle"></i> العملاء</a>
+    <a href="portal-supplier.html"  class="pauth-topbar-link"><i class="fas fa-industry"></i> الموردون</a>
+    <a href="portal-finance.html"   class="pauth-topbar-link"><i class="fas fa-landmark"></i> الممولون</a>
+    <a href="index.html" class="pauth-back-home"><i class="fas fa-home"></i> الرئيسية</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ SPLIT LAYOUT ══════════════════ -->
+<div class="pauth-layout">
+
+  <!-- ── HERO PANEL ── -->
+  <aside class="pauth-hero">
+    <div class="pauth-hero-inner">
+      <div class="pauth-hero-icon">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+      <h1>بوابة المانحين<br/>أثّر في حياة الآلاف</h1>
+      <p>ادعم المشاريع الصغيرة والمتوسطة في اليمن وتابع الأثر الحقيقي لمساهماتك بشفافية كاملة</p>
+
+      <div class="pauth-features">
+        <div class="pauth-feature-item">
+          <i class="fas fa-seedling"></i>
+          <span>دعم مشاريع إنتاجية تولّد فرص عمل</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>تقارير أثر شهرية وربع سنوية</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-search-dollar"></i>
+          <span>شفافية كاملة في توزيع المنح</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-award"></i>
+          <span>شهادات اعتماد وتقدير دولية</span>
+        </div>
+      </div>
+
+      <div class="pauth-stats">
+        <div class="pauth-stat">
+          <span class="num">$2.4M</span>
+          <span class="lbl">منح موزّعة</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">+180</span>
+          <span class="lbl">مشروع ممنوح</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">+800</span>
+          <span class="lbl">وظيفة خُلقت</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── FORM PANEL ── -->
+  <main class="pauth-form-panel">
+    <div class="pauth-form-container">
+
+      <div id="pauth-auth-section">
+
+        <div class="pauth-tabs">
+          <button class="pauth-tab-btn" id="tab-btn-login" onclick="pa_switchTab('login')">
+            <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+          </button>
+          <button class="pauth-tab-btn" id="tab-btn-register" onclick="pa_switchTab('register')">
+            <i class="fas fa-heart"></i> التسجيل كمانح
+          </button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="panel-login" class="pauth-panel">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>مرحباً بعودة المانحين 🌿</h2>
+              <p>سجّل دخولك لمتابعة مشاريعك وتقارير الأثر ومساهماتك</p>
+            </div>
+
+            <div id="login-alert" class="pauth-alert"></div>
+
+            <form id="form-login" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-username">البريد الإلكتروني</label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="login-username" class="pauth-input"
+                    placeholder="donor@organization.org" autocomplete="username" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-login-username"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-password">
+                  كلمة المرور
+                  <a href="#" class="pauth-label-hint" style="color:var(--portal-accent);text-decoration:none">نسيت؟</a>
+                </label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="login-password" class="pauth-input"
+                    placeholder="••••••••" autocomplete="current-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-login"
+                    onclick="pa_togglePassword('login-password','btn-eye-login')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-login-password"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-login">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-sign-in-alt"></i> دخول</span>
+              </button>
+            </form>
+
+            <div class="pauth-divider">أو</div>
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary)">
+              مانح جديد؟
+              <a href="#" onclick="pa_switchTab('register')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> سجّل الآن</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="panel-register" class="pauth-panel" style="display:none">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>التسجيل كمانح / منظمة</h2>
+              <p>أفراد ومنظمات وشركات — كل مساهمة تُحدث فرقاً حقيقياً</p>
+            </div>
+
+            <div id="register-alert" class="pauth-alert"></div>
+
+            <!-- Donor Type Selector -->
+            <div class="pauth-field">
+              <label class="pauth-label">نوع المانح <span style="color:#ef4444">*</span></label>
+              <div class="pauth-kyc-types">
+                <div class="pauth-kyc-type-card selected" data-kyc-type="individual"
+                  onclick="pa_selectKYCType(this)">
+                  <div class="card-check"><i class="fas fa-check"></i></div>
+                  <div class="card-icon">🧑</div>
+                  <div class="card-label">فرد<br/><span style="font-weight:400;font-size:.68rem;color:#94a3b8">متبرع شخصي</span></div>
+                </div>
+                <div class="pauth-kyc-type-card" data-kyc-type="business"
+                  onclick="pa_selectKYCType(this)">
+                  <div class="card-check"><i class="fas fa-check"></i></div>
+                  <div class="card-icon">🏛️</div>
+                  <div class="card-label">منظمة<br/><span style="font-weight:400;font-size:.68rem;color:#94a3b8">هيئة / مؤسسة</span></div>
+                </div>
+              </div>
+            </div>
+
+            <form id="form-register" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-fullname">الاسم الكامل / اسم المنظمة <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="text" id="reg-fullname" class="pauth-input"
+                    placeholder="محمد أحمد / منظمة الخير للتنمية"/>
+                  <i class="fas fa-heart pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-fullname"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-email">البريد الإلكتروني <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="reg-email" class="pauth-input"
+                    placeholder="donor@email.com" autocomplete="email" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-email"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-phone">رقم التواصل <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="tel" id="reg-phone" class="pauth-input"
+                    placeholder="7XXXXXXXX" maxlength="12" dir="ltr"
+                    style="padding-right:4.5rem"/>
+                  <i class="fas fa-phone pauth-input-icon"></i>
+                  <span class="pauth-phone-prefix" style="right:2.6rem">🇾🇪 +967</span>
+                </div>
+                <span class="pauth-field-err" id="err-reg-phone"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-password">كلمة المرور <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-password" class="pauth-input"
+                    placeholder="8 أحرف على الأقل" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-reg"
+                    onclick="pa_togglePassword('reg-password','btn-eye-reg')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-reg-password"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="pauth-pw-strength">
+                  <div class="pauth-pw-bar"><div class="pauth-pw-fill" id="pw-fill"></div></div>
+                  <div class="pauth-pw-hints">
+                    <div class="pauth-pw-hint" id="pw-hint-len"><i class="fas fa-circle"></i> 8 أحرف</div>
+                    <div class="pauth-pw-hint" id="pw-hint-upper"><i class="fas fa-circle"></i> حرف كبير</div>
+                    <div class="pauth-pw-hint" id="pw-hint-num"><i class="fas fa-circle"></i> رقم</div>
+                    <div class="pauth-pw-hint" id="pw-hint-special"><i class="fas fa-circle"></i> رمز خاص</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-confirm">تأكيد كلمة المرور <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-confirm" class="pauth-input"
+                    placeholder="أعد إدخال كلمة المرور" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-confirm"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-check-wrap">
+                  <input type="checkbox" id="reg-terms"/>
+                  <span>أوافق على <a href="#">شروط الاستخدام</a> و<a href="#">سياسة الشفافية</a> وإجراءات التحقق AML/KYC للمانحين</span>
+                </label>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-register">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-heart"></i> التسجيل وبدء المساهمة</span>
+              </button>
+            </form>
+
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary);margin-top:1rem">
+              لديك حساب؟
+              <a href="#" onclick="pa_switchTab('login')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> سجّل دخولك</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pauth-security-bar">
+          <div class="pauth-security-item"><i class="fas fa-lock"></i> SSL 256-bit</div>
+          <div class="pauth-security-item"><i class="fas fa-eye"></i> شفافية كاملة</div>
+          <div class="pauth-security-item"><i class="fas fa-certificate"></i> معتمد دولياً</div>
+        </div>
+
+        <div class="pauth-other-portals">
+          <h4>بوابات المنصة الأخرى</h4>
+          <div class="pauth-portals-grid">
+            <a href="portal-customer.html" class="pauth-portal-link">
+              <i class="fas fa-user-circle" style="color:#2563eb"></i>
+              بوابة العملاء
+            </a>
+            <a href="portal-supplier.html" class="pauth-portal-link">
+              <i class="fas fa-industry" style="color:#ea580c"></i>
+              بوابة الموردين
+            </a>
+            <a href="portal-finance.html" class="pauth-portal-link">
+              <i class="fas fa-landmark" style="color:#7c3aed"></i>
+              بوابة الممولين
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="pauth-dash-section" style="display:none"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/portal-auth.js?v=5.0"></script>
+<script>
+  pa_init({
+    portalType:      'donor',
+    portalLabel:     'المانحين',
+    kycTypeOverride: 'individual',
+  });
+</script>
+</body>
+</html>

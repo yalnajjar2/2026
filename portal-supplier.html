@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة الموردين | منصة مشروعي</title>
+  <meta name="description" content="بوابة دخول وتسجيل الموردين والشركات المصنّعة في منصة مشروعي"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="css/portal-auth.css?v=5.0"/>
+</head>
+
+<body class="portal-page portal-supplier">
+
+<!-- ══════════════════ TOP NAV ══════════════════ -->
+<nav class="pauth-topbar">
+  <a href="index.html" class="pauth-topbar-logo">
+    <div class="pauth-logo-mark">م</div>
+    <div class="pauth-logo-text">
+      <span class="name">مشروعي</span>
+      <span class="tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="pauth-topbar-nav">
+    <div class="pauth-portal-badge">
+      <i class="fas fa-industry"></i> بوابة الموردين
+    </div>
+    <a href="portal-customer.html"  class="pauth-topbar-link"><i class="fas fa-user-circle"></i> العملاء</a>
+    <a href="portal-finance.html"   class="pauth-topbar-link"><i class="fas fa-landmark"></i> الممولون</a>
+    <a href="portal-donor.html"     class="pauth-topbar-link"><i class="fas fa-hand-holding-heart"></i> المانحون</a>
+    <a href="index.html" class="pauth-back-home"><i class="fas fa-home"></i> الرئيسية</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ SPLIT LAYOUT ══════════════════ -->
+<div class="pauth-layout">
+
+  <!-- ── HERO PANEL ── -->
+  <aside class="pauth-hero">
+    <div class="pauth-hero-inner">
+      <div class="pauth-hero-icon">
+        <i class="fas fa-industry"></i>
+      </div>
+      <h1>بوابة الموردين<br/>سوّق منتجاتك عالمياً</h1>
+      <p>وصّل مصنعك ومنتجاتك بآلاف العملاء في اليمن والمنطقة العربية عبر منصة مشروعي المتخصصة</p>
+
+      <div class="pauth-features">
+        <div class="pauth-feature-item">
+          <i class="fas fa-store"></i>
+          <span>معرض رقمي لمنتجاتك وكتالوج تفاعلي</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-globe-asia"></i>
+          <span>وصول لسوق اليمن والخليج العربي</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-certificate"></i>
+          <span>التحقق من شهادات ISO/CE والجودة</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-university"></i>
+          <span>حلول دفع دولية عبر SWIFT وWeNet</span>
+        </div>
+      </div>
+
+      <div class="pauth-stats">
+        <div class="pauth-stat">
+          <span class="num">+150</span>
+          <span class="lbl">مورد نشط</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">+500</span>
+          <span class="lbl">صفقة منجزة</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">18</span>
+          <span class="lbl">دولة</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── FORM PANEL ── -->
+  <main class="pauth-form-panel">
+    <div class="pauth-form-container">
+
+      <div id="pauth-auth-section">
+
+        <!-- Tabs -->
+        <div class="pauth-tabs">
+          <button class="pauth-tab-btn" id="tab-btn-login" onclick="pa_switchTab('login')">
+            <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+          </button>
+          <button class="pauth-tab-btn" id="tab-btn-register" onclick="pa_switchTab('register')">
+            <i class="fas fa-building"></i> تسجيل مورد جديد
+          </button>
+        </div>
+
+        <!-- ═══ LOGIN ═══ -->
+        <div id="panel-login" class="pauth-panel">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>تسجيل دخول الموردين</h2>
+              <p>ادخل إلى لوحة تحكم المورد وإدارة منتجاتك وطلباتك</p>
+            </div>
+
+            <div id="login-alert" class="pauth-alert"></div>
+
+            <form id="form-login" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-username">البريد الإلكتروني</label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="login-username" class="pauth-input"
+                    placeholder="info@supplier.com" autocomplete="username" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-login-username"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-password">
+                  كلمة المرور
+                  <a href="#" class="pauth-label-hint" style="color:var(--portal-accent);text-decoration:none">نسيت؟</a>
+                </label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="login-password" class="pauth-input"
+                    placeholder="••••••••" autocomplete="current-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-login"
+                    onclick="pa_togglePassword('login-password','btn-eye-login')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-login-password"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-login">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-sign-in-alt"></i> دخول</span>
+              </button>
+            </form>
+
+            <div class="pauth-divider">أو</div>
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary)">
+              مورد جديد؟
+              <a href="#" onclick="pa_switchTab('register')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> سجّل الآن</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ REGISTER ═══ -->
+        <div id="panel-register" class="pauth-panel" style="display:none">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>تسجيل مورد/شركة مصنّعة</h2>
+              <p>أكمل التسجيل ثم اجتز KYC للموردين للحصول على الاعتماد الكامل</p>
+            </div>
+
+            <!-- KYC Info Banner -->
+            <div class="pauth-alert pauth-alert-info show" style="margin-bottom:1rem">
+              <i class="fas fa-info-circle"></i>
+              <span>ستحتاج لإكمال <strong>KYC المورد</strong> (7 خطوات) بعد التسجيل — يشمل: الترخيص التجاري، شهادات ISO/CE، القدرة الإنتاجية، بيانات SWIFT</span>
+            </div>
+
+            <div id="register-alert" class="pauth-alert"></div>
+
+            <form id="form-register" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-fullname">اسم الشركة / المصنع <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="text" id="reg-fullname" class="pauth-input"
+                    placeholder="اسم الشركة الرسمي" autocomplete="organization"/>
+                  <i class="fas fa-industry pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-fullname"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-email">البريد الإلكتروني الرسمي <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="reg-email" class="pauth-input"
+                    placeholder="info@company.com" autocomplete="email" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-email"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-phone">هاتف التواصل <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="tel" id="reg-phone" class="pauth-input"
+                    placeholder="+86 XXX XXXX XXXX" dir="ltr"
+                    style="padding-right:3rem"/>
+                  <i class="fas fa-phone pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-phone"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-password">كلمة المرور <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-password" class="pauth-input"
+                    placeholder="8 أحرف على الأقل" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-reg"
+                    onclick="pa_togglePassword('reg-password','btn-eye-reg')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-reg-password"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="pauth-pw-strength">
+                  <div class="pauth-pw-bar"><div class="pauth-pw-fill" id="pw-fill"></div></div>
+                  <div class="pauth-pw-hints">
+                    <div class="pauth-pw-hint" id="pw-hint-len"><i class="fas fa-circle"></i> 8 أحرف</div>
+                    <div class="pauth-pw-hint" id="pw-hint-upper"><i class="fas fa-circle"></i> حرف كبير</div>
+                    <div class="pauth-pw-hint" id="pw-hint-num"><i class="fas fa-circle"></i> رقم</div>
+                    <div class="pauth-pw-hint" id="pw-hint-special"><i class="fas fa-circle"></i> رمز خاص</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-confirm">تأكيد كلمة المرور <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-confirm" class="pauth-input"
+                    placeholder="أعد إدخال كلمة المرور" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-confirm"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-check-wrap">
+                  <input type="checkbox" id="reg-terms"/>
+                  <span>أوافق على <a href="#">شروط الاستخدام</a> وإخضاع الشركة لإجراءات <a href="#">KYC الموردين</a> (ISO, CE, SWIFT)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-register">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-building"></i> تسجيل الشركة وبدء KYC</span>
+              </button>
+            </form>
+
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary);margin-top:1rem">
+              مسجّل بالفعل؟
+              <a href="#" onclick="pa_switchTab('login')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> سجّل دخولك</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pauth-security-bar">
+          <div class="pauth-security-item"><i class="fas fa-lock"></i> SSL 256-bit</div>
+          <div class="pauth-security-item"><i class="fas fa-certificate"></i> ISO/CE Verified</div>
+          <div class="pauth-security-item"><i class="fas fa-university"></i> SWIFT/AML</div>
+        </div>
+
+        <div class="pauth-other-portals">
+          <h4>بوابات المنصة الأخرى</h4>
+          <div class="pauth-portals-grid">
+            <a href="portal-customer.html" class="pauth-portal-link">
+              <i class="fas fa-user-circle" style="color:#2563eb"></i>
+              بوابة العملاء
+            </a>
+            <a href="portal-finance.html" class="pauth-portal-link">
+              <i class="fas fa-landmark" style="color:#7c3aed"></i>
+              بوابة الممولين
+            </a>
+            <a href="portal-donor.html" class="pauth-portal-link">
+              <i class="fas fa-hand-holding-heart" style="color:#059669"></i>
+              بوابة المانحين
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="pauth-dash-section" style="display:none"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/portal-auth.js?v=5.0"></script>
+<script>
+  pa_init({
+    portalType:      'supplier',
+    portalLabel:     'الموردين',
+    kycTypeOverride: 'supplier',
+  });
+</script>
+</body>
+</html>

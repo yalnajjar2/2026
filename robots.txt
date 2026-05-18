@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# منع الوصول لملفات الإدارة والمعلومات الحساسة
+Disallow: /.htaccess
+Disallow: /.htpasswd
+Disallow: /.env
+Disallow: /CHANGELOG.md
+Disallow: /FIXES-SUMMARY.md
+Disallow: /GODADDY-UPLOAD-GUIDE.md
+
+# ملف Sitemap
+Sitemap: https://mshroue.com/sitemap.xml

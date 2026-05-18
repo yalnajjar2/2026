@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — الصفحة غير موجودة | مشروعي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Cairo',sans-serif;
+      background:linear-gradient(135deg,#0f2d5e 0%,#1a4a7a 50%,#0ea5a0 100%);
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      color:white;text-align:center;padding:24px;
+    }
+    .container{max-width:560px;width:100%}
+    .logo{font-size:2.2rem;font-weight:900;margin-bottom:32px;letter-spacing:-0.5px}
+    .logo span{color:#0ea5a0}
+    .code{
+      font-size:clamp(5rem,18vw,9rem);font-weight:900;
+      line-height:1;
+      background:linear-gradient(135deg,white 0%,rgba(255,255,255,0.5) 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:12px;
+    }
+    .emoji{font-size:3rem;margin-bottom:20px;display:block;-webkit-text-fill-color:initial}
+    h1{font-size:1.5rem;font-weight:800;margin-bottom:12px;color:white}
+    p{color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:36px}
+    .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{
+      padding:13px 30px;border-radius:50px;font-family:'Cairo',sans-serif;
+      font-size:0.95rem;font-weight:700;cursor:pointer;border:none;
+      text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+      transition:transform 0.2s,box-shadow 0.2s;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+    .btn-primary{background:white;color:#0f2d5e}
+    .btn-outline{background:rgba(255,255,255,0.12);color:white;border:1.5px solid rgba(255,255,255,0.4)}
+    .divider{width:80px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;margin:32px auto}
+    .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .link{
+      color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none;
+      padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);
+      transition:all 0.2s;
+    }
+    .link:hover{background:rgba(255,255,255,0.12);color:white}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">م<span>شروعي</span></div>
+
+    <span class="emoji">🔍</span>
+    <div class="code">404</div>
+    <h1>عذراً، هذه الصفحة غير موجودة</h1>
+    <p>
+      يبدو أن الرابط الذي تبحث عنه غير موجود أو تم نقله.<br/>
+      ربما كُتب الرابط بشكل خاطئ أو تمت إزالة الصفحة.
+    </p>
+
+    <div class="actions">
+      <a href="/index.html" class="btn btn-primary">🏠 الصفحة الرئيسية</a>
+      <a href="/index.html#products" class="btn btn-outline" onclick="history.back();return false">← العودة للخلف</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="links">
+      <a href="/index.html" class="link">الرئيسية</a>
+      <a href="/index.html" onclick="event.preventDefault();window.location='/index.html';setTimeout(()=>window.showPage&&showPage('products'),500)" class="link">المعدات</a>
+      <a href="/index.html" onclick="event.preventDefault();window.location='/index.html';setTimeout(()=>window.showPage&&showPage('financing'),500)" class="link">التمويل</a>
+      <a href="/index.html" onclick="event.preventDefault();window.location='/index.html';setTimeout(()=>window.showPage&&showPage('contact'),500)" class="link">تواصل معنا</a>
+    </div>
+  </div>
+</body>
+</html>

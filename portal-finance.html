@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة شركاء التمويل | منصة مشروعي</title>
+  <meta name="description" content="بوابة المؤسسات المالية وشركاء التمويل — منصة مشروعي"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="css/portal-auth.css?v=5.0"/>
+</head>
+
+<body class="portal-page portal-finance">
+
+<!-- ══════════════════ TOP NAV ══════════════════ -->
+<nav class="pauth-topbar">
+  <a href="index.html" class="pauth-topbar-logo">
+    <div class="pauth-logo-mark">م</div>
+    <div class="pauth-logo-text">
+      <span class="name">مشروعي</span>
+      <span class="tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="pauth-topbar-nav">
+    <div class="pauth-portal-badge">
+      <i class="fas fa-landmark"></i> بوابة الممولين
+    </div>
+    <a href="portal-customer.html"  class="pauth-topbar-link"><i class="fas fa-user-circle"></i> العملاء</a>
+    <a href="portal-supplier.html"  class="pauth-topbar-link"><i class="fas fa-industry"></i> الموردون</a>
+    <a href="portal-donor.html"     class="pauth-topbar-link"><i class="fas fa-hand-holding-heart"></i> المانحون</a>
+    <a href="index.html" class="pauth-back-home"><i class="fas fa-home"></i> الرئيسية</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ SPLIT LAYOUT ══════════════════ -->
+<div class="pauth-layout">
+
+  <!-- ── HERO PANEL ── -->
+  <aside class="pauth-hero">
+    <div class="pauth-hero-inner">
+      <div class="pauth-hero-icon">
+        <i class="fas fa-landmark"></i>
+      </div>
+      <h1>بوابة شركاء التمويل<br/>ادعم نمو المشاريع</h1>
+      <p>انضم كشريك تمويلي وساهم في تمويل المشاريع الصناعية الصغيرة والمتوسطة في اليمن وفق معايير Basel III وFATF</p>
+
+      <div class="pauth-features">
+        <div class="pauth-feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>متوافق مع FATF، Basel III، CBY</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>محفظة تمويل SME بعوائد جذابة</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-file-contract"></i>
+          <span>عقود موثّقة وضمانات شاملة</span>
+        </div>
+        <div class="pauth-feature-item">
+          <i class="fas fa-user-shield"></i>
+          <span>فحص AML والعناية الواجبة CDD</span>
+        </div>
+      </div>
+
+      <div class="pauth-stats">
+        <div class="pauth-stat">
+          <span class="num">12</span>
+          <span class="lbl">بنك شريك</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">$8M</span>
+          <span class="lbl">حجم التمويل</span>
+        </div>
+        <div class="pauth-stat">
+          <span class="num">+300</span>
+          <span class="lbl">مشروع ممول</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── FORM PANEL ── -->
+  <main class="pauth-form-panel">
+    <div class="pauth-form-container">
+
+      <div id="pauth-auth-section">
+
+        <div class="pauth-tabs">
+          <button class="pauth-tab-btn" id="tab-btn-login" onclick="pa_switchTab('login')">
+            <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+          </button>
+          <button class="pauth-tab-btn" id="tab-btn-register" onclick="pa_switchTab('register')">
+            <i class="fas fa-university"></i> تسجيل مؤسسة
+          </button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="panel-login" class="pauth-panel">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>دخول شركاء التمويل</h2>
+              <p>لوحة تحكم المؤسسات المالية وإدارة محافظ التمويل</p>
+            </div>
+
+            <div id="login-alert" class="pauth-alert"></div>
+
+            <form id="form-login" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-username">البريد الإلكتروني الرسمي</label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="login-username" class="pauth-input"
+                    placeholder="info@bank.com" autocomplete="username" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-login-username"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="login-password">
+                  كلمة المرور
+                  <a href="#" class="pauth-label-hint" style="color:var(--portal-accent);text-decoration:none">نسيت؟</a>
+                </label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="login-password" class="pauth-input"
+                    placeholder="••••••••" autocomplete="current-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-login"
+                    onclick="pa_togglePassword('login-password','btn-eye-login')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-login-password"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <!-- 2FA Notice -->
+              <div class="pauth-alert pauth-alert-info show" style="margin-bottom:.9rem;font-size:.78rem">
+                <i class="fas fa-shield-alt"></i>
+                <span>للمؤسسات المالية: يُوصى بتفعيل المصادقة الثنائية (2FA) بعد تسجيل الدخول الأول</span>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-login">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-sign-in-alt"></i> دخول آمن</span>
+              </button>
+            </form>
+
+            <div class="pauth-divider">أو</div>
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary)">
+              مؤسسة جديدة؟
+              <a href="#" onclick="pa_switchTab('register')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> سجّلي الآن</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="panel-register" class="pauth-panel" style="display:none">
+          <div class="pauth-card">
+            <div class="pauth-card-header">
+              <h2>تسجيل مؤسسة مالية شريكة</h2>
+              <p>إجراءات KYC موسّعة وفق Basel III وFATF لاعتماد شراكتكم</p>
+            </div>
+
+            <div class="pauth-alert pauth-alert-warning show" style="margin-bottom:1rem">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>يتطلب KYC المؤسسات المالية: <strong>موافقة CBY، كفاية رأس المال، سياسة AML، القوائم المالية (3 سنوات)</strong> — 7 خطوات كاملة</span>
+            </div>
+
+            <div id="register-alert" class="pauth-alert"></div>
+
+            <form id="form-register" novalidate>
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-fullname">اسم المؤسسة المالية <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="text" id="reg-fullname" class="pauth-input"
+                    placeholder="بنك / شركة تمويل / صندوق" autocomplete="organization"/>
+                  <i class="fas fa-landmark pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-fullname"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-email">البريد الإلكتروني الرسمي <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="email" id="reg-email" class="pauth-input"
+                    placeholder="info@bank.com" autocomplete="email" dir="ltr"/>
+                  <i class="fas fa-envelope pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-email"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-phone">هاتف رسمي للمؤسسة <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="tel" id="reg-phone" class="pauth-input"
+                    placeholder="+967 1 XXXXXXX" dir="ltr"
+                    style="padding-right:3rem"/>
+                  <i class="fas fa-phone pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-phone"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-password">كلمة مرور قوية <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-password" class="pauth-input"
+                    placeholder="12 حرفاً على الأقل" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                  <button type="button" class="pauth-eye-btn" id="btn-eye-reg"
+                    onclick="pa_togglePassword('reg-password','btn-eye-reg')">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <span class="pauth-field-err" id="err-reg-password"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="pauth-pw-strength">
+                  <div class="pauth-pw-bar"><div class="pauth-pw-fill" id="pw-fill"></div></div>
+                  <div class="pauth-pw-hints">
+                    <div class="pauth-pw-hint" id="pw-hint-len"><i class="fas fa-circle"></i> 8 أحرف</div>
+                    <div class="pauth-pw-hint" id="pw-hint-upper"><i class="fas fa-circle"></i> حرف كبير</div>
+                    <div class="pauth-pw-hint" id="pw-hint-num"><i class="fas fa-circle"></i> رقم</div>
+                    <div class="pauth-pw-hint" id="pw-hint-special"><i class="fas fa-circle"></i> رمز خاص</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-label" for="reg-confirm">تأكيد كلمة المرور <span style="color:#ef4444">*</span></label>
+                <div class="pauth-input-wrap">
+                  <input type="password" id="reg-confirm" class="pauth-input"
+                    placeholder="أعد الإدخال" autocomplete="new-password"/>
+                  <i class="fas fa-lock pauth-input-icon"></i>
+                </div>
+                <span class="pauth-field-err" id="err-reg-confirm"><i class="fas fa-exclamation-circle"></i></span>
+              </div>
+
+              <div class="pauth-field">
+                <label class="pauth-check-wrap">
+                  <input type="checkbox" id="reg-terms"/>
+                  <span>أوافق على <a href="#">اتفاقية الشراكة</a> والخضوع لإجراءات <a href="#">KYC المؤسسات المالية</a> وفق FATF/Basel III</span>
+                </label>
+              </div>
+
+              <button type="submit" class="pauth-btn" id="btn-register">
+                <div class="spinner"></div>
+                <span class="btn-text"><i class="fas fa-university"></i> تسجيل المؤسسة وبدء KYC</span>
+              </button>
+            </form>
+
+            <div style="text-align:center;font-size:.82rem;color:var(--text-secondary);margin-top:1rem">
+              لديكم حساب؟
+              <a href="#" onclick="pa_switchTab('login')" style="color:var(--portal-accent);font-weight:700;text-decoration:none"> تسجيل الدخول</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pauth-security-bar">
+          <div class="pauth-security-item"><i class="fas fa-lock"></i> SSL 256-bit</div>
+          <div class="pauth-security-item"><i class="fas fa-shield-alt"></i> FATF/AML</div>
+          <div class="pauth-security-item"><i class="fas fa-coins"></i> Basel III</div>
+        </div>
+
+        <div class="pauth-other-portals">
+          <h4>بوابات المنصة الأخرى</h4>
+          <div class="pauth-portals-grid">
+            <a href="portal-customer.html" class="pauth-portal-link">
+              <i class="fas fa-user-circle" style="color:#2563eb"></i>
+              بوابة العملاء
+            </a>
+            <a href="portal-supplier.html" class="pauth-portal-link">
+              <i class="fas fa-industry" style="color:#ea580c"></i>
+              بوابة الموردين
+            </a>
+            <a href="portal-donor.html" class="pauth-portal-link">
+              <i class="fas fa-hand-holding-heart" style="color:#059669"></i>
+              بوابة المانحين
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="pauth-dash-section" style="display:none"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/portal-auth.js?v=5.0"></script>
+<script>
+  pa_init({
+    portalType:      'finance',
+    portalLabel:     'شركاء التمويل',
+    kycTypeOverride: 'finance',
+  });
+</script>
+</body>
+</html>

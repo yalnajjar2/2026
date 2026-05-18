@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mashroie — International Supplier Partner Profile 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════════════════
+   MASHROIE — INTERNATIONAL SUPPLIER PROFILE
+   Dark Premium Theme: Charcoal · Gold · White · Warm Accent
+   Direction: RTL (Arabic primary, English secondary)
+══════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:        #0E0E12;
+  --bg2:       #161620;
+  --bg3:       #1E1E2E;
+  --bg4:       #252535;
+  --gold:      #C8922A;
+  --gold2:     #E8B84B;
+  --gold3:     #FBE9B7;
+  --gold-pale: #2A2015;
+  --em:        #1B7A4A;
+  --em2:       #22A86A;
+  --em3:       #2DD882;
+  --white:     #FFFFFF;
+  --off:       #F8F9FB;
+  --slate:     #2E2E40;
+  --muted:     #8A8AA8;
+  --txt:       #E2E4EE;
+  --txt2:      #9599B3;
+  --accent:    #E05A2B;
+}
+html{background:#252535;direction:rtl}
+body{
+  font-family:'Cairo','Inter',sans-serif;
+  background:#252535;
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+  color:var(--txt);
+  direction:rtl;
+}
+
+/* ── TOOLBAR ── */
+#bar{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:var(--bg);border-bottom:1px solid rgba(200,146,42,.15);
+  padding:0 32px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 30px rgba(0,0,0,.7);
+}
+.bar-brand{display:flex;align-items:center;gap:11px;direction:ltr}
+.bar-brand img{height:32px;width:32px;object-fit:contain;border-radius:6px}
+.bar-brand .bn{color:var(--gold2);font-weight:700;font-size:.88rem}
+.bar-brand .bs{color:var(--muted);font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;display:block}
+.bar-mid{color:var(--muted);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.bar-btns{display:flex;gap:10px;direction:ltr}
+.b-pdf{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--bg);border:none;border-radius:8px;
+  padding:9px 22px;font-size:.8rem;font-weight:800;
+  cursor:pointer;font-family:'Inter',sans-serif;
+  display:flex;align-items:center;gap:7px;
+  box-shadow:0 4px 16px rgba(200,146,42,.35);
+  transition:.2s;letter-spacing:.04em;text-transform:uppercase;
+}
+.b-pdf:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(200,146,42,.5)}
+.b-pdf svg{width:14px;height:14px}
+
+/* ── PAGES ── */
+.pages{padding:64px 20px 48px;max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+
+/* ── PAGE BASE ── */
+.pg{
+  width:100%;
+  box-shadow:0 16px 60px rgba(0,0,0,.5),0 2px 8px rgba(0,0,0,.3);
+  margin-bottom:24px;
+  position:relative;overflow:hidden;
+  page-break-after:always;
+}
+
+/* ══ PAGE 1 — COVER ══ */
+.p1{
+  background:var(--bg);
+  min-height:296mm;
+  display:flex;flex-direction:column;
+}
+.p1-noise{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 100% 0%, rgba(200,146,42,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 70% at 0% 100%, rgba(27,122,74,.08) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(30,30,46,.8) 0%, transparent 60%);
+}
+.p1-lines{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+/* Big decorative arc */
+.p1-arc{
+  position:absolute;top:-200px;left:-200px;
+  width:600px;height:600px;border-radius:50%;
+  border:1px solid rgba(200,146,42,.08);pointer-events:none;
+}
+.p1-arc2{
+  position:absolute;top:-100px;left:-100px;
+  width:400px;height:400px;border-radius:50%;
+  border:1px solid rgba(200,146,42,.05);pointer-events:none;
+}
+/* Gold top accent */
+.p1-top-accent{
+  position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--em2),var(--gold));
+}
+
+/* Cover header */
+.cov-hd{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:32px 50px 0;
+  direction:rtl;
+}
+.cov-lg{display:flex;align-items:center;gap:14px}
+.cov-lg-box{
+  width:58px;height:58px;
+  border-radius:14px;
+  border:1px solid rgba(200,146,42,.2);
+  background:rgba(200,146,42,.06);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.cov-lg-box img{width:100%;height:100%;object-fit:contain;padding:5px}
+.cov-lg-txt{}
+.cov-lg-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-weight:900;color:var(--gold2);
+  letter-spacing:.04em;line-height:1;
+  direction:ltr;
+}
+.cov-lg-sub{font-size:.72rem;color:var(--muted);letter-spacing:.08em;margin-top:4px;direction:ltr}
+.cov-tag-wrap{text-align:left}
+.cov-tag{
+  background:rgba(200,146,42,.1);
+  border:1px solid rgba(200,146,42,.25);
+  border-radius:22px;padding:6px 18px;
+  color:var(--gold2);font-size:.7rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;font-family:'Inter',sans-serif;
+  display:inline-block;margin-bottom:5px;
+}
+.cov-tag-sub{color:var(--muted);font-size:.65rem;font-family:'Inter',sans-serif;letter-spacing:.06em;display:block;text-align:left}
+
+/* Hero */
+.cov-hero{
+  position:relative;z-index:2;
+  flex:1;padding:44px 50px 30px;
+  direction:rtl;
+}
+.cov-eyebrow{
+  display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  justify-content:flex-end;
+}
+.cov-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2)}
+.cov-eye{font-size:.72rem;color:var(--gold);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+.cov-h-ar{
+  font-family:'Cairo',sans-serif;
+  font-size:3rem;font-weight:900;
+  color:var(--white);line-height:1.2;
+  margin-bottom:10px;
+  text-align:right;
+}
+.cov-h-ar .g{
+  background:linear-gradient(135deg,var(--gold2),var(--em3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cov-h-en{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;
+  color:rgba(255,255,255,.4);
+  margin-bottom:26px;letter-spacing:.01em;
+  text-align:right;direction:ltr;
+}
+.cov-div{
+  width:60px;height:3px;
+  background:linear-gradient(90deg,var(--gold2),var(--em2));
+  border-radius:2px;margin:0 0 24px auto;
+}
+.cov-desc-ar{
+  font-size:.92rem;color:rgba(255,255,255,.55);
+  line-height:1.9;max-width:600px;
+  margin:0 0 10px auto;text-align:right;
+}
+.cov-desc-en{
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;color:rgba(255,255,255,.35);
+  line-height:1.8;max-width:580px;
+  margin:0 0 0 auto;text-align:right;direction:ltr;
+}
+
+/* KPI strip */
+.cov-kpi{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  border-top:1px solid rgba(255,255,255,.06);
+  margin:0 50px;
+}
+.kpi{
+  padding:22px 12px;text-align:center;
+  border-left:1px solid rgba(255,255,255,.06);
+}
+.kpi:first-child{border-left:none}
+.kpi-n{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,var(--gold2),var(--em3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.kpi-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px}
+.kpi-en{font-size:.62rem;color:rgba(255,255,255,.3);letter-spacing:.05em;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+/* Cover foot */
+.cov-ft{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 50px 18px;
+  background:rgba(0,0,0,.25);
+  border-top:1px solid rgba(255,255,255,.04);
+  direction:rtl;
+}
+.cft-info{display:flex;gap:20px;flex-direction:row-reverse}
+.cft-item{
+  display:flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,.35);font-size:.72rem;
+  font-family:'Inter',sans-serif;direction:ltr;
+}
+.cft-copy{color:rgba(255,255,255,.18);font-size:.65rem;font-family:'Inter',sans-serif}
+
+/* Page number */
+.pg-n{
+  position:absolute;bottom:18px;
+  font-size:.62rem;font-family:'Inter',sans-serif;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:4px;
+}
+.pg-n.lt{left:28px;color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.pg-n.dk{right:28px;color:var(--muted);background:rgba(0,0,0,.05)}
+
+/* ══ INNER PAGES ══ */
+.inn{
+  background:#FAFBFC;
+  padding:50px 50px 44px;
+  min-height:240mm;
+  direction:rtl;
+}
+
+/* Section head */
+.sh{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:30px;padding-bottom:16px;
+  border-bottom:2px solid #EAECF0;
+}
+.sh-n{
+  font-family:'Playfair Display',serif;
+  font-size:4.5rem;font-weight:900;
+  color:#EAECF0;line-height:.9;margin-bottom:-6px;
+  letter-spacing:-.04em;
+}
+.sh-t{
+  font-family:'Playfair Display',serif;
+  font-size:1.55rem;font-weight:800;color:#0E0E12;
+}
+.sh-s{
+  font-family:'Cairo',sans-serif;
+  font-size:.95rem;font-weight:700;color:var(--gold);margin-top:3px;
+}
+.pill{
+  border-radius:6px;padding:5px 14px;font-size:.66rem;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  font-family:'Inter',sans-serif;align-self:flex-start;
+}
+.pill-g{background:var(--gold);color:#fff}
+.pill-d{background:var(--bg);color:var(--gold2);border:1px solid rgba(200,146,42,.3)}
+.pill-e{background:var(--em);color:#fff}
+.pill-s{background:#F0F2F5;color:#2C3E50}
+
+/* Lead box */
+.lead{
+  background:var(--bg);border-radius:14px;
+  padding:28px 32px;margin-bottom:22px;
+  position:relative;overflow:hidden;
+}
+.lead::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,146,42,.1),transparent 65%);
+}
+.lead::after{
+  content:'';position:absolute;bottom:-30px;left:-30px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,122,74,.08),transparent 65%);
+}
+.lead p{font-size:.88rem;line-height:1.9;position:relative;z-index:1}
+.lead .ar{color:rgba(255,255,255,.8);font-family:'Cairo',sans-serif;margin-bottom:12px}
+.lead .en{color:rgba(255,255,255,.45);font-family:'Inter',sans-serif;font-size:.8rem;direction:ltr;text-align:left}
+
+/* Two / Three / Four cols */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+
+/* Cards */
+.card{
+  background:#F5F7FA;border:1px solid #E8ECF0;
+  border-radius:12px;padding:20px;position:relative;overflow:hidden;
+}
+.card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px}
+.card.cg::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.card.ce::before{background:linear-gradient(90deg,var(--em),var(--em2))}
+.card.cd::before{background:linear-gradient(90deg,var(--bg),#2d2d4e)}
+.card.cp::before{background:linear-gradient(90deg,#7C3AED,#A78BFA)}
+.card.cr::before{background:linear-gradient(90deg,var(--accent),#F08060)}
+.ic{
+  width:42px;height:42px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;margin-bottom:12px;
+}
+.ic-g{background:rgba(200,146,42,.1);color:var(--gold)}
+.ic-e{background:rgba(27,122,74,.1);color:var(--em2)}
+.ic-d{background:rgba(14,14,18,.06);color:var(--bg)}
+.ic-p{background:rgba(124,58,237,.1);color:#7C3AED}
+.ic-r{background:rgba(224,90,43,.1);color:var(--accent)}
+.c-h{font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:800;color:#0E0E12;margin-bottom:2px}
+.c-h2{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;color:var(--gold);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;display:block}
+.c-p{font-family:'Cairo',sans-serif;font-size:.78rem;line-height:1.7;color:#384050}
+.c-pe{font-family:'Inter',sans-serif;font-size:.74rem;line-height:1.65;color:#7A8499;margin-top:6px;direction:ltr;text-align:left;display:block}
+
+/* Stat blocks */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;
+}
+.stat-b{
+  background:var(--bg);border-radius:12px;
+  padding:20px 14px;text-align:center;
+}
+.sb-n{
+  font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;
+  background:linear-gradient(135deg,var(--gold2),var(--em3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;
+}
+.sb-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6);margin-top:4px}
+.sb-en{font-size:.62rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;font-family:'Inter',sans-serif;margin-top:2px}
+
+/* ══ Products page ══ */
+.prod-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.prod{
+  display:grid;grid-template-columns:76px 1fr auto;gap:16px;align-items:center;
+  background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:16px;
+}
+.prod-thumb{
+  width:76px;height:62px;border-radius:8px;overflow:hidden;
+  background:var(--bg3);display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;color:rgba(255,255,255,.2);
+}
+.prod-thumb img{width:100%;height:100%;object-fit:cover}
+.prod-ar{font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:800;color:#0E0E12;margin-bottom:2px}
+.prod-en{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:#5A6880;margin-bottom:8px}
+.prod-tags{display:flex;flex-wrap:wrap;gap:4px}
+.pt{
+  padding:2px 8px;border-radius:4px;font-size:.62rem;font-weight:700;
+  letter-spacing:.04em;font-family:'Inter',sans-serif;
+}
+.pt-c{background:rgba(27,122,74,.08);color:var(--em)}
+.pt-s{background:rgba(200,146,42,.08);color:var(--gold)}
+.pt-o{background:rgba(14,14,18,.06);color:#2C3E50}
+.prod-price{text-align:center;min-width:110px}
+.pp-usd{
+  font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;
+  color:#0E0E12;line-height:1;
+}
+.pp-yer{font-family:'Cairo',sans-serif;font-size:.72rem;color:#8A9AB0;margin-top:3px}
+.pp-fin{
+  font-family:'Cairo',sans-serif;font-size:.68rem;
+  background:rgba(27,122,74,.08);color:var(--em);
+  border-radius:4px;padding:2px 7px;margin-top:5px;display:inline-block;
+}
+
+/* Supply chain block */
+.supply-block{
+  background:linear-gradient(135deg,var(--bg),var(--bg2));
+  border-radius:14px;padding:24px;margin-bottom:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+}
+.sc-item{text-align:center;padding:14px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
+.sc-ico{font-size:1.6rem;margin-bottom:8px;display:block}
+.sc-ar{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:3px}
+.sc-en{font-size:.65rem;color:rgba(255,255,255,.35);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+
+/* ══ Banking & partners ══ */
+.banks-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.bk{
+  background:#F5F7FA;border:1px solid #E8ECF0;border-radius:10px;
+  padding:13px;display:flex;align-items:center;gap:10px;
+}
+.bk-ico{
+  width:36px;height:36px;border-radius:8px;
+  background:linear-gradient(135deg,var(--bg),var(--bg3));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold2);font-size:.8rem;flex-shrink:0;
+}
+.bk-ar{font-family:'Cairo',sans-serif;font-size:.76rem;font-weight:700;color:#0E0E12;line-height:1.35}
+.bk-en{font-size:.62rem;color:#8A9AB0;font-family:'Inter',sans-serif;margin-top:1px}
+
+/* Partners grid */
+.part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.part{
+  background:#F5F7FA;border:1px solid #E8ECF0;border-radius:10px;padding:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.part-ico{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;
+}
+.part-ar{font-family:'Cairo',sans-serif;font-size:.76rem;font-weight:700;color:#0E0E12}
+.part-en{font-family:'Inter',sans-serif;font-size:.62rem;color:#8A9AB0;margin-top:2px;direction:ltr;display:block}
+
+/* ══ Stories ══ */
+.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:22px}
+.st{border-radius:12px;overflow:hidden;border:1px solid #E8ECF0;background:#F5F7FA}
+.st-img{height:82px;position:relative;overflow:hidden;background:var(--bg3)}
+.st-img img{width:100%;height:100%;object-fit:cover}
+.st-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,14,18,.7),transparent)}
+.st-bdg{
+  position:absolute;bottom:7px;right:8px;
+  background:rgba(200,146,42,.9);color:var(--bg);
+  border-radius:4px;padding:2px 7px;font-size:.6rem;font-weight:700;font-family:'Inter',sans-serif;text-transform:uppercase;
+}
+.st-body{padding:12px}
+.st-ar{font-family:'Cairo',sans-serif;font-size:.84rem;font-weight:800;color:#0E0E12;margin-bottom:1px}
+.st-loc{font-family:'Cairo',sans-serif;font-size:.68rem;color:#8A9AB0;margin-bottom:8px;display:flex;align-items:center;gap:3px}
+.st-stats{display:flex;justify-content:space-between}
+.ss-n{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:800;color:var(--gold)}
+.ss-l{font-family:'Cairo',sans-serif;font-size:.58rem;color:#8A9AB0;line-height:1.3;margin-top:1px}
+
+/* Impact strip */
+.imp-strip{
+  background:linear-gradient(135deg,var(--gold) 0%,#9A6B15 100%);
+  border-radius:14px;padding:22px 26px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin-bottom:0;
+}
+.is{text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.is:last-child{border-right:none}
+.is-n{
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;
+  color:#fff;line-height:1;margin-bottom:5px;
+}
+.is-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.7);margin-top:0}
+.is-en{font-size:.62rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;font-family:'Inter',sans-serif}
+
+/* ══ Services page ══ */
+.svc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:22px}
+.svc{
+  background:#F5F7FA;border:1px solid #E8ECF0;
+  border-radius:10px;padding:14px;text-align:center;
+}
+.sv-ico{
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;margin:0 auto 8px;
+}
+.sv-ar{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;color:#0E0E12;margin-bottom:2px}
+.sv-en{font-size:.64rem;color:#8A9AB0;font-family:'Inter',sans-serif}
+
+/* Packages */
+.pkg-g{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:14px;margin-bottom:0}
+.pc{border-radius:14px;padding:22px;position:relative;overflow:hidden;border:1px solid #E8ECF0}
+.pc.dark{
+  background:var(--bg);border-color:rgba(200,146,42,.2);
+}
+.pc.lite{background:#F5F7FA}
+.pc-top{
+  position:absolute;top:0;left:0;right:0;height:3px;
+}
+.pc-top.g{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.pc-top.e{background:linear-gradient(90deg,var(--em),var(--em2))}
+.pc-top.d{background:linear-gradient(90deg,var(--bg3),var(--bg4))}
+.pc-popular{
+  position:absolute;top:14px;left:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  border-radius:5px;padding:3px 10px;
+  font-size:.62rem;font-weight:700;color:var(--bg);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.07em;
+}
+.pc-n-ar{font-family:'Cairo',sans-serif;font-size:.9rem;font-weight:800;color:#0E0E12;margin-bottom:2px;margin-top:4px}
+.pc.dark .pc-n-ar{color:var(--gold2);margin-top:20px}
+.pc-n-en{font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;color:#8A9AB0;margin-bottom:12px}
+.pc.dark .pc-n-en{color:rgba(255,255,255,.35)}
+.pc-price{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#0E0E12;line-height:1}
+.pc.dark .pc-price{color:var(--gold2)}
+.pc-per{font-size:.68rem;color:#8A9AB0;font-family:'Inter',sans-serif;margin-bottom:12px}
+.pc.dark .pc-per{color:rgba(255,255,255,.3)}
+.pc-list{list-style:none}
+.pc-list li{
+  font-family:'Cairo',sans-serif;font-size:.72rem;color:#384050;
+  padding:4px 0;border-bottom:1px solid #E8ECF0;
+  display:flex;align-items:center;gap:6px;
+}
+.pc.dark .pc-list li{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.07)}
+.pc-list li::before{content:'✓';color:var(--gold);font-weight:700;font-size:.7rem;flex-shrink:0}
+.pc.dark .pc-list li::before{color:var(--gold2)}
+
+/* ══ Contact page ══ */
+.ctc-pg{
+  background:var(--bg);
+  min-height:246mm;
+  padding:50px;
+  position:relative;overflow:hidden;
+  direction:rtl;
+}
+.ctc-pg::before{
+  content:'';position:absolute;top:-120px;right:-120px;
+  width:450px;height:450px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,146,42,.12),transparent 65%);
+}
+.ctc-pg::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;
+  width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,122,74,.07),transparent 65%);
+}
+.ctc-pg .sh-n{color:rgba(255,255,255,.05)}
+.ctc-pg .sh-t{color:var(--white)}
+.ctc-pg .sh-s{color:var(--gold2)}
+.ctc-pg .sh{border-color:rgba(255,255,255,.07)}
+.ctc-pg .pill-g{background:var(--gold)}
+
+.ctc-g{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative;z-index:1;margin-bottom:26px}
+.ctc-label{font-size:.65rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-family:'Inter',sans-serif;margin-bottom:12px}
+.ctc-it{
+  display:flex;align-items:flex-start;gap:12px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:11px;padding:14px;margin-bottom:10px;
+}
+.ci-ico{
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;
+}
+.ci-g{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg)}
+.ci-e{background:linear-gradient(135deg,var(--em),var(--em2));color:#fff}
+.ci-txt strong{display:block;font-size:.8rem;color:rgba(255,255,255,.9);font-weight:600;margin-bottom:2px;font-family:'Inter',sans-serif}
+.ci-txt span{font-family:'Cairo',sans-serif;font-size:.74rem;color:rgba(255,255,255,.4);display:block}
+.ci-txt em{font-style:normal;font-size:.67rem;color:rgba(255,255,255,.22);display:block;margin-top:1px;font-family:'Inter',sans-serif}
+
+.invite{
+  position:relative;z-index:1;
+  background:rgba(200,146,42,.06);border:1px solid rgba(200,146,42,.2);
+  border-radius:16px;padding:26px;text-align:center;margin-bottom:24px;
+}
+.inv-ar{
+  font-family:'Cairo',sans-serif;font-size:1.5rem;font-weight:900;
+  color:var(--gold2);margin-bottom:5px;
+}
+.inv-en{
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;
+  color:rgba(255,255,255,.4);margin-bottom:16px;letter-spacing:.02em;
+}
+.inv-p-ar{font-family:'Cairo',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:520px;margin:0 auto 8px}
+.inv-p-en{font-family:'Inter',sans-serif;font-size:.76rem;color:rgba(255,255,255,.3);line-height:1.7;max-width:500px;margin:0 auto 20px;direction:ltr}
+.inv-bds{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+.inv-bd{
+  border-radius:22px;padding:6px 15px;font-size:.72rem;font-weight:600;
+}
+.inv-bd.g{background:rgba(200,146,42,.12);border:1px solid rgba(232,184,75,.22);color:var(--gold2);font-family:'Cairo',sans-serif}
+.inv-bd.e{background:rgba(27,122,74,.1);border:1px solid rgba(45,216,130,.2);color:var(--em3);font-family:'Inter',sans-serif}
+
+.d-ft{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:18px;
+  display:flex;align-items:center;justify-content:space-between;
+  direction:rtl;
+}
+.df-b{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:800;color:var(--gold2)}
+.df-s{font-size:.68rem;color:rgba(255,255,255,.25);font-family:'Inter',sans-serif;margin-top:3px;direction:ltr}
+.df-seal{
+  background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.18);
+  border-radius:8px;padding:8px 18px;text-align:center;
+}
+.df-seal-t{font-size:.62rem;color:var(--gold2);text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-family:'Inter',sans-serif}
+.df-seal-a{font-family:'Cairo',sans-serif;font-size:.68rem;color:rgba(200,146,42,.55);margin-top:2px;display:block}
+.df-copy{color:rgba(255,255,255,.18);font-size:.65rem;font-family:'Inter',sans-serif;text-align:left;direction:ltr}
+
+/* PRINT */
+@media print{
+  #bar{display:none!important}
+  html,body{background:#fff!important}
+  .pages{padding:0;max-width:none}
+  .pg{box-shadow:none;margin-bottom:0;page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div id="bar">
+  <div class="bar-brand">
+    <img src="images/mashroie-logo.png" alt="Mashroie"/>
+    <div>
+      <div class="bn">MASHROIE Platform</div>
+      <small class="bs">International Supplier Partner Profile</small>
+    </div>
+  </div>
+  <div class="bar-mid">Profile B — International Suppliers &amp; Manufacturers</div>
+  <div class="bar-btns">
+    <button class="b-pdf" onclick="window.print()">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Export PDF
+    </button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- ═══════ PAGE 1 — COVER ═══════ -->
+<div class="pg p1">
+  <div class="p1-noise"></div>
+  <div class="p1-lines"></div>
+  <div class="p1-arc"></div>
+  <div class="p1-arc2"></div>
+  <div class="p1-top-accent"></div>
+
+  <div class="cov-hd">
+    <div class="cov-lg">
+      <div class="cov-lg-box">
+        <img src="images/mashroie-logo.png" alt="Mashroie"/>
+      </div>
+      <div class="cov-lg-txt">
+        <div class="cov-lg-name">MASHROIE</div>
+        <div class="cov-lg-sub">INVEST &amp; GROW · منصة مشروعي</div>
+      </div>
+    </div>
+    <div class="cov-tag-wrap">
+      <div class="cov-tag">Supplier Partner Profile</div>
+      <span class="cov-tag-sub">INTERNATIONAL MANUFACTURERS EDITION 2025</span>
+    </div>
+  </div>
+
+  <div class="cov-hero">
+    <div class="cov-eyebrow">
+      <div class="cov-eye">اليمن — أسواق جديدة، شراكات حقيقية</div>
+      <div class="cov-dot"></div>
+    </div>
+    <div class="cov-h-ar">
+      بوابتكم إلى<br/>
+      <span class="g">السوق اليمني</span><br/>
+      الواعد
+    </div>
+    <div class="cov-h-en">Your Gateway to Yemen's Rising Market</div>
+    <div class="cov-div"></div>
+    <p class="cov-desc-ar">
+      منصة مشروعي تفتح أمامكم كموردين دوليين قناة وصول مباشرة وموثوقة إلى شريحة واسعة من رواد الأعمال اليمنيين الباحثين عن المعدات الصناعية الجادة وخطوط الإنتاج المتقدمة.
+    </p>
+    <p class="cov-desc-en">
+      Mashrooi Platform gives international manufacturers direct, verified access to Yemen's growing base of SME entrepreneurs actively seeking industrial equipment and production lines with financing support.
+    </p>
+  </div>
+
+  <div class="cov-kpi">
+    <div class="kpi">
+      <div class="kpi-n">10+</div>
+      <div class="kpi-ar">فئات معدات</div>
+      <div class="kpi-en">Equipment Categories</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">5</div>
+      <div class="kpi-ar">منتج موثق الآن</div>
+      <div class="kpi-en">Verified Products</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">8+</div>
+      <div class="kpi-ar">شريك مصرفي</div>
+      <div class="kpi-en">Financial Partners</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">200+</div>
+      <div class="kpi-ar">مزود خدمة</div>
+      <div class="kpi-en">Service Providers</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">6</div>
+      <div class="kpi-ar">محافظات مستهدفة</div>
+      <div class="kpi-en">Target Governorates</div>
+    </div>
+  </div>
+
+  <div class="cov-ft">
+    <div class="cft-copy">© 2025 Mashroie Platform · Tamza Holding Group · All Rights Reserved</div>
+    <div class="cft-info">
+      <div class="cft-item">📍 Sana'a, Yemen</div>
+      <div class="cft-item">✉ info@mshroue.com</div>
+      <div class="cft-item">💬 +967 773 880 066</div>
+      <div class="cft-item">📞 800 800 800</div>
+    </div>
+  </div>
+
+  <div class="pg-n lt">01 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 2 — PLATFORM OVERVIEW ═══════ -->
+<div class="pg inn">
+  <div class="sh">
+    <div>
+      <div class="sh-n">01</div>
+      <div class="sh-t">Platform Overview &amp; Opportunity</div>
+      <div class="sh-s">نظرة على المنصة وفرصة الشراكة</div>
+    </div>
+    <div class="pill pill-d">Overview</div>
+  </div>
+
+  <div class="lead">
+    <p class="ar">
+      <strong>منصة مشروعي</strong> هي أول منصة رقمية متكاملة في اليمن مصممة لدعم المشاريع الصغيرة والمتوسطة. طوّرتها <strong>مجموعة تمزا القابضة</strong>، وتضم كتالوجاً من المعدات الصناعية الدولية مع مسارات تمويلية منظمة. تمثّل المنصة قناة توزيع رقمية مثالية للمصنّعين الدوليين الراغبين في الوصول الموثوق للسوق اليمني.
+    </p>
+    <p class="en">Mashrooi is Yemen's first integrated digital marketplace, developed by Tamza Holding Group, connecting SMEs with industrial equipment, financing, and services. For international suppliers, it represents a trusted digital distribution channel with verified buyer pools, structured financing, and institutional backing.</p>
+  </div>
+
+  <div class="two">
+    <div class="card cg">
+      <div class="ic ic-g">🎯</div>
+      <div class="c-h">لماذا السوق اليمني؟</div>
+      <span class="c-h2">Why Yemen Market?</span>
+      <p class="c-p">اليمن سوق ناشئ بطاقة إنتاجية محدودة وطلب متزايد على المعدات الصناعية والخطوط الإنتاجية مدعوماً بمساعي التعافي الاقتصادي والتمويل الدولي.</p>
+      <span class="c-pe">Yemen is an emerging market with limited local production capacity and growing demand for industrial equipment, backed by economic recovery initiatives and international financing.</span>
+    </div>
+    <div class="card ce">
+      <div class="ic ic-e">🌐</div>
+      <div class="c-h">دوركم كموردين على المنصة</div>
+      <span class="c-h2">Your Role as Platform Supplier</span>
+      <p class="c-p">يُدرج المورد منتجاته مع المواصفات التقنية والشهادات الدولية ليصل لآلاف رواد الأعمال اليمنيين مع إمكانية التمويل بالتقسيط عبر البنوك الشريكة.</p>
+      <span class="c-pe">Suppliers list products with full technical specs and certifications, reaching thousands of Yemeni entrepreneurs with installment financing via partner banks.</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-b">
+      <div class="sb-n">10+</div>
+      <div class="sb-ar">فئات تصنيعية</div>
+      <div class="sb-en">Equipment Categories</div>
+    </div>
+    <div class="stat-b">
+      <div class="sb-n">50+</div>
+      <div class="sb-ar">حقل مواصفات تقنية</div>
+      <div class="sb-en">Technical Spec Fields</div>
+    </div>
+    <div class="stat-b">
+      <div class="sb-n">CE/ISO</div>
+      <div class="sb-ar">شهادات مقبولة</div>
+      <div class="sb-en">Accepted Certifications</div>
+    </div>
+    <div class="stat-b">
+      <div class="sb-n">540</div>
+      <div class="sb-ar">ريال = دولار واحد</div>
+      <div class="sb-en">YER per USD</div>
+    </div>
+  </div>
+
+  <div style="background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start">
+    <div style="min-width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--bg);font-family:'Playfair Display';font-weight:900">ت</div>
+    <div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:800;color:#0E0E12;margin-bottom:2px">مجموعة تمزا القابضة — الداعم المؤسسي الاستراتيجي</div>
+      <span style="font-family:'Inter',sans-serif;font-size:.68rem;color:var(--gold);font-weight:600;letter-spacing:.05em;text-transform:uppercase">Tamza Holding Group — Strategic Institutional Partner</span>
+      <p style="font-family:'Cairo',sans-serif;font-size:.78rem;color:#384050;line-height:1.7;margin-top:6px">مجموعة استثمارية يمنية راسخة توفر للمنصة المصداقية والبنية المؤسسية اللازمة لضمان الشراكات الموثوقة مع الموردين الدوليين. العنوان: الجمهورية اليمنية، صنعاء — حدة — عمارة تمزا القابضة.</p>
+      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+        <span style="background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.2);border-radius:5px;padding:2px 10px;font-size:.68rem;font-family:'Inter',sans-serif;color:var(--gold)">info@tmza.com</span>
+        <span style="background:rgba(27,122,74,.08);border:1px solid rgba(27,122,74,.18);border-radius:5px;padding:2px 10px;font-size:.68rem;font-family:'Inter',sans-serif;color:var(--em2)">info@mshroue.com</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-n dk">02 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 3 — PRODUCT CATALOG ═══════ -->
+<div class="pg inn">
+  <div class="sh">
+    <div>
+      <div class="sh-n">02</div>
+      <div class="sh-t">Equipment Catalog — Current Products</div>
+      <div class="sh-s">كتالوج المعدات — المنتجات المُدرجة حالياً</div>
+    </div>
+    <div class="pill pill-g">Catalog</div>
+  </div>
+
+  <!-- Categories -->
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;direction:rtl">
+    <span style="background:rgba(27,122,74,.08);border:1px solid rgba(27,122,74,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--em)">⚙️ خطوط إنتاج</span>
+    <span style="background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--gold)">📦 معدات تعبئة</span>
+    <span style="background:rgba(14,14,18,.06);border:1px solid #DADDE4;border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:#384050">🍽️ معدات غذائية</span>
+    <span style="background:rgba(27,122,74,.08);border:1px solid rgba(27,122,74,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--em)">🔧 معدات تصنيع</span>
+    <span style="background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--gold)">🚛 معدات نقل</span>
+    <span style="background:rgba(14,14,18,.06);border:1px solid #DADDE4;border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:#384050">✂️ معدات قطع</span>
+    <span style="background:rgba(27,122,74,.08);border:1px solid rgba(27,122,74,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--em)">🖨️ معدات طباعة</span>
+    <span style="background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--gold)">🔩 آلات CNC</span>
+    <span style="background:rgba(14,14,18,.06);border:1px solid #DADDE4;border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:#384050">🔥 معدات لحام</span>
+    <span style="background:rgba(27,122,74,.08);border:1px solid rgba(27,122,74,.15);border-radius:16px;padding:4px 12px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;color:var(--em)">🏗️ معدات بناء</span>
+  </div>
+
+  <div class="prod-list">
+    <div class="prod">
+      <div class="prod-thumb">💧</div>
+      <div>
+        <div class="prod-ar">ماكينة تعبئة الزجاجات — 4 فوهات</div>
+        <div class="prod-en">Bottle Filling Machine — 4 Nozzles</div>
+        <div class="prod-tags">
+          <span class="pt pt-c">Packaging</span>
+          <span class="pt pt-s">CE · ISO 9001 · GMP</span>
+          <span class="pt pt-o">🇨🇳 China</span>
+        </div>
+      </div>
+      <div class="prod-price">
+        <div class="pp-usd">$5,200</div>
+        <div class="pp-yer">≈ 2,808,000 ر.ي</div>
+        <div class="pp-fin">تمويل متاح</div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-thumb">📐</div>
+      <div>
+        <div class="prod-ar">ماكينة التعبئة والتغليف الرأسية VFFS</div>
+        <div class="prod-en">Vertical Form Fill Seal — VFFS Machine</div>
+        <div class="prod-tags">
+          <span class="pt pt-c">Packaging</span>
+          <span class="pt pt-s">CE · ISO 9001 · FDA · GMP</span>
+          <span class="pt pt-o">🇩🇪 Germany</span>
+        </div>
+      </div>
+      <div class="prod-price">
+        <div class="pp-usd">$5,200</div>
+        <div class="pp-yer">≈ 2,808,000 ر.ي</div>
+        <div class="pp-fin">تمويل متاح</div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-thumb">🐾</div>
+      <div>
+        <div class="prod-ar">خط إنتاج أغذية الحيوانات الأليفة</div>
+        <div class="prod-en">Pet Food Production Line</div>
+        <div class="prod-tags">
+          <span class="pt pt-c">Production Line</span>
+          <span class="pt pt-s">ISO 9001 · CE · FDA · HACCP</span>
+          <span class="pt pt-o">🇨🇳 China</span>
+        </div>
+      </div>
+      <div class="prod-price">
+        <div class="pp-usd">$12,500</div>
+        <div class="pp-yer">≈ 6,750,000 ر.ي</div>
+        <div class="pp-fin">تمويل متاح</div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-thumb">🍔</div>
+      <div>
+        <div class="prod-ar">خط إنتاج البرغر والناجتس</div>
+        <div class="prod-en">Burger &amp; Nuggets Production Line</div>
+        <div class="prod-tags">
+          <span class="pt pt-c">Food Processing</span>
+          <span class="pt pt-s">CE · HACCP · ISO 22000</span>
+          <span class="pt pt-o">🇮🇹 Italy</span>
+        </div>
+      </div>
+      <div class="prod-price">
+        <div class="pp-usd">$18,000</div>
+        <div class="pp-yer">≈ 9,720,000 ر.ي</div>
+        <div class="pp-fin">تمويل متاح</div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-thumb">🍞</div>
+      <div>
+        <div class="prod-ar">خط إنتاج متعدد الأغراض للصناعات الغذائية</div>
+        <div class="prod-en">Multi-Purpose Food Production Line</div>
+        <div class="prod-tags">
+          <span class="pt pt-c">Production Line</span>
+          <span class="pt pt-s">CE · ISO 9001</span>
+          <span class="pt pt-o">🇹🇷 Turkey</span>
+        </div>
+      </div>
+      <div class="prod-price">
+        <div class="pp-usd">$15,000</div>
+        <div class="pp-yer">≈ 8,100,000 ر.ي</div>
+        <div class="pp-fin">تمويل متاح</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supply chain transparency -->
+  <div class="supply-block">
+    <div class="sc-item"><span class="sc-ico">📋</span><div class="sc-ar">مواصفات تقنية كاملة</div><div class="sc-en">Full Tech Specs</div></div>
+    <div class="sc-item"><span class="sc-ico">🏷️</span><div class="sc-ar">شهادات دولية CE/ISO</div><div class="sc-en">International Certs</div></div>
+    <div class="sc-item"><span class="sc-ico">🔗</span><div class="sc-ar">روابط مباشرة للموردين</div><div class="sc-en">Direct Supplier Links</div></div>
+    <div class="sc-item"><span class="sc-ico">💳</span><div class="sc-ar">تمويل بالتقسيط</div><div class="sc-en">Installment Financing</div></div>
+  </div>
+
+  <div class="pg-n dk">03 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 4 — FINANCING & BANKING ═══════ -->
+<div class="pg inn">
+  <div class="sh">
+    <div>
+      <div class="sh-n">03</div>
+      <div class="sh-t">Financing &amp; Banking Partners</div>
+      <div class="sh-s">آلية التمويل والشركاء المصرفيون ومؤسسات التمويل الأصغر</div>
+    </div>
+    <div class="pill pill-g">Finance</div>
+  </div>
+
+  <!-- Fin steps -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+    <div style="background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:18px 12px;text-align:center;position:relative">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">1</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:800;color:#0E0E12;margin-bottom:4px">تحديد الاحتياج</div>
+      <div style="font-family:'Inter',sans-serif;font-size:.65rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Needs Assessment</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.7rem;color:#8A9AB0;line-height:1.5">العميل يختار المعدة عبر الكتالوج</div>
+    </div>
+    <div style="background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:18px 12px;text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">2</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:800;color:#0E0E12;margin-bottom:4px">إعداد الملف</div>
+      <div style="font-family:'Inter',sans-serif;font-size:.65rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">File Preparation</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.7rem;color:#8A9AB0;line-height:1.5">جمع الوثائق المطلوبة بمساعدة المنصة</div>
+    </div>
+    <div style="background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:18px 12px;text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">3</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:800;color:#0E0E12;margin-bottom:4px">الربط بالمصرف</div>
+      <div style="font-family:'Inter',sans-serif;font-size:.65rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Bank Matching</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.7rem;color:#8A9AB0;line-height:1.5">توصيل الملف لأنسب مؤسسة تمويلية</div>
+    </div>
+    <div style="background:#F5F7FA;border:1px solid #E8ECF0;border-radius:12px;padding:18px 12px;text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">4</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:800;color:#0E0E12;margin-bottom:4px">الإطلاق والمتابعة</div>
+      <div style="font-family:'Inter',sans-serif;font-size:.65rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Launch &amp; Follow-Up</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.7rem;color:#8A9AB0;line-height:1.5">متابعة ما بعد الصرف وضمان النجاح</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:800;color:#0E0E12;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+    <span style="width:20px;height:20px;border-radius:4px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;color:var(--bg);font-size:.65rem;font-weight:900">🏦</span>
+    الشركاء المصرفيون ومؤسسات التمويل الأصغر
+    <span style="font-family:'Inter',sans-serif;font-size:.68rem;color:var(--muted);font-weight:500;letter-spacing:.05em;text-transform:uppercase">Banking &amp; Microfinance Partners</span>
+  </div>
+
+  <div class="banks-wrap">
+    <div class="bk"><div class="bk-ico">🏦</div><div><div class="bk-ar">بنك التضامن الإسلامي</div><div class="bk-en">Islamic Solidarity Bank</div></div></div>
+    <div class="bk"><div class="bk-ico">🏦</div><div><div class="bk-ar">بنك سبأ الإسلامي</div><div class="bk-en">Saba Islamic Bank</div></div></div>
+    <div class="bk"><div class="bk-ico">🏦</div><div><div class="bk-ar">البنك الأهلي اليمني</div><div class="bk-en">National Bank of Yemen</div></div></div>
+    <div class="bk"><div class="bk-ico">🏦</div><div><div class="bk-ar">البنك اليمني للإنشاء والتعمير</div><div class="bk-en">Yemen Bank for Reconstruction</div></div></div>
+    <div class="bk"><div class="bk-ico">🏦</div><div><div class="bk-ar">بنك الائتمان اليمني</div><div class="bk-en">Yemen Credit Bank</div></div></div>
+    <div class="bk"><div class="bk-ico">🌱</div><div><div class="bk-ar">صندوق تنمية المنشآت الصغيرة</div><div class="bk-en">SME Development Fund</div></div></div>
+    <div class="bk"><div class="bk-ico">🌱</div><div><div class="bk-ar">مؤسسات التمويل الأصغر اليمنية</div><div class="bk-en">Yemen Microfinance Institutions</div></div></div>
+    <div class="bk"><div class="bk-ico">🌱</div><div><div class="bk-ar">برنامج التمويل الأصغر UNDP</div><div class="bk-en">UNDP Microfinance Program</div></div></div>
+    <div class="bk"><div class="bk-ico">🌱</div><div><div class="bk-ar">شبكة التمويل الأصغر العربية</div><div class="bk-en">Arab Microfinance Network</div></div></div>
+  </div>
+
+  <div class="imp-strip">
+    <div class="is"><div class="is-n">$120K+</div><div class="is-ar">تمويل ميسّر</div><div class="is-en">Total Financing</div></div>
+    <div class="is"><div class="is-n">83+</div><div class="is-ar">وظيفة</div><div class="is-en">Jobs Created</div></div>
+    <div class="is"><div class="is-n">6</div><div class="is-ar">محافظات</div><div class="is-en">Governorates</div></div>
+    <div class="is"><div class="is-n">540:1</div><div class="is-ar">سعر الصرف</div><div class="is-en">Exchange Rate</div></div>
+  </div>
+
+  <div class="pg-n dk">04 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 5 — SUCCESS STORIES ═══════ -->
+<div class="pg inn">
+  <div class="sh">
+    <div>
+      <div class="sh-n">04</div>
+      <div class="sh-t">SME Success Stories</div>
+      <div class="sh-s">قصص نجاح المشاريع المدعومة</div>
+    </div>
+    <div class="pill pill-e">Impact</div>
+  </div>
+
+  <div style="background:var(--bg);border-radius:14px;padding:20px 24px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center">
+    <div style="text-align:center;border-left:1px solid rgba(255,255,255,.07);flex:1">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--em3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">$120K+</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px">إجمالي التمويل الميسّر</div>
+      <div style="font-size:.6rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em">Total Financing</div>
+    </div>
+    <div style="text-align:center;border-left:1px solid rgba(255,255,255,.07);flex:1">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--em3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">83+</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px">وظيفة دائمة</div>
+      <div style="font-size:.6rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em">Permanent Jobs</div>
+    </div>
+    <div style="text-align:center;border-left:1px solid rgba(255,255,255,.07);flex:1">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--em3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">6</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px">محافظات يمنية</div>
+      <div style="font-size:.6rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em">Governorates</div>
+    </div>
+    <div style="text-align:center;flex:1">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--em3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">100%</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px">مشاريع يمنية</div>
+      <div style="font-size:.6rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em">Yemeni Projects</div>
+    </div>
+  </div>
+
+  <div class="st-grid">
+    <div class="st">
+      <div class="st-img"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784589?w=400&q=75" alt="Honey"/><div class="st-ov"></div><div class="st-bdg">Food Mfg</div></div>
+      <div class="st-body"><div class="st-ar">مصنع العسل اليمني الأصيل</div><div class="st-loc">📍 حضرموت</div><div class="st-stats"><div><div class="ss-n">$15K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">12</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2018</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+    <div class="st">
+      <div class="st-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=75" alt="Bakery"/><div class="st-ov"></div><div class="st-bdg">Bakery</div></div>
+      <div class="st-body"><div class="st-ar">مخبز البركة الحديث</div><div class="st-loc">📍 صنعاء</div><div class="st-stats"><div><div class="ss-n">$12K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">8</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2020</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+    <div class="st">
+      <div class="st-img"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=75" alt="Juice"/><div class="st-ov"></div><div class="st-bdg">Beverages</div></div>
+      <div class="st-body"><div class="st-ar">مصنع العصائر الطبيعية</div><div class="st-loc">📍 تعز</div><div class="st-stats"><div><div class="ss-n">$25K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">15</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2019</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+    <div class="st">
+      <div class="st-img"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=75" alt="Carpentry"/><div class="st-ov"></div><div class="st-bdg">Furniture</div></div>
+      <div class="st-body"><div class="st-ar">ورشة النجارة الفنية</div><div class="st-loc">📍 عدن</div><div class="st-stats"><div><div class="ss-n">$18K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">10</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2017</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+    <div class="st">
+      <div class="st-img" style="background:linear-gradient(135deg,#2d1b5e,#1a0e3e)"><div class="st-ov"></div><div class="st-bdg">Textile</div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2rem">👗</div></div>
+      <div class="st-body"><div class="st-ar">مصنع الألبسة التقليدية</div><div class="st-loc">📍 إب</div><div class="st-stats"><div><div class="ss-n">$20K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">20</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2016</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+    <div class="st">
+      <div class="st-img" style="background:linear-gradient(135deg,#0a3030,#0d5a55)"><div class="st-ov"></div><div class="st-bdg">Packaging</div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2rem">📦</div></div>
+      <div class="st-body"><div class="st-ar">مختبر التعبئة والتغليف</div><div class="st-loc">📍 الحديدة</div><div class="st-stats"><div><div class="ss-n">$30K</div><div class="ss-l">تمويل</div></div><div><div class="ss-n">18</div><div class="ss-l">وظيفة</div></div><div><div class="ss-n">2021</div><div class="ss-l">تأسست</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="pg-n dk">05 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 6 — SERVICES & PACKAGES ═══════ -->
+<div class="pg inn">
+  <div class="sh">
+    <div>
+      <div class="sh-n">05</div>
+      <div class="sh-t">Services Ecosystem &amp; Plans</div>
+      <div class="sh-s">منظومة الخدمات وخطط الاشتراك للموردين</div>
+    </div>
+    <div class="pill pill-s">Services</div>
+  </div>
+
+  <div class="svc-g">
+    <div class="svc"><div class="sv-ico ic-g">⚖️</div><div class="sv-ar">خدمات قانونية</div><div class="sv-en">Legal</div></div>
+    <div class="svc"><div class="sv-ico ic-e">🧮</div><div class="sv-ar">محاسبة ومالية</div><div class="sv-en">Accounting</div></div>
+    <div class="svc"><div class="sv-ico ic-g">📣</div><div class="sv-ar">تسويق رقمي</div><div class="sv-en">Marketing</div></div>
+    <div class="svc"><div class="sv-ico ic-d">🚛</div><div class="sv-ar">لوجستيات</div><div class="sv-en">Logistics</div></div>
+    <div class="svc"><div class="sv-ico ic-e">💻</div><div class="sv-ar">حلول تقنية</div><div class="sv-en">IT Solutions</div></div>
+    <div class="svc"><div class="sv-ico ic-g">👔</div><div class="sv-ar">استشارات</div><div class="sv-en">Consultancy</div></div>
+    <div class="svc"><div class="sv-ico ic-d">🎓</div><div class="sv-ar">تدريب وتأهيل</div><div class="sv-en">Training</div></div>
+    <div class="svc"><div class="sv-ico ic-p">🔬</div><div class="sv-ar">جودة ومعايرة</div><div class="sv-en">Quality</div></div>
+    <div class="svc"><div class="sv-ico ic-e">🔧</div><div class="sv-ar">صيانة ودعم</div><div class="sv-en">Maintenance</div></div>
+    <div class="svc"><div class="sv-ico ic-g">📋</div><div class="sv-ar">تراخيص</div><div class="sv-en">Licensing</div></div>
+    <div class="svc"><div class="sv-ico ic-d">📊</div><div class="sv-ar">دراسات السوق</div><div class="sv-en">Research</div></div>
+    <div class="svc"><div class="sv-ico ic-r">🛡️</div><div class="sv-ar">تأمين وضمانات</div><div class="sv-en">Insurance</div></div>
+  </div>
+
+  <div style="font-family:'Cairo',sans-serif;font-size:.84rem;font-weight:800;color:#0E0E12;margin-bottom:14px;display:flex;align-items:center;gap:8px">
+    خطط الاشتراك للموردين
+    <span style="font-family:'Inter',sans-serif;font-size:.68rem;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase">Supplier Subscription Plans</span>
+  </div>
+  <div class="pkg-g">
+    <div class="pc lite">
+      <div class="pc-top g"></div>
+      <div class="pc-n-ar">الباقة الأساسية</div>
+      <div class="pc-n-en">Starter Plan</div>
+      <div class="pc-price">Free</div>
+      <div class="pc-per">مجاني — Get Started</div>
+      <ul class="pc-list">
+        <li>إدراج 3 منتجات</li>
+        <li>بيانات الاتصال الأساسية</li>
+        <li>تصفح طلبات المشترين</li>
+        <li>Basic analytics dashboard</li>
+      </ul>
+    </div>
+    <div class="pc dark">
+      <div class="pc-top g"></div>
+      <div class="pc-popular">الأكثر طلباً</div>
+      <div class="pc-n-ar">الباقة المهنية</div>
+      <div class="pc-n-en">Professional</div>
+      <div class="pc-price">$49</div>
+      <div class="pc-per">/month · شهرياً</div>
+      <ul class="pc-list">
+        <li>إدراج منتجات غير محدود</li>
+        <li>ظهور مميز في الكتالوج</li>
+        <li>ربط بمسارات التمويل</li>
+        <li>تحليلات متقدمة</li>
+        <li>Priority verified badge</li>
+      </ul>
+    </div>
+    <div class="pc lite">
+      <div class="pc-top e"></div>
+      <div class="pc-n-ar">باقة المؤسسات</div>
+      <div class="pc-n-en">Enterprise</div>
+      <div class="pc-price">Custom</div>
+      <div class="pc-per">مخصص — للاستفسار</div>
+      <ul class="pc-list">
+        <li>شراكة استراتيجية كاملة</li>
+        <li>تكامل API للمنصة</li>
+        <li>حلول مخصصة</li>
+        <li>Dedicated account team</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pg-n dk">06 / 07</div>
+</div>
+
+<!-- ═══════ PAGE 7 — CONTACT ═══════ -->
+<div class="pg ctc-pg">
+  <div class="sh">
+    <div>
+      <div class="sh-n">06</div>
+      <div class="sh-t">انضموا إلى منظومتنا</div>
+      <div class="sh-s">Join Our Supplier Ecosystem — Contact Us</div>
+    </div>
+    <div class="pill pill-g">تواصل</div>
+  </div>
+
+  <div class="ctc-g">
+    <div>
+      <div class="ctc-label">التواصل المباشر — Direct Contact</div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-g">📞</div>
+        <div class="ci-txt"><strong>800 800 800</strong><span>خط مجاني — Free Hotline</span><em>Sun–Thu · 8 AM – 5 PM</em></div>
+      </div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-e">💬</div>
+        <div class="ci-txt"><strong>+967 773 880 066</strong><span>واتساب — WhatsApp 24/7</span><em>wa.me/967773880066</em></div>
+      </div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-g">✉</div>
+        <div class="ci-txt"><strong>info@mshroue.com</strong><span>منصة مشروعي — Mashroie Platform</span></div>
+      </div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-g">✉</div>
+        <div class="ci-txt"><strong>info@tmza.com</strong><span>مجموعة تمزا القابضة — Tamza Holding</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="ctc-label">العنوان والموقع — Address &amp; Location</div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-g">📍</div>
+        <div class="ci-txt"><strong>الجمهورية اليمنية</strong><span>صنعاء — حدة — عمارة تمزا القابضة</span><em>Sana'a · Hadda · Tamza Holding Building</em></div>
+      </div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-e">🌐</div>
+        <div class="ci-txt"><strong>Online Platform — متاح 24/7</strong><span>منصة رقمية تخدم اليمن ومنطقة MENA</span><em>Digital presence across the MENA region</em></div>
+      </div>
+      <div class="ctc-it">
+        <div class="ci-ico ci-e">✅</div>
+        <div class="ci-txt"><strong>Registered Verified Entity</strong><span>مؤسسة مسجلة ومعتمدة تحت مجموعة تمزا</span><em>Backed by Yemen's trusted investment group</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="invite">
+    <div class="inv-ar">انضموا إلى سوق اليمن الواعد</div>
+    <div class="inv-en">Partner With Yemen's Future Industrial Base</div>
+    <p class="inv-p-ar">ترحب منصة مشروعي بالمصنّعين الدوليين والموردين العالميين الراغبين في تسويق معداتهم وخطوط إنتاجهم في اليمن عبر قناة رقمية موثوقة تربطهم برواد أعمال جادين ومؤسسات تمويلية راسخة.</p>
+    <p class="inv-p-en">Mashroie welcomes international manufacturers and global equipment suppliers to list their products on Yemen's leading SME platform, reaching verified buyers with structured financing pathways.</p>
+    <div class="inv-bds">
+      <span class="inv-bd g">🏭 مصنّعون دوليون</span>
+      <span class="inv-bd e">⚙️ Equipment Suppliers</span>
+      <span class="inv-bd g">🔬 Technical Partners</span>
+      <span class="inv-bd e">📦 Raw Material Suppliers</span>
+      <span class="inv-bd g">🌍 MENA Distributors</span>
+      <span class="inv-bd e">🤝 OEM Manufacturers</span>
+    </div>
+  </div>
+
+  <div class="d-ft">
+    <div>
+      <div class="df-b">MASHROIE — مشروعي</div>
+      <div class="df-s">Invest &amp; Grow · Yemen's SME Empowerment Platform · Powered by Tamza Holding Group</div>
+    </div>
+    <div class="df-seal">
+      <div class="df-seal-t">Confidential</div>
+      <span class="df-seal-a">وثيقة سرية — للموردين الدوليين</span>
+    </div>
+    <div class="df-copy">
+      info@mshroue.com · info@tmza.com<br/>
+      © 2025 Mashroie · All Rights Reserved
+    </div>
+  </div>
+
+  <div class="pg-n lt">07 / 07</div>
+</div>
+
+</div><!-- /pages -->
+
+<script>
+document.addEventListener('keydown', e => {
+  if((e.ctrlKey||e.metaKey) && (e.key==='p'||e.key==='s')) {
+    e.preventDefault(); window.print();
+  }
+});
+</script>
+</body>
+</html>

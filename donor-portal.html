@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة المانحين | منصة مشروعي</title>
+  <meta name="description" content="بوابة تسجيل المنظمات والهيئات المانحة المحلية والدولية في اليمن — منصة مشروعي"/>
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png"/>
+  <link rel="stylesheet" href="css/fonts.css?v=4.2"/>
+  <link rel="stylesheet" href="css/fontawesome.min.css?v=4.2"/>
+  <link rel="stylesheet" href="css/variables.css?v=4.2"/>
+  <link rel="stylesheet" href="css/portals.css?v=4.2"/>
+  <style>
+    /* Donor-specific overrides */
+    .donor-hero-decor {
+      position:absolute; width:300px; height:300px; border-radius:50%;
+      background:rgba(255,255,255,0.04); bottom:-100px; left:60%;
+      pointer-events:none;
+    }
+    .org-type-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.7rem;
+    }
+    .org-type-card {
+      border:1.5px solid var(--gray-200); border-radius:1rem; padding:.9rem .8rem;
+      text-align:center; cursor:pointer; transition:var(--portal-transition);
+      background:#fff;
+    }
+    .org-type-card:hover { border-color:var(--secondary); }
+    .org-type-card.selected { border-color:var(--secondary); background:rgba(14,165,160,.07); }
+    .org-type-card i { font-size:1.6rem; margin-bottom:.4rem; display:block; }
+    .org-type-card span { font-size:.82rem; font-weight:700; color:var(--gray-700); }
+    .org-type-card input { display:none; }
+    /* Tabs panel */
+    .tab-panel { display:none; } .tab-panel.active { display:block; }
+  </style>
+</head>
+<body class="portal-wrapper portal-donor">
+
+<!-- ========================= TOP NAV ========================= -->
+<nav class="portal-topbar">
+  <a href="index.html" class="portal-topbar-logo">
+    <div class="logo-mark">م</div>
+    <div>
+      <span class="logo-name">مشروعي</span>
+      <span class="logo-tagline">Mashrooi Platform</span>
+    </div>
+  </a>
+  <div class="portal-topbar-actions">
+    <a href="beneficiary-portal.html" class="btn-back">
+      <i class="fas fa-hands-helping"></i> بوابة المستفيدين
+    </a>
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> الرئيسية
+    </a>
+  </div>
+</nav>
+
+<!-- ========================= HERO ========================= -->
+<section class="portal-hero">
+  <div class="donor-hero-decor"></div>
+  <div class="portal-hero-content">
+    <div class="portal-icon-badge"><i class="fas fa-handshake"></i></div>
+    <h1>بوابة المانحين</h1>
+    <p>
+      منصة موحّدة لتسجيل المنظمات والهيئات المانحة المحلية والدولية العاملة في اليمن<br/>
+      وربطها مباشرةً بالمشاريع والمستفيدين على أرض الواقع
+    </p>
+    <div class="portal-hero-btns">
+      <button class="portal-tab-btn-hero active-hero" onclick="switchHeroTab('register')">
+        <i class="fas fa-user-plus"></i> تسجيل منظمة جديدة
+      </button>
+      <button class="portal-tab-btn-hero" onclick="switchHeroTab('login')" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:.65rem 1.5rem;border-radius:99px;font-family:var(--font-primary);font-size:.95rem;font-weight:700;cursor:pointer;transition:.3s;">
+        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= STATS ========================= -->
+<div class="portal-stats-bar">
+  <div class="portal-stats-inner">
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="statDonors">--</div>
+      <div class="portal-stat-label">منظمة مسجّلة</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="statGrants">--</div>
+      <div class="portal-stat-label">منحة ومشروع نشط</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value" id="statBeneficiaries">--</div>
+      <div class="portal-stat-label">مستفيد مسجّل</div>
+    </div>
+    <div class="portal-stat-item">
+      <div class="portal-stat-value">21</div>
+      <div class="portal-stat-label">محافظة يمنية مُغطّاة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= MAIN CONTENT ========================= -->
+<main class="portal-container">
+  <div style="max-width:860px;margin:0 auto;">
+
+    <!-- Tabs -->
+    <div class="portal-tabs">
+      <button class="portal-tab-btn active" onclick="switchTab('register','donor')">
+        <i class="fas fa-user-plus"></i> تسجيل منظمة جديدة
+      </button>
+      <button class="portal-tab-btn" onclick="switchTab('login','donor')">
+        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+      </button>
+    </div>
+
+    <!-- ============ REGISTER TAB ============ -->
+    <div class="tab-panel active" id="tab-register">
+      <div class="portal-info-panel">
+        <h3><i class="fas fa-info-circle"></i> معلومات عن بوابة المانحين</h3>
+        <ul class="info-list">
+          <li><i class="fas fa-check-circle"></i> يمكن للمنظمات المحلية والدولية تسجيل أنفسها ومنحها ومشاريعها</li>
+          <li><i class="fas fa-check-circle"></i> يتم مراجعة الطلبات من قِبَل فريق منصة مشروعي خلال 3-5 أيام عمل</li>
+          <li><i class="fas fa-check-circle"></i> بعد الاعتماد يمكنك إدارة قوائم المستفيدين والتقارير إلكترونياً</li>
+          <li><i class="fas fa-shield-alt"></i> جميع البيانات محمية وسرية ولا تُشارك مع أي طرف ثالث</li>
+        </ul>
+      </div>
+
+      <div class="portal-form-card" id="donorRegisterForm">
+        <h2>تسجيل منظمة / هيئة مانحة</h2>
+        <p class="form-subtitle">يُرجى تعبئة جميع الحقول المطلوبة بدقة. ستُراجَع بياناتك وسيُبلَّغك بالنتيجة عبر البريد الإلكتروني.</p>
+
+        <div id="donorFormAlert" class="form-alert"></div>
+
+        <!-- STEP 1: معلومات المنظمة -->
+        <div class="form-step-header">
+          <div class="step-number">١</div>
+          <div>
+            <h3>معلومات المنظمة</h3>
+          </div>
+        </div>
+
+        <!-- نوع المنظمة -->
+        <div class="form-group full-width" style="margin-bottom:1.2rem;">
+          <label class="form-label">نوع المنظمة <span class="required-star">*</span></label>
+          <div class="org-type-grid" id="orgTypeGrid">
+            <div class="org-type-card" onclick="selectOrgType(this,'منظمة دولية')">
+              <i class="fas fa-globe" style="color:#3b82f6;"></i>
+              <span>منظمة دولية</span>
+              <input type="radio" name="org_type" value="منظمة دولية"/>
+            </div>
+            <div class="org-type-card" onclick="selectOrgType(this,'منظمة محلية')">
+              <i class="fas fa-flag" style="color:#0ea5a0;"></i>
+              <span>منظمة محلية</span>
+              <input type="radio" name="org_type" value="منظمة محلية"/>
+            </div>
+            <div class="org-type-card" onclick="selectOrgType(this,'هيئة حكومية')">
+              <i class="fas fa-landmark" style="color:#6c47d0;"></i>
+              <span>هيئة حكومية</span>
+              <input type="radio" name="org_type" value="هيئة حكومية"/>
+            </div>
+            <div class="org-type-card" onclick="selectOrgType(this,'مؤسسة خيرية')">
+              <i class="fas fa-heart" style="color:#e11d48;"></i>
+              <span>مؤسسة خيرية</span>
+              <input type="radio" name="org_type" value="مؤسسة خيرية"/>
+            </div>
+            <div class="org-type-card" onclick="selectOrgType(this,'شركة')">
+              <i class="fas fa-building" style="color:#f59e0b;"></i>
+              <span>شركة / قطاع خاص</span>
+              <input type="radio" name="org_type" value="شركة"/>
+            </div>
+            <div class="org-type-card" onclick="selectOrgType(this,'أفراد')">
+              <i class="fas fa-user-friends" style="color:#059669;"></i>
+              <span>مانح فردي</span>
+              <input type="radio" name="org_type" value="أفراد"/>
+            </div>
+          </div>
+          <div class="field-error" id="err-org_type"><i class="fas fa-exclamation-circle"></i> يُرجى اختيار نوع المنظمة</div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">اسم المنظمة بالعربية <span class="required-star">*</span></label>
+            <input type="text" class="form-input" id="d_org_name_ar" placeholder="مثال: منظمة الأمل للتنمية"/>
+            <div class="field-error" id="err-d_org_name_ar"><i class="fas fa-exclamation-circle"></i> هذا الحقل مطلوب</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">اسم المنظمة بالإنجليزية</label>
+            <input type="text" class="form-input" id="d_org_name_en" placeholder="Hope Development Organization" dir="ltr"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">دولة المنظمة <span class="required-star">*</span></label>
+            <select class="form-select" id="d_country">
+              <option value="">— اختر الدولة —</option>
+              <option value="اليمن">🇾🇪 اليمن</option>
+              <option value="المملكة المتحدة">🇬🇧 المملكة المتحدة</option>
+              <option value="الولايات المتحدة">🇺🇸 الولايات المتحدة</option>
+              <option value="ألمانيا">🇩🇪 ألمانيا</option>
+              <option value="الإمارات">🇦🇪 الإمارات</option>
+              <option value="السعودية">🇸🇦 المملكة العربية السعودية</option>
+              <option value="الكويت">🇰🇼 الكويت</option>
+              <option value="قطر">🇶🇦 قطر</option>
+              <option value="هولندا">🇳🇱 هولندا</option>
+              <option value="السويد">🇸🇪 السويد</option>
+              <option value="النرويج">🇳🇴 النرويج</option>
+              <option value="كندا">🇨🇦 كندا</option>
+              <option value="فرنسا">🇫🇷 فرنسا</option>
+              <option value="اليابان">🇯🇵 اليابان</option>
+              <option value="أخرى">🌍 أخرى</option>
+            </select>
+            <div class="field-error" id="err-d_country"><i class="fas fa-exclamation-circle"></i> يُرجى اختيار الدولة</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">رقم التسجيل الرسمي</label>
+            <input type="text" class="form-input" id="d_reg_num" placeholder="رقم التسجيل أو الترخيص"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">الموقع الإلكتروني</label>
+            <input type="url" class="form-input" id="d_website" placeholder="https://example.org" dir="ltr"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">المحافظة (إن كانت محلية)</label>
+            <select class="form-select" id="d_governorate">
+              <option value="">— اختر المحافظة —</option>
+              <option>صنعاء</option><option>عدن</option><option>تعز</option>
+              <option>الحديدة</option><option>إب</option><option>مأرب</option>
+              <option>حضرموت</option><option>ذمار</option><option>المهرة</option>
+              <option>البيضاء</option><option>أبين</option><option>شبوة</option>
+              <option>حجة</option><option>عمران</option><option>صعدة</option>
+              <option>المحويت</option><option>الجوف</option><option>لحج</option>
+              <option>الضالع</option><option>ريمة</option><option>سقطرى</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label class="form-label">العنوان في اليمن (إن وُجد)</label>
+            <input type="text" class="form-input" id="d_address" placeholder="مثال: صنعاء — حدة — شارع..."/>
+          </div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- STEP 2: بيانات المسؤول -->
+        <div class="form-step-header">
+          <div class="step-number">٢</div>
+          <div><h3>بيانات المسؤول (نقطة الاتصال)</h3></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">اسم المسؤول <span class="required-star">*</span></label>
+            <input type="text" class="form-input" id="d_focal_name" placeholder="الاسم الكامل"/>
+            <div class="field-error" id="err-d_focal_name"><i class="fas fa-exclamation-circle"></i> هذا الحقل مطلوب</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">المنصب / الوظيفة</label>
+            <input type="text" class="form-input" id="d_focal_title" placeholder="مثال: مدير البرامج"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">البريد الإلكتروني <span class="required-star">*</span></label>
+            <input type="email" class="form-input" id="d_email" placeholder="info@org.com" dir="ltr"/>
+            <div class="field-error" id="err-d_email"><i class="fas fa-exclamation-circle"></i> يُرجى إدخال بريد صحيح</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">رقم الهاتف <span class="required-star">*</span></label>
+            <div class="input-with-prefix">
+              <span class="input-prefix">+967</span>
+              <input type="tel" id="d_phone" placeholder="7XXXXXXXX" maxlength="9"/>
+            </div>
+            <div class="field-error" id="err-d_phone"><i class="fas fa-exclamation-circle"></i> أدخل 9 أرقام يمنية صحيحة</div>
+          </div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- STEP 3: القطاعات -->
+        <div class="form-step-header">
+          <div class="step-number">٣</div>
+          <div><h3>القطاعات التي تعمل فيها المنظمة</h3></div>
+        </div>
+
+        <div class="sectors-grid" id="sectorGrid" style="margin-bottom:1.2rem;">
+          <div class="sector-chip" onclick="toggleSector(this,'تعليم')"><i class="fas fa-graduation-cap"></i> تعليم</div>
+          <div class="sector-chip" onclick="toggleSector(this,'صحة')"><i class="fas fa-heartbeat"></i> صحة</div>
+          <div class="sector-chip" onclick="toggleSector(this,'زراعة')"><i class="fas fa-seedling"></i> زراعة</div>
+          <div class="sector-chip" onclick="toggleSector(this,'أعمال صغيرة')"><i class="fas fa-briefcase"></i> أعمال صغيرة</div>
+          <div class="sector-chip" onclick="toggleSector(this,'إغاثة إنسانية')"><i class="fas fa-hands-helping"></i> إغاثة إنسانية</div>
+          <div class="sector-chip" onclick="toggleSector(this,'مياه وصرف صحي')"><i class="fas fa-tint"></i> مياه وصرف صحي</div>
+          <div class="sector-chip" onclick="toggleSector(this,'تمكين المرأة')"><i class="fas fa-venus"></i> تمكين المرأة</div>
+          <div class="sector-chip" onclick="toggleSector(this,'شباب')"><i class="fas fa-running"></i> شباب</div>
+          <div class="sector-chip" onclick="toggleSector(this,'بيئة')"><i class="fas fa-leaf"></i> بيئة</div>
+          <div class="sector-chip" onclick="toggleSector(this,'تقنية')"><i class="fas fa-laptop-code"></i> تقنية</div>
+        </div>
+
+        <hr class="form-divider"/>
+
+        <!-- STEP 4: كلمة المرور -->
+        <div class="form-step-header">
+          <div class="step-number">٤</div>
+          <div><h3>كلمة مرور الحساب</h3></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">كلمة المرور <span class="required-star">*</span></label>
+            <input type="password" class="form-input" id="d_password" autocomplete="new-password" placeholder="أدخل كلمة مرور قوية" oninput="checkPasswordStrength(this,'d_str')"/>
+            <div class="password-strength">
+              <div class="strength-bar"><div class="strength-fill" id="d_str_fill"></div></div>
+              <span class="strength-text" id="d_str_text"></span>
+            </div>
+            <div class="field-error" id="err-d_password"><i class="fas fa-exclamation-circle"></i> كلمة المرور ضعيفة أو قصيرة</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">تأكيد كلمة المرور <span class="required-star">*</span></label>
+            <input type="password" class="form-input" id="d_password2" autocomplete="new-password" placeholder="أعد إدخال كلمة المرور"/>
+            <div class="field-error" id="err-d_password2"><i class="fas fa-exclamation-circle"></i> كلمتا المرور غير متطابقتين</div>
+          </div>
+        </div>
+
+        <div class="form-group full-width" style="margin-top:.5rem;">
+          <div class="checkbox-group">
+            <input type="checkbox" id="d_agree"/>
+            <label for="d_agree">أوافق على <a href="#" style="color:var(--secondary);font-weight:700;">شروط الاستخدام</a> و<a href="#" style="color:var(--secondary);font-weight:700;">سياسة الخصوصية</a> الخاصة بمنصة مشروعي</label>
+          </div>
+          <div class="field-error" id="err-d_agree"><i class="fas fa-exclamation-circle"></i> يُرجى الموافقة على الشروط</div>
+        </div>
+
+        <button class="portal-submit-btn" onclick="submitDonorRegistration()">
+          <div class="btn-spinner"></div>
+          <span class="btn-text"><i class="fas fa-paper-plane"></i> إرسال طلب التسجيل</span>
+        </button>
+
+        <p class="login-alt-bar">لديك حساب بالفعل؟ <a onclick="switchTab('login','donor')">سجّل الدخول هنا</a></p>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="portal-form-card portal-success" id="donorSuccess">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h2>تم إرسال طلب التسجيل بنجاح!</h2>
+        <p>شكراً لتسجيلكم في منصة مشروعي. سيقوم فريقنا بمراجعة بياناتكم خلال <strong>3-5 أيام عمل</strong> وإبلاغكم بالنتيجة عبر البريد الإلكتروني.</p>
+        <div class="ref-number" id="donorRefNum">رقم الطلب: ---</div>
+        <a href="index.html" style="display:inline-block;padding:.75rem 2rem;background:linear-gradient(135deg,#0f2d5e,#0ea5a0);color:#fff;border-radius:99px;font-weight:700;font-size:.95rem;text-decoration:none;">
+          العودة للرئيسية
+        </a>
+      </div>
+    </div>
+
+    <!-- ============ LOGIN TAB ============ -->
+    <div class="tab-panel" id="tab-login">
+      <div class="portal-form-card">
+        <h2>تسجيل الدخول — بوابة المانحين</h2>
+        <p class="form-subtitle">أدخل بريدك الإلكتروني وكلمة المرور المسجّلة لدخول لوحة تحكم منظمتك.</p>
+
+        <div id="loginAlert" class="form-alert"></div>
+
+        <div class="form-group" style="margin-bottom:1.2rem;">
+          <label class="form-label">البريد الإلكتروني <span class="required-star">*</span></label>
+          <input type="email" class="form-input" id="login_email" placeholder="info@org.com" dir="ltr"/>
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label class="form-label">كلمة المرور <span class="required-star">*</span></label>
+          <input type="password" class="form-input" id="login_pass" autocomplete="current-password" placeholder="كلمة المرور"/>
+        </div>
+
+        <button class="portal-submit-btn" onclick="donorLogin()">
+          <div class="btn-spinner"></div>
+          <span class="btn-text"><i class="fas fa-sign-in-alt"></i> دخول</span>
+        </button>
+
+        <p class="login-alt-bar" style="margin-top:1rem;">منظمة جديدة؟ <a onclick="switchTab('register','donor')">سجّل هنا مجاناً</a></p>
+      </div>
+    </div>
+
+  </div><!-- /max-width -->
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer style="background:var(--gray-800);color:var(--gray-400);text-align:center;padding:1.5rem;font-size:.85rem;margin-top:2rem;">
+  <p>© 2025 مشروعي — Tamza Holding | <a href="index.html" style="color:var(--secondary);">العودة للموقع الرئيسي</a></p>
+</footer>
+
+<script src="js/portals.js?v=4.2"></script>
+</body>
+</html>

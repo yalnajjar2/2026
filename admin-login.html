@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دخول الإدارة | منصة مشروعي</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:   #0f2d5e;
+      --primary-d: #091e42;
+      --accent:    #e11d48;
+      --success:   #059669;
+      --warn:      #d97706;
+      --gray-50:   #f8fafc;
+      --gray-100:  #f1f5f9;
+      --gray-200:  #e2e8f0;
+      --gray-400:  #94a3b8;
+      --gray-600:  #475569;
+      --gray-900:  #0f172a;
+      --radius:    14px;
+      --shadow:    0 20px 60px rgba(0,0,0,.25);
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Cairo', sans-serif;
+      background: var(--primary-d);
+      color: var(--gray-900);
+    }
+
+    /* ── Background pattern ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(14,165,160,.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 80%, rgba(225,29,72,.12) 0%, transparent 55%),
+        linear-gradient(135deg, #091e42 0%, #0f2d5e 50%, #0a1f3e 100%);
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* ── Layout ── */
+    .login-page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+    }
+    @media (max-width: 900px) {
+      .login-page { grid-template-columns: 1fr; }
+      .login-hero  { display: none; }
+    }
+
+    /* ── Hero Panel ── */
+    .login-hero {
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 3rem 4rem;
+      gap: 2rem;
+    }
+    .hero-logo {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-logo-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #0ea5a0, #059669);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: white;
+      box-shadow: 0 8px 24px rgba(14,165,160,.4);
+    }
+    .hero-logo-text {
+      color: white; font-size: 1.6rem; font-weight: 900;
+    }
+    .hero-logo-text span { color: #0ea5a0; }
+    .hero-heading {
+      color: white;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .hero-heading span { color: #0ea5a0; }
+    .hero-desc {
+      color: rgba(255,255,255,.7);
+      font-size: 1rem; line-height: 1.9;
+      max-width: 440px;
+    }
+    .hero-features {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .hero-feat {
+      display: flex; align-items: center; gap: 12px;
+      color: rgba(255,255,255,.85); font-size: .9rem;
+    }
+    .hero-feat i {
+      width: 32px; height: 32px;
+      background: rgba(14,165,160,.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #0ea5a0; font-size: .85rem;
+      flex-shrink: 0;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(225,29,72,.15);
+      border: 1px solid rgba(225,29,72,.4);
+      border-radius: 50px; padding: 6px 16px;
+      color: #fda4af; font-size: .8rem; font-weight: 700;
+    }
+
+    /* ── Form Panel ── */
+    .login-form-panel {
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+    .login-card {
+      width: 100%; max-width: 440px;
+      background: white;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-top {
+      background: linear-gradient(135deg, var(--primary), #1a4a7a);
+      padding: 2rem;
+      text-align: center;
+    }
+    .card-top-icon {
+      width: 64px; height: 64px;
+      background: rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.6rem; color: white;
+      border: 2px solid rgba(255,255,255,.25);
+    }
+    .card-top h1 { color: white; font-size: 1.3rem; font-weight: 900; }
+    .card-top p  { color: rgba(255,255,255,.7); font-size: .82rem; margin-top: 4px; }
+    .card-body { padding: 2rem; }
+
+    /* ── Form Elements ── */
+    .f-group { margin-bottom: 1.1rem; }
+    .f-label {
+      display: block;
+      font-size: .83rem; font-weight: 700;
+      color: var(--gray-600); margin-bottom: 6px;
+    }
+    .f-input-wrap { position: relative; }
+    .f-input-wrap i {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      color: var(--gray-400); font-size: .9rem; pointer-events: none;
+    }
+    .f-input {
+      width: 100%;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 11px 40px 11px 14px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .92rem;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .f-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15,45,94,.1);
+      background: white;
+    }
+    .f-input.error { border-color: var(--accent); }
+    .pw-toggle {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer;
+      color: var(--gray-400); font-size: .9rem; padding: 4px;
+    }
+    .pw-toggle:hover { color: var(--primary); }
+
+    /* ── Alert ── */
+    .f-alert {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: .85rem; font-weight: 600;
+      margin-bottom: 1rem;
+      align-items: center; gap: 10px;
+    }
+    .f-alert.error   { background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; display: flex; }
+    .f-alert.success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; display: flex; }
+    .f-alert.warning { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; display: flex; }
+
+    /* ── Submit Button ── */
+    .btn-login {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), #1a4a7a);
+      color: white; border: none;
+      border-radius: 10px;
+      padding: 13px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-login:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15,45,94,.35);
+    }
+    .btn-login:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+
+    /* ── Security info ── */
+    .security-info {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; margin-top: 1rem;
+      font-size: .75rem; color: var(--gray-400);
+    }
+    .security-info i { color: var(--success); }
+    .back-link {
+      text-align: center; margin-top: .8rem;
+    }
+    .back-link a {
+      font-size: .8rem; color: var(--gray-400);
+      text-decoration: none; transition: color .2s;
+    }
+    .back-link a:hover { color: var(--primary); }
+
+    /* ── Change Password Panel ── */
+    #changePwPanel { display: none; }
+    .pw-strength {
+      height: 4px; background: var(--gray-200);
+      border-radius: 2px; margin-top: 6px; overflow: hidden;
+    }
+    .pw-strength-bar {
+      height: 100%; width: 0;
+      border-radius: 2px;
+      transition: width .3s, background .3s;
+    }
+    .pw-hint { font-size: .72rem; color: var(--gray-400); margin-top: 4px; }
+
+    /* ── Spinner ── */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .fa-spin-custom { animation: spin .8s linear infinite; }
+
+    /* ── Footer ── */
+    .card-footer {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      padding: .9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .card-footer-left { font-size: .72rem; color: var(--gray-400); }
+    .card-footer-right { display: flex; gap: 14px; }
+    .card-footer-right span {
+      font-size: .72rem; color: var(--gray-400);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .status-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--success);
+      display: inline-block;
+      box-shadow: 0 0 6px rgba(5,150,105,.6);
+    }
+  </style>
+</head>
+<body>
+<div class="login-page">
+
+  <!-- ────── Hero ────── -->
+  <div class="login-hero">
+    <div class="hero-logo">
+      <div class="hero-logo-icon">🏭</div>
+      <div class="hero-logo-text">مشروعي <span>Admin</span></div>
+    </div>
+
+    <div>
+      <div class="hero-badge"><i class="fas fa-shield-alt"></i> منطقة محمية — للإدارة فقط</div>
+      <h2 class="hero-heading" style="margin-top:1rem">
+        مركز إدارة<br><span>منصة مشروعي</span>
+      </h2>
+      <p class="hero-desc">
+        لوحة تحكم متكاملة لإدارة المنصة، اعتماد المستخدمين، مراقبة الأنشطة، وإدارة كل عمليات المنصة من مكان واحد.
+      </p>
+    </div>
+
+    <div class="hero-features">
+      <div class="hero-feat"><i class="fas fa-user-check"></i> <span>اعتماد طلبات التسجيل والـ KYC</span></div>
+      <div class="hero-feat"><i class="fas fa-concierge-bell"></i> <span>متابعة طلبات الخدمات والمعاملات</span></div>
+      <div class="hero-feat"><i class="fas fa-shield-alt"></i> <span>جلسة آمنة بانتهاء تلقائي (4 ساعات)</span></div>
+      <div class="hero-feat"><i class="fas fa-history"></i> <span>سجل كامل لكل الإجراءات الإدارية</span></div>
+      <div class="hero-feat"><i class="fas fa-users-cog"></i> <span>إدارة صلاحيات فريق الإدارة</span></div>
+    </div>
+  </div>
+
+  <!-- ────── Form Panel ────── -->
+  <div class="login-form-panel">
+    <div class="login-card">
+      <!-- Card Top -->
+      <div class="card-top">
+        <div class="card-top-icon"><i class="fas fa-user-shield"></i></div>
+        <h1>دخول لوحة التحكم</h1>
+        <p>بيانات المدير مطلوبة للمتابعة</p>
+      </div>
+
+      <!-- Card Body -->
+      <div class="card-body">
+
+        <!-- ── Login Form ── -->
+        <div id="loginPanel">
+          <div id="loginAlert" class="f-alert"></div>
+
+          <form id="loginForm" onsubmit="handleAdminLogin(event)" novalidate autocomplete="off">
+
+            <div class="f-group">
+              <label class="f-label" for="adminUsername">
+                <i class="fas fa-at" style="color:#0ea5a0;margin-left:5px;"></i>
+                اسم المستخدم / البريد الإلكتروني
+              </label>
+              <div class="f-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="adminUsername" class="f-input"
+                  placeholder="y.alnajjar@outlook.sa أو m.alkhamari"
+                  autocomplete="off" spellcheck="false" dir="ltr"
+                  style="text-align:right;padding-left:40px;"/>
+                <span class="pw-toggle" onclick="clearAdminField('adminUsername')" title="مسح" style="right:auto;left:12px;">
+                  <i class="fas fa-times" id="clearUsernameIcon" style="display:none;"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="f-group">
+              <label class="f-label" for="adminPassword">
+                <i class="fas fa-lock" style="color:#0ea5a0;margin-left:5px;"></i>
+                كلمة المرور
+              </label>
+              <div class="f-input-wrap">
+                <i class="fas fa-key"></i>
+                <input type="password" id="adminPassword" class="f-input"
+                  placeholder="••••••••" autocomplete="current-password" dir="ltr"
+                  style="text-align:right;padding-left:40px;letter-spacing:2px;" form="loginForm"/>
+                <button type="button" class="pw-toggle" id="pwToggleBtn"
+                  onclick="toggleAdminPw('adminPassword','pwToggleBtn')" title="إظهار/إخفاء">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-login" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i>
+              <span id="loginBtnText">دخول لوحة التحكم</span>
+            </button>
+          </form>
+
+          <div class="security-info">
+            <i class="fas fa-shield-alt"></i>
+            جلسة مشفّرة · تنتهي بعد 4 ساعات · 5 محاولات كحدٍ أقصى
+          </div>
+
+          <div class="back-link">
+            <a href="index.html"><i class="fas fa-home"></i> العودة للموقع الرئيسي</a>
+          </div>
+        </div>
+
+        <!-- ── Change Password Panel (يظهر عند أول دخول) ── -->
+        <div id="changePwPanel">
+          <form id="changePwForm" onsubmit="handleChangePw();return false;" autocomplete="off">
+          <!-- حقل مخفي لمساعدة مديري كلمات المرور على ربط الحساب الصحيح -->
+          <input type="text" id="changePwUsername" name="username"
+                 autocomplete="username" style="display:none;" aria-hidden="true" tabindex="-1"/>
+          <div style="text-align:center;margin-bottom:1.5rem;">
+            <div style="width:56px;height:56px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem;color:white;">
+              🔑
+            </div>
+            <h3 style="font-size:1.1rem;font-weight:900;color:#0f2d5e;margin-bottom:4px;">تغيير كلمة المرور</h3>
+            <p style="font-size:.8rem;color:#6b7280;line-height:1.7;">
+              يجب تغيير كلمة المرور المؤقتة قبل المتابعة.<br>
+              اختر كلمة مرور قوية لحماية حسابك.
+            </p>
+          </div>
+
+          <div id="changePwAlert" class="f-alert"></div>
+
+          <div class="f-group">
+            <label class="f-label">كلمة المرور الجديدة</label>
+            <div class="f-input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="newPw1" class="f-input"
+                placeholder="8 أحرف على الأقل" dir="ltr"
+                style="text-align:right;padding-left:40px;letter-spacing:2px;"
+                oninput="checkPwStrength(this.value)"
+                autocomplete="new-password"/>
+              <button type="button" class="pw-toggle" onclick="toggleAdminPw('newPw1','pwToggle1')">
+                <i class="fas fa-eye" id="pwToggle1"></i>
+              </button>
+            </div>
+            <div class="pw-strength">
+              <div class="pw-strength-bar" id="pwStrengthBar"></div>
+            </div>
+            <div class="pw-hint" id="pwStrengthHint">أدخل كلمة مرور جديدة</div>
+          </div>
+
+          <div class="f-group">
+            <label class="f-label">تأكيد كلمة المرور</label>
+            <div class="f-input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="newPw2" class="f-input"
+                placeholder="أعد كتابة كلمة المرور" dir="ltr"
+                style="text-align:right;padding-left:40px;letter-spacing:2px;"
+                autocomplete="new-password"/>
+              <button type="button" class="pw-toggle" onclick="toggleAdminPw('newPw2','pwToggle2')">
+                <i class="fas fa-eye" id="pwToggle2"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-login" id="changePwBtn">
+            <i class="fas fa-key"></i>
+            <span id="changePwBtnText">حفظ كلمة المرور والمتابعة</span>
+          </button>
+          </form>
+        </div>
+
+      </div><!-- /card-body -->
+
+      <!-- Card Footer -->
+      <div class="card-footer">
+        <div class="card-footer-left">
+          &copy; 2026 منصة مشروعي — جميع الحقوق محفوظة
+        </div>
+        <div class="card-footer-right">
+          <span><span class="status-dot"></span> النظام يعمل</span>
+          <span><i class="fas fa-lock" style="color:#0ea5a0;"></i> SSL مفعّل</span>
+        </div>
+      </div>
+    </div>
+  </div><!-- /login-form-panel -->
+
+</div><!-- /login-page -->
+
+<!-- ── Scripts ── -->
+<script src="js/admin-auth.js?v=5.2"></script>
+<script>
+'use strict';
+
+/* إذا كان المدير مسجّلاً بالفعل → انتقل مباشرة للوحة */
+(function checkExistingSession() {
+  const s = adm_getSession();
+  if (s && !s.mustChangePw) {
+    window.location.href = 'index.html#admin';
+  }
+})();
+
+/* ── Helpers ── */
+function showAlert(panelId, type, msg) {
+  const el = document.getElementById(panelId);
+  if (!el) return;
+  el.className = 'f-alert ' + type;
+  el.innerHTML = `<i class="fas fa-${type==='error'?'exclamation-circle':type==='success'?'check-circle':'exclamation-triangle'}"></i><span>${msg}</span>`;
+  el.style.display = 'flex';
+}
+function hideAlert(panelId) {
+  const el = document.getElementById(panelId);
+  if (el) el.style.display = 'none';
+}
+
+function toggleAdminPw(inputId, iconId) {
+  const inp = document.getElementById(inputId);
+  const ico = document.getElementById(iconId);
+  if (!inp) return;
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    if (ico) ico.className = 'fas fa-eye-slash';
+  } else {
+    inp.type = 'password';
+    if (ico) ico.className = 'fas fa-eye';
+  }
+}
+
+function clearAdminField(id) {
+  const el = document.getElementById(id);
+  if (el) { el.value = ''; el.focus(); }
+  const icon = document.getElementById('clearUsernameIcon');
+  if (icon) icon.style.display = 'none';
+}
+
+document.getElementById('adminUsername')?.addEventListener('input', function() {
+  const icon = document.getElementById('clearUsernameIcon');
+  if (icon) icon.style.display = this.value ? 'inline' : 'none';
+});
+
+/* ── قوة كلمة المرور ── */
+function checkPwStrength(val) {
+  const bar  = document.getElementById('pwStrengthBar');
+  const hint = document.getElementById('pwStrengthHint');
+  if (!bar || !hint) return;
+
+  let score = 0;
+  if (val.length >= 8)  score++;
+  if (val.length >= 12) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+
+  const levels = [
+    { pct: '20%', color: '#dc2626', text: 'ضعيفة جداً' },
+    { pct: '40%', color: '#f59e0b', text: 'ضعيفة' },
+    { pct: '60%', color: '#eab308', text: 'متوسطة' },
+    { pct: '80%', color: '#22c55e', text: 'قوية' },
+    { pct: '100%',color: '#059669', text: 'قوية جداً ✓' },
+  ];
+  const lv = levels[Math.min(score, 4)];
+  bar.style.width = lv.pct;
+  bar.style.background = lv.color;
+  hint.textContent = `قوة كلمة المرور: ${lv.text}`;
+  hint.style.color = lv.color;
+}
+
+/* ── معالج تسجيل الدخول ── */
+async function handleAdminLogin(e) {
+  e.preventDefault();
+  hideAlert('loginAlert');
+
+  const username = document.getElementById('adminUsername')?.value?.trim() || '';
+  const password = document.getElementById('adminPassword')?.value || '';
+  const btn      = document.getElementById('loginBtn');
+  const btnText  = document.getElementById('loginBtnText');
+
+  if (!username || !password) {
+    showAlert('loginAlert', 'error', 'يرجى إدخال اسم المستخدم وكلمة المرور');
+    return;
+  }
+
+  /* حالة التحميل */
+  btn.disabled = true;
+  btnText.innerHTML = '<i class="fas fa-circle-notch fa-spin-custom" style="animation:spin .8s linear infinite;"></i> جارٍ التحقق...';
+
+  const result = await adm_login(username, password);
+
+  btn.disabled = false;
+  btnText.innerHTML = 'دخول لوحة التحكم';
+
+  if (!result.ok) {
+    showAlert('loginAlert', 'error', result.msg);
+    /* رجّ حقل كلمة المرور */
+    const pwEl = document.getElementById('adminPassword');
+    if (pwEl) {
+      pwEl.style.borderColor = '#dc2626';
+      pwEl.value = '';
+      pwEl.focus();
+      setTimeout(() => pwEl.style.borderColor = '', 2000);
+    }
+    return;
+  }
+
+  /* ✅ دخول ناجح */
+  if (result.mustChangePw) {
+    /* إظهار نموذج تغيير كلمة المرور */
+    window._pendingSession = result.session;
+    /* ملء الحقل المخفي بمعرف المستخدم لمساعدة مديري كلمات المرور */
+    const cpUEl = document.getElementById('changePwUsername');
+    if (cpUEl) cpUEl.value = result.session.username || '';
+    document.getElementById('loginPanel').style.display = 'none';
+    document.getElementById('changePwPanel').style.display = 'block';
+  } else {
+    showAlert('loginAlert', 'success', `مرحباً ${result.session.displayName}! جارٍ الدخول...`);
+    setTimeout(() => {
+      window.location.href = 'index.html#admin';
+    }, 900);
+  }
+}
+
+/* ── معالج تغيير كلمة المرور ── */
+async function handleChangePw() {
+  hideAlert('changePwAlert');
+  const session = window._pendingSession || adm_getSession();
+  if (!session) { window.location.href = 'admin-login.html'; return; }
+
+  const pw1 = document.getElementById('newPw1')?.value || '';
+  const pw2 = document.getElementById('newPw2')?.value || '';
+  const btn  = document.getElementById('changePwBtn');
+  const txt  = document.getElementById('changePwBtnText');
+
+  btn.disabled = true;
+  txt.innerHTML = '<i class="fas fa-circle-notch" style="animation:spin .8s linear infinite;"></i> جارٍ الحفظ...';
+
+  const result = await adm_changePassword(session.userId, null, pw1, pw2);
+
+  btn.disabled = false;
+  txt.innerHTML = 'حفظ كلمة المرور والمتابعة';
+
+  if (!result.ok) {
+    showAlert('changePwAlert', 'error', result.msg);
+    return;
+  }
+
+  showAlert('changePwAlert', 'success', '✅ تم تغيير كلمة المرور بنجاح! جارٍ الدخول...');
+  setTimeout(() => {
+    window.location.href = 'index.html#admin';
+  }, 1200);
+}
+
+/* Enter للإرسال */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    if (document.getElementById('loginPanel').style.display !== 'none' &&
+        document.getElementById('changePwPanel').style.display === 'none') {
+      handleAdminLogin({ preventDefault: () => {} });
+    }
+  }
+});
+</script>
+</body>
+</html>

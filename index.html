@@ -1,9 +1,1615 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Mashrooi Platform</title></head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مشروعي | منصة الأعمال الموحدة — معدات، تمويل، خدمات لرواد الأعمال اليمنيين</title>
+  <meta name="description" content="مشروعي — منصة رقمية متكاملة لرواد الأعمال اليمنيين: شراء معدات التصنيع، التمويل الإسلامي، الخدمات المساندة، التوصيل والتركيب. موردون صينيون معتمدون وبنوك يمنية شريكة." />
+  <meta name="keywords" content="مشروعي, منصة أعمال اليمن, معدات تصنيع, تمويل إسلامي, مصانع صغيرة, رواد أعمال اليمن, معدات صينية, بنوك يمنية" />
+  <meta name="author" content="تمزا للتقنية — Tamza Tech" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="مشروعي | منصة الأعمال الموحدة" />
+  <meta property="og:description" content="منصة رقمية متكاملة لرواد الأعمال اليمنيين — معدات، تمويل، خدمات، توصيل" />
+  <meta property="og:image" content="images/mashroie-logo.png" />
+  <meta property="og:locale" content="ar_YE" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="مشروعي | منصة الأعمال الموحدة" />
+  <meta name="twitter:description" content="منصة رقمية متكاملة لرواد الأعمال اليمنيين" />
+  <meta name="twitter:image" content="images/mashroie-logo.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/mashroie-logo.png" />
+  <link rel="apple-touch-icon" href="images/mashroie-logo.png" />
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <!-- خطوط عربية محلية (Cairo + Tajawal) -->
+  <link rel="stylesheet" href="css/fonts.css?v=4.2" />
+  <!-- FontAwesome محلي -->
+  <link rel="stylesheet" href="css/fontawesome.min.css?v=4.2" />
+  <link rel="stylesheet" href="css/variables.css?v=4.2" />
+  <link rel="stylesheet" href="css/navbar.css?v=4.2" />
+  <link rel="stylesheet" href="css/homepage.css?v=4.2" />
+  <link rel="stylesheet" href="css/dashboard.css?v=4.2" />
+  <link rel="stylesheet" href="css/pages.css?v=4.2" />
+  <link rel="stylesheet" href="css/advanced-features.css?v=4.2" />
+  <link rel="stylesheet" href="css/product-detail.css?v=4.2" />
+  <link rel="stylesheet" href="css/sme-stores.css?v=4.2" />
+  <!-- روابط بوابات المانحين والمستفيدين -->
+  <link rel="stylesheet" href="css/portals.css?v=4.2"/>
+  <!-- بوابة الدفع WeNet -->
+  <link rel="stylesheet" href="css/payment.css?v=4.5"/>
+  <!-- Chart.js من CDN — يُستخدم في لوحة التحكم -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
 <body>
-<h1>Mashrooi Platform</h1>
-<p>Rebuilt static prototype.</p>
-<p>Demo accounts are listed in README.md.</p>
+
+<!-- ============================================
+     ANNOUNCE BAR
+     ============================================ -->
+<div class="announce-bar" id="announceBar">
+  🎉 إطلاق منصة مشروعي - احصل على استشارة مجانية لمشروعك اليوم
+  <a href="#" onclick="showPage('contact'); return false;"> ابدأ الآن</a>
+  <button onclick="document.getElementById('announceBar').style.display='none'" style="background:none;border:none;color:white;cursor:pointer;margin-right:12px;font-size:1rem;">✕</button>
+</div>
+
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <div class="navbar-logo" onclick="showPage('home')" style="cursor:pointer;">
+      <div class="logo-mark">م</div>
+      <div class="logo-text">
+        <span class="logo-name">مشروعي</span>
+        <span class="logo-tagline">Mashrooi Platform</span>
+      </div>
+    </div>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" onclick="showPage('home')">الرئيسية</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('products')">
+          المنتجات والمعدات <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="dropdown-item" onclick="showPage('products')">
+            <div class="item-icon" style="background:rgba(14,165,160,0.1);color:var(--secondary)"><i class="fas fa-boxes"></i></div>
+            <div class="item-text"><span class="item-title">كتالوج المعدات</span><span class="item-desc">تصفّح جميع المعدات والأصول</span></div>
+          </div>
+          <div class="dropdown-item" onclick="showPage('products')">
+            <div class="item-icon" style="background:rgba(108,71,208,0.1);color:var(--accent-violet)"><i class="fas fa-cogs"></i></div>
+            <div class="item-text"><span class="item-title">الحلول التشغيلية</span><span class="item-desc">حزم جاهزة لتشغيل مشروعك</span></div>
+          </div>
+          <div class="dropdown-item" onclick="showPage('products')">
+            <div class="item-icon" style="background:rgba(5,150,105,0.1);color:var(--accent-emerald)"><i class="fas fa-tag"></i></div>
+            <div class="item-text"><span class="item-title">عروض مميزة</span><span class="item-desc">أفضل الأسعار والصفقات</span></div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" onclick="showPage('products')">
+            <div class="item-icon" style="background:rgba(245,158,11,0.1);color:var(--accent-amber)"><i class="fas fa-file-alt"></i></div>
+            <div class="item-text"><span class="item-title">طلب عرض سعر</span><span class="item-desc">احصل على عروض مخصصة</span></div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('financing')">
+          التمويل <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="dropdown-item" onclick="showPage('financing')">
+            <div class="item-icon" style="background:rgba(15,45,94,0.1);color:var(--primary)"><i class="fas fa-search-dollar"></i></div>
+            <div class="item-text"><span class="item-title">تشخيص احتياج التمويل</span><span class="item-desc">اكتشف الخيار المناسب لك</span></div>
+          </div>
+          <div class="dropdown-item" onclick="showPage('financing')">
+            <div class="item-icon" style="background:rgba(14,165,160,0.1);color:var(--secondary)"><i class="fas fa-balance-scale"></i></div>
+            <div class="item-text"><span class="item-title">مقارنة عروض التمويل</span><span class="item-desc">قارن بين أفضل البنوك والشركات</span></div>
+          </div>
+          <div class="dropdown-item" onclick="showPage('financing')">
+            <div class="item-icon" style="background:rgba(16,185,129,0.1);color:var(--success)"><i class="fas fa-check-circle"></i></div>
+            <div class="item-text"><span class="item-title">فحص الأهلية المبدئية</span><span class="item-desc">اعرف مدى أهليتك في دقيقة</span></div>
+          </div>
+          <div class="dropdown-item" onclick="showPage('financing')">
+            <div class="item-icon" style="background:rgba(239,68,68,0.1);color:var(--error)"><i class="fas fa-chart-line"></i></div>
+            <div class="item-text"><span class="item-title">متابعة طلب التمويل</span><span class="item-desc">تابع حالة طلبك لحظة بلحظة</span></div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('services')">الخدمات</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('packages')">الباقات</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('partners')">الشركاء</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('sme-stores')">قصص نجاح</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="showPage('about')">من نحن</a>
+      </li>
+      <!-- ===== لوحة التحكم الإدارية — دائمة الظهور ===== -->
+      <li class="nav-item">
+        <a class="nav-link" id="adminNavLink" onclick="handleAdminNavClick()" 
+           style="color:#e11d48;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:5px">
+          <i class="fas fa-shield-alt"></i> <span id="adminNavLinkText">دخول الإدارة</span>
+        </a>
+      </li>
+      <!-- ===== بوابة الدفع فقط — المانحون مرحلة لاحقة ===== -->
+      <li class="nav-item">
+        <a class="nav-link" onclick="window.location.href='payment-gateway.html'" style="color:var(--secondary);font-weight:700;">
+          <i class="fas fa-credit-card"></i> الدفع
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar-actions">
+      <!-- زر الجرس — يوجّه للوحة المستخدم الصحيحة -->
+      <button class="notification-btn" onclick="goToMyDashboard()" title="لوحة التحكم">
+        <i class="fas fa-bell"></i>
+        <span class="notif-dot" id="navNotifDot" style="display:none"></span>
+      </button>
+
+      <!-- زر لوحة التحكم الديناميكي — يظهر فقط إذا كان هناك جلسة -->
+      <button id="myDashboardBtn" onclick="goToMyDashboard()"
+        style="display:none;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:none;font-weight:800;font-size:.82rem;cursor:pointer;background:linear-gradient(135deg,#0ea5a0,#0f2d5e);color:white">
+        <i class="fas fa-tachometer-alt"></i>
+        <span id="myDashboardBtnText">لوحتي</span>
+      </button>
+
+      <!-- قائمة البوابات الموحدة -->
+      <div style="position:relative;display:inline-block" id="portals-dropdown-wrap">
+        <button class="btn btn-outline btn-sm" onclick="togglePortalsMenu()" style="display:flex;align-items:center;gap:5px">
+          <i class="fas fa-door-open"></i> البوابات <i class="fas fa-chevron-down" style="font-size:.6rem"></i>
+        </button>
+        <div id="portals-dropdown" style="display:none;position:absolute;top:110%;left:0;background:white;
+          border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.15);padding:10px;min-width:240px;z-index:9999">
+          <div style="font-size:.68rem;font-weight:800;color:#94a3b8;padding:4px 8px 6px;text-transform:uppercase;letter-spacing:.06em">اختر بوابتك</div>
+          ${[
+            {type:'customer', label:'بوابة العملاء',        icon:'fa-rocket',              color:'#0f2d5e', sub:'رواد أعمال ومشاريع'},
+            {type:'supplier', label:'بوابة الموردين',       icon:'fa-industry',            color:'#ea580c', sub:'مصانع، خدمات، لوجستيك'},
+            {type:'finance',  label:'المؤسسات المالية',     icon:'fa-university',          color:'#7c3aed', sub:'بنوك، شركات تمويل'},
+            {type:'donor',    label:'بوابة المانحين',       icon:'fa-heart',               color:'#059669', sub:'دعم رواد الأعمال'},
+          ].map(p=>`
+            <div onclick="openPortal('${p.type}');document.getElementById('portals-dropdown').style.display='none'"
+              style="display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border-radius:10px;cursor:pointer;
+              transition:background .15s"
+              onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background=''">
+              <div style="width:34px;height:34px;background:${p.color}15;border-radius:9px;
+                display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas ${p.icon}" style="color:${p.color};font-size:.85rem"></i>
+              </div>
+              <div>
+                <div style="font-size:.83rem;font-weight:800;color:#0f172a">${p.label}</div>
+                <div style="font-size:.7rem;color:#94a3b8">${p.sub}</div>
+              </div>
+            </div>
+          `).join('')}
+          <div style="border-top:1px solid #f1f5f9;margin-top:6px;padding-top:6px">
+            <div onclick="showPage('portals');document.getElementById('portals-dropdown').style.display='none'"
+              style="display:flex;align-items:center;gap:.5rem;padding:.5rem .8rem;border-radius:8px;cursor:pointer;
+              color:#0ea5a0;font-size:.78rem;font-weight:700;transition:background .15s"
+              onmouseover="this.style.background='#f0fdfa'" onmouseout="this.style.background=''">
+              <i class="fas fa-th-large"></i> عرض جميع البوابات
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- زر ابدأ مشروعك الذكي -->
+      <button id="navStartBtn" onclick="handleStartProject()" class="btn btn-secondary btn-sm"
+        style="display:inline-flex;align-items:center;gap:5px;font-weight:800">
+        <i class="fas fa-rocket"></i> ابدأ مشروعك
+      </button>
+
+      <button class="navbar-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+  <div class="mobile-panel">
+    <div class="mobile-header">
+      <div class="navbar-logo">
+        <div class="logo-mark">م</div>
+        <div class="logo-text">
+          <span class="logo-name">مشروعي</span>
+          <span class="logo-tagline">Mashrooi</span>
+        </div>
+      </div>
+      <button class="mobile-close" onclick="toggleMobileMenu()"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="mobile-nav">
+      <li><div class="mobile-nav-link" onclick="showPage('home');toggleMobileMenu()"><i class="fas fa-home"></i>الرئيسية</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('products');toggleMobileMenu()"><i class="fas fa-boxes"></i>المنتجات والمعدات</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('financing');toggleMobileMenu()"><i class="fas fa-hand-holding-usd"></i>التمويل</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('services');toggleMobileMenu()"><i class="fas fa-concierge-bell"></i>الخدمات</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('packages');toggleMobileMenu()"><i class="fas fa-box-open"></i>الباقات</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('partners');toggleMobileMenu()"><i class="fas fa-handshake"></i>الشركاء</div></li>
+      <li><div class="mobile-nav-link" onclick="showPage('about');toggleMobileMenu()"><i class="fas fa-info-circle"></i>من نحن</div></li>
+      <li><div class="mobile-nav-link" onclick="openPortal('donor');toggleMobileMenu()" style="color:#059669;font-weight:700;"><i class="fas fa-heart" style="color:#059669;"></i>بوابة المانحين</div></li>
+      <li><div class="mobile-nav-link" onclick="openPortal('supplier');toggleMobileMenu()" style="color:#ea580c;font-weight:700;"><i class="fas fa-industry" style="color:#ea580c;"></i>بوابة الموردين</div></li>
+      <li><div class="mobile-nav-link" onclick="openPortal('finance');toggleMobileMenu()" style="color:#7c3aed;font-weight:700;"><i class="fas fa-university" style="color:#7c3aed;"></i>المؤسسات المالية</div></li>
+      <li><div class="mobile-nav-link" onclick="window.location.href='payment-gateway.html'" style="color:#1b3a6b;font-weight:700;"><i class="fas fa-credit-card" style="color:#1b3a6b;"></i>بوابة الدفع</div></li>
+    </ul>
+    <div class="mobile-divider"></div>
+    <ul class="mobile-nav">
+      <li><div class="mobile-nav-link" onclick="showPage('dashboard-admin');toggleMobileMenu()" id="adminMobileLink" style="color:#e11d48;font-weight:800;display:none"><i class="fas fa-shield-alt" style="color:#e11d48;"></i>لوحة الإدارة</div></li>
+      <li><div class="mobile-nav-link" onclick="goToMyDashboard();toggleMobileMenu()" style="color:var(--secondary);font-weight:700;"><i class="fas fa-tachometer-alt" style="color:var(--secondary);"></i>لوحة التحكم</div></li>
+    </ul>
+    <div class="mobile-actions">
+      <button class="btn btn-outline" style="width:100%" onclick="showPage('signin');toggleMobileMenu()">تسجيل الدخول</button>
+      <button class="btn btn-secondary" style="width:100%" onclick="showPage('signup');toggleMobileMenu()">ابدأ مجاناً</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     TOAST CONTAINER
+     ============================================ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ============================================
+     PAGES CONTAINER
+     ============================================ -->
+<div id="pagesContainer">
+
+  <!-- =================== HOME PAGE =================== -->
+  <div id="page-home" class="page active">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-particles"></div>
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="dot"></span>
+              منصة أعمال متكاملة — الإصدار الأول
+            </div>
+            <h1 class="hero-title">
+              منصة واحدة لشراء<br/>
+              <span class="highlight">معدات مشروعك</span><br/>
+              وتمويلها ودفعها وتوصيلها
+            </h1>
+            <p class="hero-subtitle">
+              كل ما يحتاجه مشروعك في منصة واحدة:<br/>
+              <strong style="color:rgba(255,255,255,0.95)">منتج، تمويل، دفع، خدمة، وتوصيل.</strong>
+            </p>
+            <div class="hero-cta">
+              <button class="btn btn-secondary btn-lg" onclick="handleStartProject()">
+                <i class="fas fa-rocket"></i>
+                ابدأ مشروعك الآن
+              </button>
+              <button class="btn btn-outline-white btn-lg" onclick="showPage('products')">
+                <i class="fas fa-play-circle"></i>
+                تصفّح المعدات
+              </button>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num" id="heroStatProducts">+500</div>
+                <div class="hero-stat-label">منتج وأصل</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num" id="heroStatPartners">+30</div>
+                <div class="hero-stat-label">شريك تمويلي</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num" id="heroStatServices">+200</div>
+                <div class="hero-stat-label">مزود خدمة</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num" id="heroStatUsers">+1200</div>
+                <div class="hero-stat-label">عميل مستفيد</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-dashboard-card">
+              <div class="hero-card-header">
+                <span class="hero-card-title">رحلة المشروع الموحدة</span>
+                <span class="hero-card-badge">جارٍ التنفيذ</span>
+              </div>
+              <div class="hero-journey">
+                <div class="journey-step completed">
+                  <div class="journey-icon" style="background:rgba(16,185,129,0.2)"><i class="fas fa-check-circle" style="color:#4ade80;font-size:1.25rem"></i></div>
+                  <div class="journey-text">
+                    <div class="journey-name">اختيار المعدة</div>
+                    <div class="journey-desc">ماكينة تعبئة تجارية • 45,000 ريال</div>
+                  </div>
+                  <span class="journey-status" style="background:rgba(16,185,129,0.2);color:#4ade80">مكتمل</span>
+                </div>
+                <div class="journey-step completed">
+                  <div class="journey-icon" style="background:rgba(16,185,129,0.2)"><i class="fas fa-check-circle" style="color:#4ade80;font-size:1.25rem"></i></div>
+                  <div class="journey-text">
+                    <div class="journey-name">طلب التمويل</div>
+                    <div class="journey-desc">تقسيط 36 شهراً • بنك التضامن الإسلامي عدن</div>
+                  </div>
+                  <span class="journey-status" style="background:rgba(16,185,129,0.2);color:#4ade80">مكتمل</span>
+                </div>
+                <div class="journey-step active-step">
+                  <div class="journey-icon" style="background:rgba(14,165,160,0.2)"><i class="fas fa-credit-card" style="color:var(--secondary-light);font-size:1.125rem"></i></div>
+                  <div class="journey-text">
+                    <div class="journey-name">الدفع والتعاقد</div>
+                    <div class="journey-desc">دفعة أولى 10% • العقد الرقمي</div>
+                  </div>
+                  <span class="journey-status" style="background:rgba(14,165,160,0.2);color:var(--secondary-light)">جارٍ</span>
+                </div>
+                <div class="journey-step">
+                  <div class="journey-icon" style="background:rgba(255,255,255,0.08)"><i class="fas fa-truck" style="color:rgba(255,255,255,0.4);font-size:1.125rem"></i></div>
+                  <div class="journey-text">
+                    <div class="journey-name">التوصيل والتركيب</div>
+                    <div class="journey-desc">عدن • خلال 5 أيام عمل</div>
+                  </div>
+                  <span class="journey-status" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4)">قادم</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Paths -->
+    <section class="journey-paths">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">ابدأ من هنا</span>
+          <h2 class="section-title">ما الذي تبحث عنه اليوم؟</h2>
+          <p class="section-subtitle">اختر رحلتك وسنوجّهك خطوة بخطوة نحو الهدف</p>
+        </div>
+        <div class="paths-grid">
+          <div class="path-card" style="--path-color:#0ea5a0" onclick="handleStartProject()">
+            <div class="path-icon-wrap" style="background:rgba(14,165,160,0.1)"><span style="font-size:1.75rem">🚀</span></div>
+            <h3 class="path-title">أريد تأسيس مشروع</h3>
+            <p class="path-desc">من الفكرة إلى التشغيل — نساعدك في التأسيس والترخيص والمعدات والتمويل</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> ابدأ رحلة التأسيس</div>
+          </div>
+          <div class="path-card" style="--path-color:#0f2d5e" onclick="showPage('products')">
+            <div class="path-icon-wrap" style="background:rgba(15,45,94,0.1)"><span style="font-size:1.75rem">🏭</span></div>
+            <h3 class="path-title">أريد شراء معدة أو أصل</h3>
+            <p class="path-desc">اختر معدتك من كتالوجنا الشامل وادفع نقداً أو بالتقسيط مع التوصيل لبابك</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> تصفّح المعدات</div>
+          </div>
+          <div class="path-card" style="--path-color:#6c47d0" onclick="showPage('financing')">
+            <div class="path-icon-wrap" style="background:rgba(108,71,208,0.1)"><span style="font-size:1.75rem">💰</span></div>
+            <h3 class="path-title">أريد تمويلاً</h3>
+            <p class="path-desc">قارن عروض التمويل من أكثر من 30 بنكاً وشركة تمويل واختر الأنسب</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> اكتشف التمويل المناسب</div>
+          </div>
+          <div class="path-card" style="--path-color:#059669" onclick="showPage('services')">
+            <div class="path-icon-wrap" style="background:rgba(5,150,105,0.1)"><span style="font-size:1.75rem">⚙️</span></div>
+            <h3 class="path-title">أريد تشغيل مشروعي</h3>
+            <p class="path-desc">خدمات محاسبة، قانونية، استشارات، تسويق، وموارد بشرية لتشغيل مشروعك بكفاءة</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> استكشف الخدمات</div>
+          </div>
+          <div class="path-card" style="--path-color:#f59e0b" onclick="showPage('packages')">
+            <div class="path-icon-wrap" style="background:rgba(245,158,11,0.1)"><span style="font-size:1.75rem">📈</span></div>
+            <h3 class="path-title">أريد تطوير وتوسعة</h3>
+            <p class="path-desc">باقات النمو لمساعدتك في توسيع نشاطك التجاري وفتح أسواق جديدة</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> عرض باقات التوسع</div>
+          </div>
+          <div class="path-card" style="--path-color:#e11d48" onclick="showPage('partners')">
+            <div class="path-icon-wrap" style="background:rgba(225,29,72,0.1)"><span style="font-size:1.75rem">🤝</span></div>
+            <h3 class="path-title">أبحث عن فرصة أو شريك</h3>
+            <p class="path-desc">فرص استثمارية وشراكات استراتيجية وامتيازات تجارية مختارة ومُعتمدة</p>
+            <div class="path-link"><i class="fas fa-arrow-left"></i> استكشف الفرص</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">كيف تعمل المنصة</span>
+          <h2 class="section-title">رحلة واحدة من المنتج إلى التشغيل</h2>
+          <p class="section-subtitle">أربع خطوات بسيطة تحوّل فكرتك إلى مشروع يعمل</p>
+        </div>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-step-num"><i class="fas fa-search"></i></div>
+            <h3 class="how-step-title">اكتشف وقارن</h3>
+            <p class="how-step-desc">تصفّح كتالوج المعدات والحلول المناسبة لمشروعك وقارن بينها بسهولة تامة</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num"><i class="fas fa-hand-holding-usd"></i></div>
+            <h3 class="how-step-title">اختر التمويل</h3>
+            <p class="how-step-desc">قيّم أهليتك للتمويل وقارن عروض البنوك وشركات التمويل وقدّم طلبك رقمياً</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num"><i class="fas fa-credit-card"></i></div>
+            <h3 class="how-step-title">ادفع بأمان</h3>
+            <p class="how-step-desc">أتمّ عملية الدفع عبر بوابتنا الآمنة، سواء نقداً أو دفعة أولى مع تقسيط الباقي</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num"><i class="fas fa-truck"></i></div>
+            <h3 class="how-step-title">استلم وشغّل</h3>
+            <p class="how-step-desc">نتولى التوصيل والتركيب وفريق الدعم يرافقك خلال مرحلة التشغيل الأولى</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">كتالوج المعدات</span>
+          <h2 class="section-title">معدات وأصول مختارة لمشروعك</h2>
+          <p class="section-subtitle">أكثر من 500 منتج من موردين معتمدين مع إمكانية التمويل الفوري</p>
+        </div>
+        <div class="products-grid" id="homeProductsGrid">
+          <!-- يتم تحميل المنتجات ديناميكياً من products-database.js -->
+          <div style="grid-column:1/-1;text-align:center;padding:var(--spacing-8);color:var(--gray-400)">
+            <i class="fas fa-spinner fa-spin" style="font-size:2rem;margin-bottom:12px;display:block"></i>
+            جارٍ تحميل المنتجات...
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:var(--spacing-10)">
+          <button class="btn btn-outline btn-lg" onclick="showPage('products')">
+            <i class="fas fa-boxes"></i>
+            عرض جميع المنتجات (500+)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financing Section -->
+    <section class="financing-section">
+      <div class="container">
+        <div class="financing-inner">
+          <div>
+            <span class="section-tag">محرك التمويل</span>
+            <h2 class="section-title" style="text-align:right;margin-bottom:var(--spacing-4)">تمويل مشروعك لم يكن بهذه السهولة</h2>
+            <p style="color:var(--gray-500);line-height:1.9;margin-bottom:var(--spacing-8);font-size:var(--font-size-lg)">
+              نربطك بأكثر من 30 بنكاً وشركة تمويل في منطقتك. قارن العروض، قيّم الأهلية، وقدّم طلبك كله داخل المنصة دون زيارة أي جهة.
+            </p>
+            <div class="financing-mini-cards" id="homeFinanceCards">
+              <div class="mini-card">
+                <div class="mini-card-icon" style="background:rgba(15,45,94,0.1)"><i class="fas fa-university" style="color:var(--primary)"></i></div>
+                <div class="mini-card-title">تمويل بنكي</div>
+                <div class="mini-card-desc">قروض وتمويل شخصي وتجاري</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-icon" style="background:rgba(14,165,160,0.1)"><i class="fas fa-mosque" style="color:var(--secondary)"></i></div>
+                <div class="mini-card-title">تمويل إسلامي</div>
+                <div class="mini-card-desc">مرابحة وإجارة وتمويل حلال</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-icon" style="background:rgba(108,71,208,0.1)"><i class="fas fa-seedling" style="color:var(--accent-violet)"></i></div>
+                <div class="mini-card-title">تمويل متناهي الصغر</div>
+                <div class="mini-card-desc">للمشاريع الصغيرة والمنزلية</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-icon" style="background:rgba(5,150,105,0.1)"><i class="fas fa-file-contract" style="color:var(--accent-emerald)"></i></div>
+                <div class="mini-card-title">إجارة ومتعلقات</div>
+                <div class="mini-card-desc">تأجير الأصول مع خيار التملك</div>
+              </div>
+            </div>
+            <div style="margin-top:var(--spacing-8)">
+              <button class="btn btn-primary btn-lg" onclick="showPage('financing')">
+                <i class="fas fa-search-dollar"></i>
+                افحص أهليتك للتمويل
+              </button>
+            </div>
+          </div>
+          <div class="financing-visual">
+            <div class="financing-main-card">
+              <div class="finance-card-header">
+                <div class="finance-card-logo">مشروعي</div>
+                <span class="finance-card-type">تمويل تجاري</span>
+              </div>
+              <div class="finance-card-amount">$83 ≈ 45,000 ر.ي</div>
+              <div class="finance-card-label">قيمة التمويل المعتمد</div>
+              <div style="margin-bottom:var(--spacing-6)">
+                <div style="background:rgba(255,255,255,0.1);border-radius:var(--radius-full);height:8px;margin-bottom:8px">
+                  <div style="background:var(--secondary);width:72%;height:100%;border-radius:var(--radius-full)"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.6)">
+                  <span>72% تمت الموافقة</span>
+                  <span>المرحلة 3 من 4</span>
+                </div>
+              </div>
+              <div class="finance-card-info">
+                <div>
+                  <div class="fci-label">مدة التمويل</div>
+                  <div class="fci-value">36 شهراً</div>
+                </div>
+                <div>
+                  <div class="fci-label">القسط الشهري</div>
+                  <div class="fci-value">$2.7 ≈ 1,450 ر.ي</div>
+                </div>
+                <div>
+                  <div class="fci-label">الدفعة الأولى</div>
+                  <div class="fci-value">$8 ≈ 4,500 ر.ي</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">خدمات المنصة</span>
+          <h2 class="section-title">كل ما تحتاجه لتشغيل مشروعك</h2>
+          <p class="section-subtitle">خبراء ومستشارون معتمدون في جميع المجالات</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(15,45,94,0.1)"><i class="fas fa-building" style="color:var(--primary)"></i></div>
+            <div class="service-name">تأسيس الأعمال</div>
+            <div class="service-desc">تسجيل الشركات، التراخيص، السجلات التجارية، وكل متطلبات البدء</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(14,165,160,0.1)"><i class="fas fa-calculator" style="color:var(--secondary)"></i></div>
+            <div class="service-name">المحاسبة والضرائب</div>
+            <div class="service-desc">دفاتر حسابات، ضريبة القيمة المضافة، زكاة الأعمال، وإعداد القوائم المالية</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(108,71,208,0.1)"><i class="fas fa-gavel" style="color:var(--accent-violet)"></i></div>
+            <div class="service-name">الاستشارات القانونية</div>
+            <div class="service-desc">عقود، نزاعات، توثيق، محاماة، وحماية حقوق الملكية الفكرية</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(245,158,11,0.1)"><i class="fas fa-bullhorn" style="color:var(--accent-amber)"></i></div>
+            <div class="service-name">التسويق الرقمي</div>
+            <div class="service-desc">حملات إعلانية، وسائل التواصل، هوية بصرية، وإدارة المحتوى</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(5,150,105,0.1)"><i class="fas fa-chart-bar" style="color:var(--accent-emerald)"></i></div>
+            <div class="service-name">دراسات الجدوى</div>
+            <div class="service-desc">تحليل السوق، الجدوى الاقتصادية، وإعداد خطط الأعمال الاحترافية</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(225,29,72,0.1)"><i class="fas fa-laptop-code" style="color:var(--accent-rose)"></i></div>
+            <div class="service-name">التحول الرقمي</div>
+            <div class="service-desc">تطوير تطبيقات، أنظمة ERP، أتمتة العمليات، والبنية التقنية</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(59,130,246,0.1)"><i class="fas fa-users" style="color:var(--info)"></i></div>
+            <div class="service-name">الموارد البشرية</div>
+            <div class="service-desc">توظيف، رواتب، تدريب، وإدارة منظومة الموارد البشرية</div>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon" style="background:rgba(15,45,94,0.1)"><i class="fas fa-expand-arrows-alt" style="color:var(--primary)"></i></div>
+            <div class="service-name">استشارات النمو</div>
+            <div class="service-desc">استراتيجيات التوسع، فتح فروع، دخول أسواق جديدة</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:var(--spacing-10)">
+          <button class="btn btn-outline btn-lg" onclick="showPage('services')">
+            <i class="fas fa-concierge-bell"></i>
+            استكشف جميع الخدمات
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">الباقات المتكاملة</span>
+          <h2 class="section-title">حزمة واحدة تغطي احتياجاتك كاملاً</h2>
+          <p class="section-subtitle">باقات مصممة لكل مرحلة من مراحل مشروعك</p>
+        </div>
+        <div class="packages-grid">
+          <div class="pkg-card" onclick="showPage('packages')">
+            <div class="pkg-icon" style="background:rgba(14,165,160,0.1)"><span style="font-size:1.5rem">🏗️</span></div>
+            <h3 class="pkg-name">باقة تأسيس المشروع</h3>
+            <p class="pkg-desc">كل ما تحتاجه لبدء مشروعك من الصفر بشكل صحيح وقانوني</p>
+            <div class="pkg-price">
+              <div class="pkg-price-amount">$7 <span style="font-size:0.7em">≈ 3,500 ر.ي</span></div>
+              <div class="pkg-price-note">تسعيرة مجمّعة بدلاً من $12 (6,200 ر.ي)</div>
+            </div>
+            <ul class="pkg-features">
+              <li class="pkg-feature"><i class="fas fa-check"></i>تسجيل الشركة والترخيص</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>الهوية البصرية الأساسية</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>استشارة مالية وقانونية</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>دراسة الجدوى المبدئية</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>خطة عمل تنفيذية</li>
+            </ul>
+            <button class="btn btn-outline" style="width:100%" onclick="showPage('packages')">اعرف المزيد</button>
+          </div>
+          <div class="pkg-card popular" onclick="showPage('packages')">
+            <span class="pkg-badge">الأكثر طلباً</span>
+            <div class="pkg-icon" style="background:rgba(14,165,160,0.1)"><span style="font-size:1.5rem">⚡</span></div>
+            <h3 class="pkg-name">باقة النشاط التجاري</h3>
+            <p class="pkg-desc">ابدأ نشاطك التجاري بسرعة مع كل الأدوات اللازمة للتشغيل الفوري</p>
+            <div class="pkg-price">
+              <div class="pkg-price-amount">$16 <span style="font-size:0.7em">≈ 8,900 ر.ي</span></div>
+              <div class="pkg-price-note">أو قسّطها على 12 شهراً</div>
+            </div>
+            <ul class="pkg-features">
+              <li class="pkg-feature"><i class="fas fa-check"></i>التأسيس والترخيص الكامل</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>معدة أساسية حسب النشاط</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>نظام نقاط بيع وفوترة</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>محاسبة أول 3 أشهر</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>حملة تسويق إطلاق</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>متابعة شهرية لمدة 6 أشهر</li>
+            </ul>
+            <button class="btn btn-secondary" style="width:100%" onclick="showPage('packages')">اختر هذه الباقة</button>
+          </div>
+          <div class="pkg-card" onclick="showPage('packages')">
+            <div class="pkg-icon" style="background:rgba(108,71,208,0.1)"><span style="font-size:1.5rem">🛒</span></div>
+            <h3 class="pkg-name">باقة إطلاق التجارة الإلكترونية</h3>
+            <p class="pkg-desc">متجرك الإلكتروني جاهز للبيع خلال 7 أيام مع كل الدعم المطلوب</p>
+            <div class="pkg-price">
+              <div class="pkg-price-amount">$10 <span style="font-size:0.7em">≈ 5,200 ر.ي</span></div>
+              <div class="pkg-price-note">تسعيرة مجمّعة بدلاً من $18 (9,500 ر.ي)</div>
+            </div>
+            <ul class="pkg-features">
+              <li class="pkg-feature"><i class="fas fa-check"></i>تصميم وتطوير المتجر</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>بوابة دفع متكاملة</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>ربط شركات الشحن</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>إعداد صفحات التواصل</li>
+              <li class="pkg-feature"><i class="fas fa-check"></i>تدريب وتسليم كامل</li>
+            </ul>
+            <button class="btn btn-outline" style="width:100%" onclick="showPage('packages')">اعرف المزيد</button>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:var(--spacing-10)">
+          <button class="btn btn-primary btn-lg" onclick="showPage('packages')">
+            <i class="fas fa-box-open"></i>
+            عرض جميع الباقات
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logistics Section -->
+    <section class="logistics-section">
+      <div class="container">
+        <div class="logistics-inner">
+          <div>
+            <span class="section-tag" style="background:rgba(14,165,160,0.3);color:var(--secondary-light)">الخدمات اللوجستية</span>
+            <h2 class="section-title" style="color:white;text-align:right;margin-bottom:var(--spacing-5)">التوصيل والتركيب حتى باب مشروعك</h2>
+            <p style="color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:var(--spacing-8);font-size:var(--font-size-lg)">
+              نتعاون مع كبرى شركات الشحن والتوصيل في اليمن لضمان وصول معداتك بأمان وفي الموعد المحدد.
+            </p>
+            <div class="logistics-features">
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-shipping-fast"></i></div>
+                <div class="lf-title">شحن سريع</div>
+                <div class="lf-desc">من 24 إلى 72 ساعة للمدن الرئيسية</div>
+              </div>
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="lf-title">تتبع لحظي</div>
+                <div class="lf-desc">تابع شحنتك لحظة بلحظة</div>
+              </div>
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-tools"></i></div>
+                <div class="lf-title">تركيب وتشغيل</div>
+                <div class="lf-desc">فنيون معتمدون للتركيب</div>
+              </div>
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-warehouse"></i></div>
+                <div class="lf-title">تخزين وتفريغ</div>
+                <div class="lf-desc">مستودعات في 12 مدينة</div>
+              </div>
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-undo-alt"></i></div>
+                <div class="lf-title">إدارة المرتجعات</div>
+                <div class="lf-desc">سياسة استرداد واضحة وعادلة</div>
+              </div>
+              <div class="logistics-feature">
+                <div class="lf-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="lf-title">تأمين الشحنات</div>
+                <div class="lf-desc">كامل الشحنات مؤمّنة ضد الأضرار</div>
+              </div>
+            </div>
+          </div>
+          <div class="logistics-map">
+            <div class="map-circle">
+              <div class="map-center">🗺️</div>
+              <div class="map-dot" style="top:15%;left:50%;transform:translate(-50%,-50%)"></div>
+              <div class="map-dot" style="top:50%;left:20%;transform:translate(-50%,-50%);animation-delay:0.5s"></div>
+              <div class="map-dot" style="bottom:20%;right:25%;transform:translate(50%,50%);animation-delay:1s"></div>
+              <div class="map-dot" style="top:35%;right:10%;transform:translate(50%,-50%);animation-delay:1.5s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ADMIN LOGIN SECTION — قسم دخول الإدارة
+         ============================================================ -->
+    <section id="adminLoginSection" style="padding:4rem 0;background:linear-gradient(135deg,#091e42 0%,#0f2d5e 50%,#1a1a2e 100%);position:relative;overflow:hidden">
+      <!-- خلفية شبكية -->
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none"></div>
+      <!-- دوائر ضوئية -->
+      <div style="position:absolute;top:-60px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.15) 0%,transparent 70%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(225,29,72,.12) 0%,transparent 70%);pointer-events:none"></div>
+
+      <div class="container" style="position:relative;z-index:1">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto">
+
+          <!-- النص التعريفي -->
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(225,29,72,.15);border:1px solid rgba(225,29,72,.3);border-radius:99px;padding:6px 16px;margin-bottom:1.2rem">
+              <i class="fas fa-shield-alt" style="color:#f87171;font-size:.8rem"></i>
+              <span style="color:#f87171;font-size:.78rem;font-weight:800">منطقة مقيّدة — للمشرفين فقط</span>
+            </div>
+            <h2 style="font-size:2rem;font-weight:900;color:white;margin-bottom:1rem;line-height:1.3">
+              لوحة التحكم<br><span style="color:#0ea5a0">الإدارية</span>
+            </h2>
+            <p style="color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:1.5rem;font-size:.95rem">
+              إدارة شاملة للمنصة: موافقة المنتجات، إدارة المستخدمين، متابعة الطلبات، إحصائيات مباشرة، ولوحة اللوجستيك.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.85rem">
+                <div style="width:28px;height:28px;background:rgba(14,165,160,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:#0ea5a0;font-size:.7rem"></i></div>
+                موافقة على منتجات الموردين والتمويل
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.85rem">
+                <div style="width:28px;height:28px;background:rgba(14,165,160,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:#0ea5a0;font-size:.7rem"></i></div>
+                إدارة حسابات العملاء والموردين والممولين
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.85rem">
+                <div style="width:28px;height:28px;background:rgba(14,165,160,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:#0ea5a0;font-size:.7rem"></i></div>
+                متابعة الطلبات والشحنات اللوجستية
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.85rem">
+                <div style="width:28px;height:28px;background:rgba(14,165,160,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:#0ea5a0;font-size:.7rem"></i></div>
+                إحصائيات ومخططات بيانية مباشرة
+              </div>
+            </div>
+          </div>
+
+          <!-- نموذج الدخول -->
+          <div id="adminSectionLoginBox">
+            <!-- حالة: غير مسجّل -->
+            <div id="adminLoginCard" style="background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:2rem">
+              <div style="text-align:center;margin-bottom:1.5rem">
+                <div style="width:56px;height:56px;background:linear-gradient(135deg,#e11d48,#7c3aed);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:1.4rem">🛡️</div>
+                <h3 style="color:white;font-weight:900;font-size:1.1rem;margin-bottom:4px">دخول لوحة التحكم</h3>
+                <p style="color:rgba(255,255,255,.5);font-size:.78rem">للمسؤولين المعتمدين فقط</p>
+              </div>
+
+              <div id="adminSectionAlert" style="display:none;background:rgba(225,29,72,.15);border:1px solid rgba(225,29,72,.3);border-radius:10px;padding:10px 14px;margin-bottom:1rem;color:#f87171;font-size:.82rem;text-align:center"></div>
+
+              <form id="adminSectionForm" onsubmit="handleAdminSectionLogin(event)" autocomplete="off">
+                <input type="text" name="username" autocomplete="username" style="display:none" aria-hidden="true" tabindex="-1"/>
+                <div style="margin-bottom:1rem">
+                  <label style="color:rgba(255,255,255,.7);font-size:.8rem;font-weight:700;display:block;margin-bottom:6px">اسم المستخدم</label>
+                  <div style="position:relative">
+                    <i class="fas fa-user" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-size:.85rem"></i>
+                    <input type="text" id="admSecUser" placeholder="admin" autocomplete="username"
+                      style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px 38px 11px 12px;color:white;font-family:inherit;font-size:.88rem;outline:none;transition:border .2s"
+                      onfocus="this.style.borderColor='rgba(14,165,160,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
+                  </div>
+                </div>
+                <div style="margin-bottom:1.2rem">
+                  <label style="color:rgba(255,255,255,.7);font-size:.8rem;font-weight:700;display:block;margin-bottom:6px">كلمة المرور</label>
+                  <div style="position:relative">
+                    <i class="fas fa-lock" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-size:.85rem"></i>
+                    <input type="password" id="admSecPw" placeholder="••••••••" autocomplete="current-password"
+                      style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px 38px 11px 38px;color:white;font-family:inherit;font-size:.88rem;outline:none;direction:ltr;letter-spacing:2px;transition:border .2s"
+                      onfocus="this.style.borderColor='rgba(14,165,160,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
+                    <button type="button" onclick="toggleSectionPw()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:.85rem;padding:4px" title="إظهار/إخفاء">
+                      <i class="fas fa-eye" id="admSecPwIcon"></i>
+                    </button>
+                  </div>
+                </div>
+                <button type="submit" id="admSecBtn"
+                  style="width:100%;background:linear-gradient(135deg,#e11d48,#7c3aed);color:white;border:none;border-radius:10px;padding:13px;font-weight:900;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <span id="admSecBtnTxt">دخول لوحة التحكم</span>
+                </button>
+              </form>
+              <div style="text-align:center;margin-top:1rem">
+                <a href="admin-login.html" style="color:rgba(255,255,255,.4);font-size:.75rem;text-decoration:none">
+                  <i class="fas fa-external-link-alt" style="font-size:.65rem"></i>
+                  فتح في صفحة مستقلة
+                </a>
+              </div>
+            </div>
+
+            <!-- حالة: مسجّل دخول -->
+            <div id="adminLoggedCard" style="display:none;background:rgba(14,165,160,.08);backdrop-filter:blur(20px);border:1px solid rgba(14,165,160,.25);border-radius:20px;padding:2rem;text-align:center">
+              <div style="width:64px;height:64px;background:linear-gradient(135deg,#0f2d5e,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.3rem;color:white;font-weight:900" id="admSecAvatar">مد</div>
+              <div style="color:white;font-weight:900;font-size:1rem;margin-bottom:4px" id="admSecName">مدير النظام</div>
+              <div style="color:rgba(255,255,255,.5);font-size:.78rem;margin-bottom:1.5rem" id="admSecRole">super_admin</div>
+              <button onclick="openAdminDashboard()"
+                style="width:100%;background:linear-gradient(135deg,#0ea5a0,#059669);color:white;border:none;border-radius:10px;padding:13px;font-weight:900;font-size:.9rem;cursor:pointer;margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;gap:8px">
+                <i class="fas fa-tachometer-alt"></i> فتح لوحة التحكم
+              </button>
+              <button onclick="admSectionLogout()"
+                style="width:100%;background:rgba(225,29,72,.15);color:#f87171;border:1px solid rgba(225,29,72,.3);border-radius:10px;padding:10px;font-weight:700;font-size:.82rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">
+                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">الثقة والاعتماد</span>
+          <h2 class="section-title">منصة تبني على الثقة</h2>
+          <p class="section-subtitle">ضمانات واضحة وآليات حماية لجميع أطراف المعاملة</p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-certificate"></i></div>
+            <h3 class="trust-title">موردون معتمدون</h3>
+            <p class="trust-desc">جميع الموردون خضعوا لعملية تحقق وتقييم صارمة قبل الانضمام للمنصة</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-file-signature"></i></div>
+            <h3 class="trust-title">عقود رقمية موثّقة</h3>
+            <p class="trust-desc">كل معاملة محمية بعقد رقمي موثّق قانونياً مع إمكانية الرجوع في أي وقت</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-lock"></i></div>
+            <h3 class="trust-title">مدفوعات آمنة 100%</h3>
+            <p class="trust-desc">بوابة دفع مشفّرة ومعتمدة وفق أعلى معايير أمن المعاملات المالية</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-star"></i></div>
+            <h3 class="trust-title">تقييمات موثّقة</h3>
+            <p class="trust-desc">جميع التقييمات من عملاء حقيقيين أتمّوا صفقاتهم عبر المنصة</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3 class="trust-title">إدارة النزاعات</h3>
+            <p class="trust-desc">فريق متخصص لحل النزاعات بين الأطراف بشفافية ونزاهة</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-headset"></i></div>
+            <h3 class="trust-title">دعم 24/7</h3>
+            <p class="trust-desc">فريق دعم متاح على مدار الساعة عبر الدردشة والهاتف والبريد</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-check-double"></i></div>
+            <h3 class="trust-title">SLA واضحة</h3>
+            <p class="trust-desc">معايير مستوى الخدمة معلنة وقابلة للقياس لكل طرف في المنصة</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon"><i class="fas fa-user-check"></i></div>
+            <h3 class="trust-title">التحقق من الهوية</h3>
+            <p class="trust-desc">نظام KYC متكامل للتحقق من هوية جميع المستخدمين والشركاء</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Logos -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">شركاؤنا</span>
+          <h2 class="section-title">شبكة بنوك يمنية موثوقة في عدن والمحافظات</h2>
+        </div>
+        <div class="partners-logos">
+          <div class="partner-logo-item"><i class="fas fa-university"></i> بنك اليمن والخليج — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-university"></i> بنك التضامن الإسلامي — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-university"></i> البنك الأهلي اليمني — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-university"></i> بنك سبأ الإسلامي — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-university"></i> بنك كاك الإسلامي — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-university"></i> البنك اليمني للإنشاء والتعمير</div>
+          <div class="partner-logo-item"><i class="fas fa-hands-helping"></i> صندوق الرعاية الاجتماعية — عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-hands-helping"></i> مؤسسة أمل للتمويل الأصغر</div>
+          <div class="partner-logo-item"><i class="fas fa-industry"></i> اتحاد الصناعيين اليمنيين</div>
+          <div class="partner-logo-item"><i class="fas fa-shipping-fast"></i> شركة اليمن للشحن</div>
+          <div class="partner-logo-item"><i class="fas fa-building"></i> غرفة تجارة وصناعة عدن</div>
+          <div class="partner-logo-item"><i class="fas fa-handshake"></i> تمزا للتقنية</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">قصص النجاح</span>
+          <h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              استطعت خلال أسبوع واحد أن أجد ماكينة التعبئة المناسبة لمشروعي، وأحصل على موافقة التمويل من بنك اليمن والخليج، والآن المعدة في المصنع وجاهزة للتشغيل. المنصة غيّرت الطريقة التي أفكر بها في توسيع مشروعي.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">أ</div>
+              <div>
+                <div class="author-name">أحمد محمد الأنسي</div>
+                <div class="author-role">مصنع تعبئة وتغليف — صنعاء</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              كنت أحتاج تجهيزات لمخبزي بتمويل إسلامي، وكل بنك كان له شروطه المعقدة. جربت مشروعي وقارنت 4 عروض في ساعة واحدة واخترت الأنسب من بنك التضامن. التجربة كانت سلسة جداً والتوصيل لعدن في الموعد.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ف</div>
+              <div>
+                <div class="author-name">فاطمة علي الشرعبي</div>
+                <div class="author-role">مخبز البركة — عدن</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              المنصة ليست فقط للشراء، استفدت من خدمة المحاسبة والمستشار القانوني وكلهم من نفس المنصة. وفّرت وقتاً وجهداً كبيراً. مشروعي يعمل الآن في تعز ويتوسع بشكل لم أتوقعه.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">م</div>
+              <div>
+                <div class="author-name">محمد حسين المقطري</div>
+                <div class="author-role">مصنع عصائر — تعز</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">الأسئلة الشائعة</span>
+          <h2 class="section-title">أجوبة على أكثر الأسئلة شيوعاً</h2>
+        </div>
+        <div class="faq-list" id="faqList">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              ما الفرق بين مشروعي وبقية منصات التجارة الإلكترونية؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              مشروعي ليست متجراً إلكترونياً فقط. نحن منصة متعددة الأطراف تجمع في رحلة واحدة: شراء المعدات، التمويل، الدفع، الخدمات المساندة، والتوصيل. لا تحتاج أن تذهب لجهات متعددة — كل شيء في منصة واحدة.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              هل يمكنني تمويل أي منتج أجده في المنصة؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              نعم، معظم المنتجات في كتالوجنا متاح لها خيار التمويل. ستجد عند كل منتج مؤهل للتمويل زراً مخصصاً لطلب التمويل مباشرة، حيث سيتم ربطك بشركاء التمويل المناسبين.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              كيف يتم التحقق من الموردين؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              يمر كل مورد بعملية فحص شاملة تتضمن: التحقق من السجلات التجارية، تاريخ الأعمال، معايير الجودة، والأداء السابق. ويُصنَّف الموردون إلى مستويات: شريك استراتيجي، مزود معتمد، مزود قياسي، أو مزود جديد تحت المراجعة.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              ماذا لو تأخر التوصيل أو وصلت المعدة معيبة؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              لدينا فريق متخصص لإدارة النزاعات يعمل على حل أي إشكالية في غضون 72 ساعة. كما تتوفر سياسة استرداد واضحة وعقد رقمي يحمي حقوقك.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              هل المنصة مناسبة للمشاريع الصغيرة جداً والمشاريع المنزلية؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              بالتأكيد! صمّمنا المنصة لتخدم رواد الأعمال والأسر المنتجة والمشاريع الصغيرة وصولاً للشركات المتوسطة. نوفر باقات وخيارات تمويل مناسبة لكل حجم مشروع.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              كيف تربح المنصة؟ هل هناك رسوم خفية؟
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              نعتمد على نموذج عمل شفاف: عمولة على المعاملات الناجحة يدفعها الموردون وشركاء التمويل، اشتراكات الشركاء، ورسوم الباقات. لا توجد رسوم خفية على العملاء النهائيين.
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner">
+          <h2 class="cta-title">حلول الأعمال تبدأ من هنا</h2>
+          <p class="cta-subtitle">ابدأ مجاناً اليوم وانضم لأكثر من 1200 رائد أعمال يستخدمون مشروعي لتنمية مشاريعهم</p>
+          <div class="cta-buttons">
+            <button class="btn btn-secondary btn-xl" onclick="showPage('signup')">
+              <i class="fas fa-rocket"></i>
+              أنشئ حسابك مجاناً
+            </button>
+            <button class="btn btn-outline-white btn-xl" onclick="showPage('contact')">
+              <i class="fas fa-phone"></i>
+              تحدّث مع مستشار
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="footer-logo-mark">م</div>
+              <span class="footer-logo-name">مشروعي</span>
+            </div>
+            <p class="footer-brand-desc">منصة أعمال متعددة الأطراف تجمع التجارة والتمويل والخدمات والخدمات اللوجستية في رحلة واحدة متكاملة لرواد الأعمال والشركات الصغيرة والمتوسطة.</p>
+            <p style="font-size:var(--font-size-xs);color:rgba(255,255,255,0.5);margin-bottom:var(--spacing-4)">منتج من منتجات تمزا للتقنية</p>
+            <!-- Contact Info in Footer -->
+            <div style="margin-bottom:var(--spacing-5);display:flex;flex-direction:column;gap:10px">
+              <a href="tel:800800800" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.75);font-size:var(--font-size-sm);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+                <i class="fas fa-phone-alt" style="color:var(--secondary);width:16px"></i>
+                <span dir="ltr">800 800 800</span>
+              </a>
+              <a href="tel:+967773880066" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.75);font-size:var(--font-size-sm);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+                <i class="fab fa-whatsapp" style="color:#25d366;width:16px"></i>
+                <span dir="ltr">+967 773 880 066</span>
+              </a>
+              <a href="mailto:info@mshroue.com" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.75);font-size:var(--font-size-sm);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+                <i class="fas fa-envelope" style="color:var(--secondary);width:16px"></i>
+                info@mshroue.com
+              </a>
+              <a href="mailto:info@tmza.com" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.75);font-size:var(--font-size-sm);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+                <i class="fas fa-envelope" style="color:var(--secondary);width:16px"></i>
+                info@tmza.com
+              </a>
+              <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.65);font-size:var(--font-size-xs);line-height:1.6">
+                <i class="fas fa-map-marker-alt" style="color:var(--secondary);width:16px;margin-top:3px;flex-shrink:0"></i>
+                <span>الجمهورية اليمنية — صنعاء، حدة<br/>عمارة تمزا للتقنية</span>
+              </div>
+            </div>
+            <div class="footer-social">
+              <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/967773880066" target="_blank" class="social-btn" style="background:rgba(37,211,102,0.15);color:#25d366"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-col-title">المنصة</h4>
+            <ul class="footer-links">
+              <li><span class="footer-link" onclick="showPage('products')">كتالوج المعدات</span></li>
+              <li><span class="footer-link" onclick="showPage('financing')">التمويل</span></li>
+              <li><span class="footer-link" onclick="showPage('services')">الخدمات</span></li>
+              <li><span class="footer-link" onclick="showPage('packages')">الباقات</span></li>
+              <li><span class="footer-link">العروض والصفقات</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">الشركاء</h4>
+            <ul class="footer-links">
+              <li><span class="footer-link" onclick="showPage('partners')">الموردون</span></li>
+              <li><span class="footer-link" onclick="showPage('partners')">شركاء التمويل</span></li>
+              <li><span class="footer-link" onclick="showPage('partners')">مزودو الخدمات</span></li>
+              <li><span class="footer-link" onclick="showPage('partners')">شركاء الخدمات اللوجستية</span></li>
+              <li><span class="footer-link" onclick="showPage('partners')">المستثمرون</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">الشركة</h4>
+            <ul class="footer-links">
+              <li><span class="footer-link" onclick="showPage('about')">من نحن</span></li>
+              <li><span class="footer-link">وظائف</span></li>
+              <li><span class="footer-link">المدوّنة</span></li>
+              <li><span class="footer-link">الأخبار</span></li>
+              <li><span class="footer-link" onclick="showPage('contact')">تواصل معنا</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">الدعم</h4>
+            <ul class="footer-links">
+              <li><span class="footer-link">مركز المساعدة</span></li>
+              <li><span class="footer-link">الأسئلة الشائعة</span></li>
+              <li><span class="footer-link">سياسة الخصوصية</span></li>
+              <li><span class="footer-link">الشروط والأحكام</span></li>
+              <li><span class="footer-link">سياسة الاسترداد</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 مشروعي — Mashrooi Platform. جميع الحقوق محفوظة.</span>
+          <div class="footer-bottom-links">
+            <span class="footer-bottom-link">سياسة الخصوصية</span>
+            <span class="footer-bottom-link">الشروط والأحكام</span>
+            <span class="footer-bottom-link">خريطة الموقع</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- End Home Page -->
+
+  <!-- =================== KYC PAGE =================== -->
+  <div id="page-kyc" class="page"></div>
+
+  <!-- =================== ADD PRODUCT PAGE =================== -->
+  <div id="page-add-product" class="page"></div>
+
+  <!-- =================== PRODUCT DETAIL PAGE =================== -->
+  <div id="page-product-detail" class="page"></div>
+
+  <!-- =================== SME STORES PAGE =================== -->
+  <div id="page-sme-stores" class="page"></div>
+
+  <!-- =================== LOGISTICS DASHBOARD PAGE =================== -->
+  <div id="page-dashboard-logistics" class="page"></div>
+
+</div><!-- End Pages Container -->
+
+<script src="js/unified-auth.js?v=7.0"></script>
+<script src="js/app.js?v=5.2"></script>
+<script src="js/products-database.js?v=4.7"></script>
+<script src="js/product-detail.js?v=4.7"></script>
+<script src="js/sme-stores.js?v=4.7"></script>
+<script src="js/pages.js?v=5.2"></script>
+<script src="js/payment.js?v=4.7"></script>
+<script src="js/dashboard-supplier.js?v=6.0"></script>
+<script src="js/dashboard-customer.js?v=6.0"></script>
+<script src="js/dashboard-finance.js?v=6.0"></script>
+<script src="js/dashboard-logistics.js?v=6.0"></script>
+<script src="js/admin-auth.js?v=5.2"></script>
+<script src="js/dashboard.js?v=6.0"></script>
+<script src="js/kyc.js?v=5.2"></script>
+<script src="js/product-management.js?v=4.7"></script>
+<script src="js/project-wizard.js?v=7.0"></script>
+<script src="js/dashboard-admin-ops.js?v=8.0"></script>
+<script src="js/dashboard-donor.js?v=9.0"></script>
+<script src="js/portals-unified.js?v=9.0"></script>
+<script src="js/home-live.js?v=6.0"></script>
+<script>
+// Portals Dropdown toggle
+function togglePortalsMenu() {
+  const dd = document.getElementById('portals-dropdown');
+  if (dd) dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
+}
+// Close on outside click
+document.addEventListener('click', function(e) {
+  const wrap = document.getElementById('portals-dropdown-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    const dd = document.getElementById('portals-dropdown');
+    if (dd) dd.style.display = 'none';
+  }
+});
+
+/* ── Admin Guard: إذا كانت الصفحة المطلوبة هي admin وليس مسجّلاً → توجيه ── */
+(function checkAdminHash() {
+  if (window.location.hash === '#admin') {
+    if (typeof adm_isLoggedIn === 'function' && !adm_isLoggedIn()) {
+      window.location.href = 'admin-login.html';
+      return;
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof adm_updateSidebar === 'function') adm_updateSidebar();
+      openAdminDashboard();
+    });
+  }
+})();
+
+/* ── فتح لوحة الإدارة مع تحميل الـ badges ── */
+function openAdminDashboard() {
+  if (typeof adm_isLoggedIn === 'function' && !adm_isLoggedIn()) {
+    window.location.href = 'admin-login.html';
+    return;
+  }
+  if (typeof adm_updateSidebar === 'function') adm_updateSidebar();
+  if (typeof showPage === 'function') showPage('dashboard-admin');
+  setTimeout(() => {
+    if (typeof adm_loadAdminBadges  === 'function') adm_loadAdminBadges();
+    if (typeof ops_enhanceAdminOverview === 'function') ops_enhanceAdminOverview();
+    if (typeof ops_init === 'function') ops_init();
+  }, 400);
+}
+
+/* ══════════════════════════════════════════
+   handleStartProject — نقطة الدخول الرئيسية
+   يتحقق من الجلسة:
+   - مسجّل → Wizard مباشرة
+   - غير مسجّل → modal تسجيل/دخول موحد
+══════════════════════════════════════════ */
+function handleStartProject() {
+  const session = typeof ua_getSession === 'function' ? ua_getSession() : null;
+
+  if (session) {
+    // مسجّل → افتح الـ Wizard مباشرة
+    if (typeof showProjectWizard === 'function') showProjectWizard(session);
+    else showPage(typeof ua_getDashboard === 'function' ? ua_getDashboard(session.role) : 'dashboard-customer');
+  } else {
+    // غير مسجّل → modal تسجيل/دخول موحد
+    _showUnifiedAuthModal();
+  }
+}
+
+/* ══════════════════════════════════════════
+   Unified Auth Modal — دخول/تسجيل موحد
+══════════════════════════════════════════ */
+function _showUnifiedAuthModal() {
+  const old = document.getElementById('unifiedAuthModal');
+  if (old) old.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'unifiedAuthModal';
+  modal.style.cssText = `
+    position:fixed;inset:0;z-index:99998;
+    background:rgba(9,18,42,0.85);backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;padding:1rem;
+    animation:fadeIn .3s ease;
+  `;
+  modal.innerHTML = `
+  <div style="width:100%;max-width:480px;background:#0d1b35;border-radius:24px;overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.08)">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#091e42,#0f2d5e);padding:1.8rem 2rem 1.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;background:rgba(14,165,160,.2);border-radius:10px;
+            display:flex;align-items:center;justify-content:center;font-size:1.1rem">🚀</div>
+          <div>
+            <div style="font-size:.65rem;color:#0ea5a0;font-weight:800;letter-spacing:.08em">منصة مشروعي</div>
+            <div style="font-size:1.05rem;font-weight:900;color:white">ابدأ رحلة مشروعك</div>
+          </div>
+        </div>
+        <button onclick="document.getElementById('unifiedAuthModal').remove();document.body.style.overflow=''"
+          style="background:rgba(255,255,255,.07);border:none;color:rgba(255,255,255,.6);
+            width:32px;height:32px;border-radius:50%;font-size:.9rem;cursor:pointer">✕</button>
+      </div>
+      <!-- Tabs -->
+      <div style="display:flex;gap:4px;background:rgba(0,0,0,.2);border-radius:10px;padding:4px;margin-top:1rem">
+        <button id="uaTabLogin" onclick="_uaSwitchTab('login')"
+          style="flex:1;padding:8px;border:none;border-radius:7px;font-weight:800;font-size:.82rem;cursor:pointer;transition:all .2s;
+            background:rgba(14,165,160,.9);color:white">
+          <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+        </button>
+        <button id="uaTabReg" onclick="_uaSwitchTab('register')"
+          style="flex:1;padding:8px;border:none;border-radius:7px;font-weight:800;font-size:.82rem;cursor:pointer;transition:all .2s;
+            background:transparent;color:rgba(255,255,255,.55)">
+          <i class="fas fa-user-plus"></i> حساب جديد
+        </button>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:1.5rem 2rem 2rem">
+
+      <!-- Alert -->
+      <div id="uaAlert" style="display:none;margin-bottom:1rem;padding:10px 14px;border-radius:10px;
+        font-size:.8rem;font-weight:700;background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.2)"></div>
+
+      <!-- LOGIN PANEL -->
+      <div id="uaPanelLogin">
+        <div style="display:flex;flex-direction:column;gap:.8rem">
+          <div>
+            <label style="font-size:.72rem;color:rgba(255,255,255,.5);font-weight:700;display:block;margin-bottom:4px">البريد الإلكتروني أو اسم المستخدم</label>
+            <input id="uaLoginUser" type="email" placeholder="example@email.com" dir="ltr" autocomplete="username"
+              style="width:100%;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+                border-radius:10px;color:white;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"
+              onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"
+              onkeydown="if(event.key==='Enter')_uaHandleLogin()"/>
+          </div>
+          <div>
+            <label style="font-size:.72rem;color:rgba(255,255,255,.5);font-weight:700;display:block;margin-bottom:4px">كلمة المرور</label>
+            <input id="uaLoginPw" type="password" placeholder="••••••••" autocomplete="current-password"
+              style="width:100%;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+                border-radius:10px;color:white;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"
+              onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"
+              onkeydown="if(event.key==='Enter')_uaHandleLogin()"/>
+          </div>
+          <button id="uaLoginBtn" onclick="_uaHandleLogin()"
+            style="width:100%;padding:13px;border:none;border-radius:12px;
+              background:linear-gradient(135deg,#0ea5a0,#059669);color:white;
+              font-weight:900;font-size:.9rem;cursor:pointer;transition:all .2s;margin-top:.3rem"
+            onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 8px 20px rgba(14,165,160,.35)'"
+            onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <i class="fas fa-sign-in-alt"></i> دخول ← ابدأ رحلتك
+          </button>
+        </div>
+        <div style="text-align:center;margin-top:1rem;font-size:.75rem;color:rgba(255,255,255,.4)">
+          ليس لديك حساب؟
+          <a href="#" onclick="_uaSwitchTab('register');return false" style="color:#0ea5a0;font-weight:700;text-decoration:none">سجّل مجاناً</a>
+        </div>
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div id="uaPanelReg" style="display:none">
+        <!-- اختيار نوع الحساب -->
+        <div style="margin-bottom:1rem">
+          <label style="font-size:.72rem;color:rgba(255,255,255,.5);font-weight:700;display:block;margin-bottom:.5rem">نوع حسابك:</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
+            ${[
+              {v:'customer', icon:'👤', label:'عميل / مشروع', desc:'شراء معدات وتمويل'},
+              {v:'supplier', icon:'🏭', label:'مورد / شركة',  desc:'بيع وتوريد منتجات'},
+              {v:'finance',  icon:'🏦', label:'ممول / بنك',   desc:'تقديم حلول تمويل'},
+            ].map(r => `
+              <div class="ua-role-card" id="role_${r.v}" onclick="_uaSelectRole('${r.v}')"
+                style="background:rgba(255,255,255,.04);border:2px solid ${r.v==='customer'?'#0ea5a0':'rgba(255,255,255,.08)'};
+                  border-radius:10px;padding:.6rem .8rem;cursor:pointer;transition:all .2s;
+                  ${r.v==='customer'?'background:rgba(14,165,160,.08);':''}">
+                <div style="font-size:1rem;margin-bottom:2px">${r.icon}</div>
+                <div style="font-size:.72rem;font-weight:800;color:white">${r.label}</div>
+                <div style="font-size:.62rem;color:rgba(255,255,255,.4)">${r.desc}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.7rem">
+          <input id="uaRegName" type="text" placeholder="الاسم الكامل *" autocomplete="name"
+            style="width:100%;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+              border-radius:10px;color:white;font-size:.85rem;font-family:inherit;outline:none;box-sizing:border-box"
+            onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/>
+          <input id="uaRegEmail" type="email" placeholder="البريد الإلكتروني *" dir="ltr" autocomplete="username"
+            style="width:100%;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+              border-radius:10px;color:white;font-size:.85rem;font-family:inherit;outline:none;box-sizing:border-box"
+            onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/>
+          <input id="uaRegPhone" type="tel" placeholder="رقم الجوال" dir="ltr" autocomplete="tel"
+            style="width:100%;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+              border-radius:10px;color:white;font-size:.85rem;font-family:inherit;outline:none;box-sizing:border-box"
+            onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/>
+          <input id="uaRegPw" type="password" placeholder="كلمة المرور (8 أحرف+) *" autocomplete="new-password"
+            style="width:100%;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+              border-radius:10px;color:white;font-size:.85rem;font-family:inherit;outline:none;box-sizing:border-box"
+            onfocus="this.style.borderColor='#0ea5a0'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/>
+          <button id="uaRegBtn" onclick="_uaHandleRegister()"
+            style="width:100%;padding:13px;border:none;border-radius:12px;
+              background:linear-gradient(135deg,#0f2d5e,#0ea5a0);color:white;
+              font-weight:900;font-size:.9rem;cursor:pointer;transition:all .2s"
+            onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 8px 20px rgba(14,165,160,.3)'"
+            onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <i class="fas fa-rocket"></i> إنشاء الحساب وابدأ رحلتك
+          </button>
+        </div>
+        <p style="text-align:center;font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.8rem;line-height:1.6">
+          بالتسجيل أنت توافق على شروط الاستخدام وسياسة الخصوصية
+        </p>
+      </div>
+
+      <!-- OR divider -->
+      <div style="display:flex;align-items:center;gap:.7rem;margin-top:1.2rem">
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.07)"></div>
+        <span style="font-size:.7rem;color:rgba(255,255,255,.3)">أو تسجيل دخول بصفتك</span>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.07)"></div>
+      </div>
+      <!-- Quick Portal Links — تبديل التبويب للتسجيل مع اختيار الدور مباشرة -->
+      <div style="display:flex;gap:.5rem;margin-top:.8rem">
+        ${[
+          {role:'supplier', label:'مورد',  color:'#ea580c', icon:'fa-store'},
+          {role:'finance',  label:'ممول',   color:'#7c3aed', icon:'fa-hand-holding-usd'},
+          {role:'donor',    label:'مانح',   color:'#059669', icon:'fa-heart'},
+        ].map(p => `
+          <button onclick="_uaSwitchTab('register');_uaSelectRole('${p.role}');"
+            style="flex:1;text-align:center;padding:7px;border-radius:8px;
+            background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+            font-size:.72rem;font-weight:700;color:${p.color};cursor:pointer;
+            transition:all .2s;font-family:inherit"
+            onmouseover="this.style.background='rgba(255,255,255,.10)';this.style.borderColor='${p.color}40'"
+            onmouseout="this.style.background='rgba(255,255,255,.04)';this.style.borderColor='rgba(255,255,255,.08)'">
+            <i class="fas ${p.icon}" style="margin-left:.3rem;font-size:.7rem"></i>${p.label}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  </div>`;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  modal.addEventListener('click', e => {
+    if (e.target === modal) { modal.remove(); document.body.style.overflow = ''; }
+  });
+
+  // state
+  modal._selectedRole = 'customer';
+  setTimeout(() => document.getElementById('uaLoginUser')?.focus(), 100);
+}
+
+let _uaSelectedRole = 'customer';
+
+function _uaSwitchTab(tab) {
+  const loginPanel = document.getElementById('uaPanelLogin');
+  const regPanel   = document.getElementById('uaPanelReg');
+  const loginTab   = document.getElementById('uaTabLogin');
+  const regTab     = document.getElementById('uaTabReg');
+  document.getElementById('uaAlert').style.display = 'none';
+
+  if (tab === 'login') {
+    loginPanel.style.display = 'block';
+    regPanel.style.display   = 'none';
+    loginTab.style.background = 'rgba(14,165,160,.9)';
+    loginTab.style.color      = 'white';
+    regTab.style.background   = 'transparent';
+    regTab.style.color        = 'rgba(255,255,255,.55)';
+    document.getElementById('uaLoginUser')?.focus();
+  } else {
+    loginPanel.style.display = 'none';
+    regPanel.style.display   = 'block';
+    regTab.style.background  = 'rgba(14,165,160,.9)';
+    regTab.style.color       = 'white';
+    loginTab.style.background = 'transparent';
+    loginTab.style.color      = 'rgba(255,255,255,.55)';
+    document.getElementById('uaRegName')?.focus();
+  }
+}
+
+function _uaSelectRole(role) {
+  _uaSelectedRole = role;
+  document.querySelectorAll('.ua-role-card').forEach(c => {
+    c.style.borderColor = 'rgba(255,255,255,.08)';
+    c.style.background  = 'rgba(255,255,255,.04)';
+  });
+  const sel = document.getElementById('role_' + role);
+  if (sel) {
+    sel.style.borderColor = '#0ea5a0';
+    sel.style.background  = 'rgba(14,165,160,.08)';
+  }
+}
+
+function _uaShowAlert(msg) {
+  const el = document.getElementById('uaAlert');
+  if (el) { el.textContent = '⚠️ ' + msg; el.style.display = 'block'; }
+}
+
+async function _uaHandleLogin() {
+  const user = document.getElementById('uaLoginUser')?.value?.trim();
+  const pw   = document.getElementById('uaLoginPw')?.value;
+  const btn  = document.getElementById('uaLoginBtn');
+
+  if (!user || !pw) { _uaShowAlert('يرجى إدخال البريد الإلكتروني وكلمة المرور'); return; }
+
+  btn.disabled  = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جارٍ الدخول...';
+
+  try {
+    const session = await ua_login(user, pw);
+    document.getElementById('unifiedAuthModal')?.remove();
+    document.body.style.overflow = '';
+
+    if (typeof syncNavbar === 'function') syncNavbar();
+    if (typeof showToast === 'function')
+      showToast(`👋 مرحباً ${session.displayName}! جارٍ فتح رحلة مشروعك...`, 'success', 3000);
+
+    setTimeout(() => {
+      const needsKYC = !session.kycStatus
+                    || session.kycStatus === 'not_started'
+                    || session.kycStatus === 'pending';
+      if (needsKYC) {
+        // كل الأدوار → KYC الخاص بهم
+        const kycTypeMap = {
+          customer : 'customer_individual',
+          supplier : 'supplier',
+          finance  : 'finance',
+          donor    : 'donor',
+        };
+        const kycType = kycTypeMap[session.role] || 'customer_individual';
+        if (typeof showPage === 'function') {
+          showPage('kyc');
+          setTimeout(() => {
+            if (typeof startKYC === 'function') startKYC(kycType);
+          }, 350);
+        }
+      } else {
+        // KYC مكتمل → الداشبورد
+        const dash = typeof ua_getDashboard === 'function'
+          ? ua_getDashboard(session.role)
+          : 'home';
+        if (typeof showPage === 'function') showPage(dash);
+      }
+    }, 400);
+  } catch (err) {
+    _uaShowAlert(err.message || 'فشل تسجيل الدخول');
+    btn.disabled  = false;
+    btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> دخول ← ابدأ رحلتك';
+  }
+}
+
+async function _uaHandleRegister() {
+  const name  = document.getElementById('uaRegName')?.value?.trim();
+  const email = document.getElementById('uaRegEmail')?.value?.trim();
+  const phone = document.getElementById('uaRegPhone')?.value?.trim();
+  const pw    = document.getElementById('uaRegPw')?.value;
+  const btn   = document.getElementById('uaRegBtn');
+  const role  = _uaSelectedRole || 'customer';
+
+  if (!name || !email || !pw) { _uaShowAlert('يرجى تعبئة الحقول الإلزامية'); return; }
+  if (pw.length < 8)           { _uaShowAlert('كلمة المرور يجب أن تكون 8 أحرف على الأقل'); return; }
+  if (!email.includes('@'))    { _uaShowAlert('البريد الإلكتروني غير صحيح'); return; }
+
+  btn.disabled  = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جارٍ الإنشاء...';
+
+  const kycMap = { customer:'customer_individual', supplier:'supplier', finance:'finance', donor:'donor' };
+
+  try {
+    const session = await ua_register({
+      fullName: name, username: email, phone, password: pw,
+      role, kycType: kycMap[role] || 'customer_individual',
+    });
+    document.getElementById('unifiedAuthModal')?.remove();
+    document.body.style.overflow = '';
+
+    if (typeof syncNavbar === 'function') syncNavbar();
+    if (typeof showToast === 'function')
+      showToast(`🎉 أهلاً ${session.displayName}! حسابك جاهز`, 'success', 4000);
+
+    // توجيه حسب الدور — كل دور → KYC الخاص به
+    const kycTypeMap = {
+      customer : 'customer_individual',
+      supplier : 'supplier',
+      finance  : 'finance',
+      donor    : 'donor',
+    };
+    setTimeout(() => {
+      const kycType = kycTypeMap[role] || 'customer_individual';
+      if (typeof showPage === 'function') {
+        showPage('kyc');
+        setTimeout(() => {
+          if (typeof startKYC === 'function') startKYC(kycType);
+        }, 350);
+      }
+    }, 500);
+  } catch (err) {
+    _uaShowAlert(err.message || 'فشل إنشاء الحساب');
+    btn.disabled  = false;
+    btn.innerHTML = '<i class="fas fa-rocket"></i> إنشاء الحساب وابدأ رحلتك';
+  }
+}
+
+/* ── معالج URL params — ?page=X&wizard=1 ── */
+(function handleURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  const page   = params.get('page');
+  const wizard = params.get('wizard');
+
+  if (page || wizard) {
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (wizard === '1') {
+          const sess = typeof ua_getSession === 'function' ? ua_getSession() : null;
+          if (sess && typeof showProjectWizard === 'function') {
+            showProjectWizard(sess);
+            return;
+          }
+        }
+        if (page && typeof showPage === 'function') showPage(page);
+      }, 800);
+    });
+    // نظّف الـ URL
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+})();
+</script>
 </body>
 </html>
